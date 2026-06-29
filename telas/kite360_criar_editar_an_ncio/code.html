@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Criar Anúncio | KITE360º</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#a7c8ff",
+                        "on-surface-variant": "#43474f",
+                        "on-secondary-fixed": "#131d23",
+                        "surface-container": "#eeedf2",
+                        "on-primary": "#ffffff",
+                        "secondary": "#566067",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#592300",
+                        "surface-variant": "#e2e2e7",
+                        "surface": "#f9f9fe",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#381300",
+                        "on-tertiary-fixed-variant": "#723610",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#ffb690",
+                        "tertiary-fixed": "#ffdbca",
+                        "outline-variant": "#c3c6d1",
+                        "on-secondary-container": "#5c666d",
+                        "background": "#f9f9fe",
+                        "on-secondary-fixed-variant": "#3e484f",
+                        "surface-container-highest": "#e2e2e7",
+                        "surface-bright": "#f9f9fe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "inverse-surface": "#2f3034",
+                        "primary-fixed": "#d5e3ff",
+                        "on-primary-fixed": "#001b3c",
+                        "primary-container": "#003366",
+                        "inverse-on-surface": "#f1f0f5",
+                        "secondary-fixed-dim": "#bec8d0",
+                        "error-container": "#ffdad6",
+                        "outline": "#737780",
+                        "surface-container-high": "#e8e8ed",
+                        "on-surface": "#1a1c1f",
+                        "surface-tint": "#3a5f94",
+                        "surface-container-low": "#f4f3f8",
+                        "on-tertiary-container": "#d8885c",
+                        "on-tertiary-fixed": "#341100",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dad9de",
+                        "secondary-container": "#dae4ed",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "secondary-fixed": "#dae4ed",
+                        "primary": "#001e40",
+                        "on-background": "#1a1c1f",
+                        "on-primary-container": "#799dd6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "unit-xs": "4px",
+                        "unit-xl": "48px",
+                        "container-max-width": "1280px",
+                        "unit-md": "16px",
+                        "unit-sm": "8px",
+                        "unit-lg": "24px",
+                        "margin-desktop": "32px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "hanken": ["Hanken Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .filled-icon { font-variation-settings: 'FILL' 1; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="w-full sticky top-0 z-50 bg-surface-container-lowest border-b border-outline-variant">
+<div class="flex items-center justify-between px-margin-desktop py-4 max-w-container-max-width mx-auto">
+<div class="flex items-center gap-12">
+<h1 class="font-hanken text-2xl font-extrabold tracking-tight text-primary-container">KITE360º</h1>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant font-semibold hover:text-primary-container transition-colors text-sm" href="#">Kitesurf</a>
+<a class="text-on-surface-variant font-semibold hover:text-primary-container transition-colors text-sm" href="#">Wingfoil</a>
+<a class="text-on-surface-variant font-semibold hover:text-primary-container transition-colors text-sm" href="#">Board</a>
+<a class="text-on-surface-variant font-semibold hover:text-primary-container transition-colors text-sm" href="#">Harness</a>
+<a class="text-on-surface-variant font-semibold hover:text-primary-container transition-colors text-sm" href="#">Wetsuits</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary-container transition-colors">favorite</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary-container transition-colors">shopping_cart</span>
+<div class="flex items-center gap-2 cursor-pointer border border-outline px-3 py-1.5 rounded">
+<span class="material-symbols-outlined text-on-surface-variant">account_circle</span>
+<span class="text-sm font-semibold text-on-surface">Minha Conta</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow max-w-4xl w-full mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<div class="mb-10">
+<h2 class="text-3xl font-bold text-primary-container">Criar Anúncio</h2>
+<p class="text-on-surface-variant mt-2">Venda seus equipamentos profissionais de Kitesurf e Wingfoil de forma rápida e segura.</p>
+</div>
+<form class="space-y-8" id="create-listing-form">
+<!-- Section: Fotos -->
+<section class="bg-surface-container-lowest p-6 md:p-8 rounded-lg border border-outline-variant shadow-sm">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary-container">add_a_photo</span>
+<h3 class="text-lg font-bold text-on-surface">Fotos do Equipamento</h3>
+</div>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-10 flex flex-col items-center justify-center bg-surface hover:bg-surface-container-low transition-colors cursor-pointer mb-6 group">
+<div class="bg-primary-container text-white p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">upload</span>
+</div>
+<p class="font-bold text-on-surface">Arraste as fotos ou clique para enviar</p>
+<p class="text-sm text-on-surface-variant mt-1 text-center">Envie até 10 fotos. Formatos JPG, PNG. Mínimo 1000px.</p>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-4 hide-scrollbar">
+<!-- Thumbnail 1 (Main) -->
+<div class="relative min-w-[140px] h-[140px] rounded-lg border border-outline overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close-up photograph of a professional high-performance kitesurfing kite laid out on a pristine sandy beach, featuring vibrant blue and white graphics with carbon fiber reinforcements. The lighting is bright coastal sunlight, emphasizing the high-quality ripstop material texture and technical stitch details in a modern, professional product-style shot." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJpf2VR8e-qnYoUdVsJdFqFCLDlXp3ffvnVJo_2g8CrBkf20hiT1hx3Ldqj1Jnnh43vC_cV3LpybmVyWTXIpeaA5sIqqtW9O4W1Wy8eEjcacJK4ZDsoOfVjNLy0ix1ZM4DnqURjGqrSAPJJdkHz9vqIXdiRDdHnGLAtXi86CilxMlA2WUOIXJtU0jmBGrxNzKP2-Epg3H4yphW3Gnva51CZTG42fjXOz-yPBT91srjUYhB0NKO38Mr9wOsHAzuNiNtoms8z9yjzQ')"></div>
+<div class="absolute top-2 left-2 bg-primary-container text-white p-1 rounded shadow-lg">
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+</div>
+<div class="absolute top-2 right-2 bg-white/90 text-error p-1 rounded cursor-pointer hover:bg-white transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">delete</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 bg-primary-container/80 text-white text-[10px] py-1 text-center font-bold">PRINCIPAL</div>
+</div>
+<!-- Thumbnail 2 -->
+<div class="relative min-w-[140px] h-[140px] rounded-lg border border-outline-variant overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center" data-alt="Detailed technical photo of a wingfoil board's underside, showcasing the hydrofoil mounting track and sleek aerodynamic profile. The board is made of high-end matte carbon fiber with subtle teal accents. The setting is a clean, minimalist outdoor deck with soft, diffused morning light creating a professional and technical aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCKNkSQkN0hiijtz-xgDpMPZk6Mk_AnQq1HbgXI-_ZG6BN0haN-JQTSiqGgpqdWCpHXJlwpFRJi4K0IR5NFAZi_pYP4KVfaP1G9bsZKrTbqz81kobIbtzFsZ9f8GEM8K6szV9w6k_JTUd4u6RP5EO0ym8dhD-L3NY-pYNi95gUOyR1uKkhIgpRt2qUmJPNoW2QMTY7LEXMvGM9Q13kd5MPcNEgN75o9O7Fr3OIVtBkc3DxvfpnecR5lC6lcSCWojiDxpdYgEUWVOw')"></div>
+<div class="absolute top-2 left-2 bg-white/90 text-on-surface-variant p-1 rounded cursor-pointer hover:bg-primary-container hover:text-white transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<div class="absolute top-2 right-2 bg-white/90 text-error p-1 rounded cursor-pointer hover:bg-white transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">delete</span>
+</div>
+</div>
+<!-- Thumbnail 3 -->
+<div class="relative min-w-[140px] h-[140px] rounded-lg border border-outline-variant overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center" data-alt="A professional action camera shot of a kitesurf control bar and lines, emphasizing the safety release mechanism and ergonomic grip. The background features a blurry ocean horizon under a clear blue sky. The visual style is crisp and commercial, highlighting the technical reliability of the gear." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAtlsG8DIId6S8ffUYzzpWrerxClzj3YeWMhH2KJQ3yJiV46cjap8bMLTZakCH5_FiLHy_x1B2tDEr15BBcB55WuiUEEctLRr_JaC6ITyEJi71BOJqz5UbcwXb_BGhn2mmKz43UXMIysvnPtbRjknttTHj6qWNh0BQ8U34dk7lje47HIqQ60h0PyGRYMfVpsQIJkPIVh00CZK-WXzb2s57mLCZ67ZLPmUyxgHtWyGnmbmA0j5_IWhC2xZUgguxQ62DeTD4p4_5K5A')"></div>
+<div class="absolute top-2 left-2 bg-white/90 text-on-surface-variant p-1 rounded cursor-pointer hover:bg-primary-container hover:text-white transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<div class="absolute top-2 right-2 bg-white/90 text-error p-1 rounded cursor-pointer hover:bg-white transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">delete</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Informações -->
+<section class="bg-surface-container-lowest p-6 md:p-8 rounded-lg border border-outline-variant shadow-sm">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary-container">info</span>
+<h3 class="text-lg font-bold text-on-surface">Informações do Produto</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="md:col-span-2">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Título do anúncio</label>
+<input class="w-full border-outline-variant focus:border-primary-container focus:ring-0 rounded py-3 bg-surface-container-low transition-all" placeholder="Ex: Kite Duotone Rebel 12m 2023 Impecável" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Categoria / Modalidade</label>
+<select class="w-full border-outline-variant focus:border-primary-container focus:ring-0 rounded py-3 bg-surface-container-low">
+<option value="">Selecione</option>
+<option>Kitesurf</option>
+<option>Wingfoil</option>
+<option>Windsurf</option>
+<option>Prancha / Board</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Marca</label>
+<input class="w-full border-outline-variant focus:border-primary-container focus:ring-0 rounded py-3 bg-surface-container-low" placeholder="Ex: Duotone, F-One, Core..." type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Modelo</label>
+<input class="w-full border-outline-variant focus:border-primary-container focus:ring-0 rounded py-3 bg-surface-container-low" placeholder="Ex: Rebel, Bandit, Nexus..." type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Condição</label>
+<select class="w-full border-outline-variant focus:border-primary-container focus:ring-0 rounded py-3 bg-surface-container-low font-bold">
+<option>Usado</option>
+<option>Seminovo (Estado de novo)</option>
+<option>Novo (Lacrado)</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Tamanho</label>
+<input class="w-full border-outline-variant focus:border-primary-container focus:ring-0 rounded py-3 bg-surface-container-low" placeholder="Ex: 12m, 5'2, Large" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Ano</label>
+<input class="w-full border-outline-variant focus:border-primary-container focus:ring-0 rounded py-3 bg-surface-container-low" placeholder="2024" type="number"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Preço</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold text-sm">R$</span>
+<input class="w-full border-outline-variant focus:border-primary-container focus:ring-0 rounded py-3 pl-10 bg-surface-container-low font-bold text-primary-container" placeholder="0.000,00" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Localização</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant">location_on</span>
+<input class="w-full border-outline-variant focus:border-primary-container focus:ring-0 rounded py-3 pl-10 bg-surface-container-low" placeholder="Cidade / Estado" type="text"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Descrição -->
+<section class="bg-surface-container-lowest p-6 md:p-8 rounded-lg border border-outline-variant shadow-sm">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary-container">notes</span>
+<h3 class="text-lg font-bold text-on-surface">Descrição Detalhada</h3>
+</div>
+<!-- Rich Text Editor Toolbar -->
+<div class="border border-outline-variant rounded-lg overflow-hidden">
+<div class="flex flex-wrap gap-1 p-2 bg-surface-container border-b border-outline-variant">
+<button class="p-2 hover:bg-white rounded transition-colors text-on-surface-variant" title="Bold" type="button"><span class="material-symbols-outlined text-[20px]">format_bold</span></button>
+<button class="p-2 hover:bg-white rounded transition-colors text-on-surface-variant" title="Italic" type="button"><span class="material-symbols-outlined text-[20px]">format_italic</span></button>
+<div class="w-px h-6 bg-outline-variant mx-1 self-center"></div>
+<button class="p-2 hover:bg-white rounded transition-colors text-on-surface-variant" title="List" type="button"><span class="material-symbols-outlined text-[20px]">format_list_bulleted</span></button>
+<button class="p-2 hover:bg-white rounded transition-colors text-on-surface-variant" title="Numbered List" type="button"><span class="material-symbols-outlined text-[20px]">format_list_numbered</span></button>
+<div class="w-px h-6 bg-outline-variant mx-1 self-center"></div>
+<button class="p-2 hover:bg-white rounded transition-colors text-on-surface-variant" title="Heading 1" type="button"><span class="material-symbols-outlined text-[20px]">format_h1</span></button>
+<button class="p-2 hover:bg-white rounded transition-colors text-on-surface-variant" title="Heading 2" type="button"><span class="material-symbols-outlined text-[20px]">format_h2</span></button>
+<div class="w-px h-6 bg-outline-variant mx-1 self-center"></div>
+<button class="p-2 hover:bg-white rounded transition-colors text-on-surface-variant" title="Image" type="button"><span class="material-symbols-outlined text-[20px]">image</span></button>
+</div>
+<textarea class="w-full border-none focus:ring-0 p-4 bg-white text-on-surface placeholder:text-on-surface-variant/50" placeholder="Descreva o estado de conservação, reparos realizados, tempo de uso e qualquer detalhe técnico relevante..." rows="8"></textarea>
+</div>
+<div class="mt-4 p-4 bg-error-container/20 border border-error/20 rounded flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-[20px] mt-0.5">warning</span>
+<p class="text-sm text-on-surface font-medium leading-relaxed">
+                        Não inclua telefone, e-mail ou links na descrição. Negocie pela plataforma para garantir sua segurança e elegibilidade para nossa proteção ao comprador.
+                    </p>
+</div>
+</section>
+<!-- Actions -->
+<div class="flex flex-col md:flex-row items-center gap-4 pt-6 border-t border-outline-variant">
+<button class="w-full md:w-auto bg-primary-container text-white px-10 py-4 rounded font-bold hover:bg-primary transition-all active:scale-[0.98]" type="submit">
+                    Publicar anúncio
+                </button>
+<button class="w-full md:w-auto border border-primary-container text-primary-container px-10 py-4 rounded font-bold hover:bg-primary-container hover:text-white transition-all" type="button">
+                    Salvar rascunho
+                </button>
+</div>
+</form>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-12 max-w-container-max-width mx-auto">
+<div class="mb-8 md:mb-0">
+<h4 class="font-hanken text-xl font-bold text-primary-container mb-2">KITE360º</h4>
+<p class="text-xs text-on-surface-variant max-w-xs leading-relaxed">© 2024 KITE360º. Professional Gear Marketplace. O maior portal de compra e venda de equipamentos náuticos de alta performance.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="text-xs font-semibold text-on-surface-variant hover:text-primary-container hover:underline transition-all" href="#">About Us</a>
+<a class="text-xs font-semibold text-on-surface-variant hover:text-primary-container hover:underline transition-all" href="#">Safety Guide</a>
+<a class="text-xs font-semibold text-on-surface-variant hover:text-primary-container hover:underline transition-all" href="#">Terms of Service</a>
+<a class="text-xs font-semibold text-on-surface-variant hover:text-primary-container hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="text-xs font-semibold text-on-surface-variant hover:text-primary-container hover:underline transition-all" href="#">Shipping Info</a>
+<a class="text-xs font-semibold text-on-surface-variant hover:text-primary-container hover:underline transition-all" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for the star icon toggle (Main photo selection)
+        document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+            if (icon.textContent === 'star') {
+                icon.parentElement.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const isMain = this.classList.contains('bg-primary-container');
+                    if (!isMain) {
+                        // Logic to demote current main and promote this one
+                        alert('Definindo como foto principal...');
+                    }
+                });
+            }
+        });
+
+        // Form submission prevent default
+        document.getElementById('create-listing-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Enviando anúncio para análise...');
+        });
+    </script>
+</body></html>

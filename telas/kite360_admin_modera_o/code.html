@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KITE360º Admin - Moderação e Segurança</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ffdbca",
+                    "tertiary-container": "#592300",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#3a5f94",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e2e2e7",
+                    "surface-container-low": "#f4f3f8",
+                    "primary-fixed": "#d5e3ff",
+                    "on-surface-variant": "#43474f",
+                    "surface": "#f9f9fe",
+                    "on-secondary-container": "#5c666d",
+                    "surface-dim": "#dad9de",
+                    "on-background": "#1a1c1f",
+                    "surface-container-high": "#e8e8ed",
+                    "secondary": "#566067",
+                    "tertiary": "#381300",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "on-primary-fixed": "#001b3c",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "inverse-surface": "#2f3034",
+                    "secondary-fixed-dim": "#bec8d0",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f1f0f5",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#eeedf2",
+                    "surface-container-highest": "#e2e2e7",
+                    "primary": "#001e40",
+                    "on-tertiary-fixed": "#341100",
+                    "secondary-fixed": "#dae4ed",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "on-surface": "#1a1c1f",
+                    "surface-bright": "#f9f9fe",
+                    "secondary-container": "#dae4ed",
+                    "on-tertiary-container": "#d8885c",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#a7c8ff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#799dd6",
+                    "background": "#f9f9fe",
+                    "outline": "#737780",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "on-error": "#ffffff",
+                    "primary-container": "#003366",
+                    "outline-variant": "#c3c6d1",
+                    "on-secondary-fixed": "#131d23",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "32px",
+                    "unit-md": "16px",
+                    "unit-xl": "48px",
+                    "unit-sm": "8px",
+                    "container-max-width": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "unit-xs": "4px",
+                    "unit-lg": "24px"
+            },
+            "fontFamily": {
+                    "price-display": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "title-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .active-tab {
+            border-bottom: 2px solid #001e40;
+            color: #001e40;
+            font-weight: 700;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c3c6d1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-hidden h-screen flex">
+<!-- SideNavBar Anchor -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant flex flex-col py-unit-lg z-50">
+<div class="px-unit-lg mb-unit-xl">
+<h1 class="font-headline-md text-headline-md text-primary font-bold tracking-tight">KITE360º</h1>
+<p class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest mt-1">Admin Portal</p>
+</div>
+<nav class="flex-1 px-unit-sm space-y-unit-xs overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+            </a>
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">group</span> Usuários
+            </a>
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">sell</span> Anúncios
+            </a>
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all bg-primary-container text-on-primary-container font-bold rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">gavel</span> Moderação
+            </a>
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">view_carousel</span> Banners
+            </a>
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">loyalty</span> Planos
+            </a>
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">verified</span> Verificações
+            </a>
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">assessment</span> Relatórios
+            </a>
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+            </a>
+</nav>
+<div class="px-unit-lg mt-auto pt-unit-lg border-t border-outline-variant">
+<div class="flex items-center gap-3 mb-4">
+<img class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="Professional studio portrait of a male administrator wearing a minimalist navy blue polo shirt, clean lighting, blurred modern office background with high-end tech vibe. The image is crisp, professional, and follows the oceanic professional aesthetic of KITE360º with a clean, high-contrast look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDenHU-hd0rKjnssvAzeS7fKUwtur6sJ3YYJTChQWS0OdXBL7EBJ05QiuX-ScGDdrqm7zhy6eTNT15zkC7WzhDPi1iGtBAS0qskISOq_5C0QWHYpuJlcO4sLyx-uDV9LIMitJUemgT1GAxKsA9ZCoAsG0aqnfa_ZEql3sf6zC2w8hqNqOQKUvPMmyu5I-WcnxppQ363KLsvtRoXc3UnvpeRDCNr2cRrI3QKjVtwqwFJH3vesdHe8KBaXYkIHuCwTiwpVx00iJBh3Q"/>
+<div>
+<p class="font-label-md text-label-md text-primary">Alex Rivers</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Pro Seller Admin</p>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors">Upgrade to Pro</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-64 flex flex-col h-screen bg-surface">
+<!-- TopNavBar Anchor -->
+<header class="w-full top-0 sticky bg-surface border-b border-outline-variant z-40">
+<div class="flex items-center justify-between px-margin-desktop py-unit-sm max-w-container-max-width mx-auto">
+<div class="flex items-center gap-unit-lg">
+<h2 class="font-title-lg text-title-lg text-primary">Moderação e Segurança</h2>
+</div>
+<div class="flex items-center gap-unit-lg">
+<div class="relative flex items-center bg-surface-container border border-outline-variant rounded-full px-4 py-1">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-48" placeholder="Buscar registros..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">notifications</span>
+</div></div></div></header></main></body></html>

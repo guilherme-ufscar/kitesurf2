@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KITE360º - Planos e Assinatura</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1a1c1f",
+                    "outline": "#737780",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "surface-container-low": "#f4f3f8",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "inverse-surface": "#2f3034",
+                    "tertiary-container": "#592300",
+                    "secondary-container": "#dae4ed",
+                    "on-secondary-fixed": "#131d23",
+                    "on-primary-container": "#799dd6",
+                    "secondary": "#566067",
+                    "surface-variant": "#e2e2e7",
+                    "surface": "#f9f9fe",
+                    "surface-bright": "#f9f9fe",
+                    "inverse-on-surface": "#f1f0f5",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "primary-container": "#003366",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#d8885c",
+                    "surface-container-highest": "#e2e2e7",
+                    "on-surface-variant": "#43474f",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdbca",
+                    "secondary-fixed-dim": "#bec8d0",
+                    "surface-dim": "#dad9de",
+                    "on-background": "#1a1c1f",
+                    "outline-variant": "#c3c6d1",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "background": "#f9f9fe",
+                    "on-error": "#ffffff",
+                    "primary": "#001e40",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#a7c8ff",
+                    "surface-container": "#eeedf2",
+                    "surface-tint": "#3a5f94",
+                    "surface-container-high": "#e8e8ed",
+                    "tertiary": "#381300",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#001b3c",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#dae4ed",
+                    "on-tertiary-fixed": "#341100",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#5c666d",
+                    "primary-fixed": "#d5e3ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max-width": "1280px",
+                    "unit-lg": "24px",
+                    "margin-desktop": "32px",
+                    "unit-sm": "8px",
+                    "unit-xs": "4px",
+                    "gutter": "24px",
+                    "unit-xl": "48px",
+                    "unit-md": "16px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "title-lg": ["Hanken Grotesk"],
+                    "price-display": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; background-color: #f9f9fe; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+        .pricing-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar (Shared Component) -->
+<nav class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant">
+<div class="flex justify-between items-center px-margin-desktop py-unit-md max-w-container-max-width mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">KITE360º</div>
+<div class="hidden md:flex items-center gap-unit-lg">
+<a class="text-secondary hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Marketplace</a>
+<a class="text-secondary hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Gear Guide</a>
+<a class="text-secondary hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Schools</a>
+<a class="text-secondary hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Travel</a>
+<a class="text-secondary hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Community</a>
+</div>
+<div class="flex items-center gap-unit-md">
+<button class="text-secondary font-body-lg text-body-lg hover:text-primary transition-colors px-4 py-2">Login</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-body-lg text-body-lg font-semibold hover:opacity-90 transition-all">List Gear</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-unit-xl">
+<!-- Header Section -->
+<header class="text-center mb-unit-xl">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-unit-sm">Planos para Vendedores</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">Escolha o plano ideal para impulsionar suas vendas e alcance milhares de praticantes de Kitesurf e Wingfoil.</p>
+</header>
+<!-- Pricing Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-unit-xl">
+<!-- Basic Plan -->
+<div class="pricing-card bg-surface-container-lowest border border-outline-variant p-unit-lg flex flex-col">
+<div class="mb-unit-md">
+<h2 class="font-title-lg text-title-lg text-primary mb-unit-xs">Basic</h2>
+<div class="flex items-baseline gap-1">
+<span class="font-display-lg text-display-lg text-primary">R$ 0</span>
+<span class="font-body-md text-body-md text-secondary">/mês</span>
+</div>
+</div>
+<div class="flex-grow space-y-unit-sm mb-unit-lg">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Até 3 anúncios ativos</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Chat padrão</span>
+</div>
+<div class="flex items-start gap-2 opacity-40">
+<span class="material-symbols-outlined text-outline text-[20px]">cancel</span>
+<span class="font-body-md text-body-md text-outline">Selo Vendedor Verificado</span>
+</div>
+</div>
+<button class="w-full border border-primary text-primary py-3 px-6 rounded font-semibold hover:bg-secondary-container transition-all">Começar Grátis</button>
+</div>
+<!-- Pro Plan (Recommended) -->
+<div class="pricing-card bg-white border-2 border-primary p-unit-lg flex flex-col relative shadow-lg">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1 rounded-full text-label-md font-label-md uppercase tracking-wider">
+                    Recomendado
+                </div>
+<div class="mb-unit-md">
+<h2 class="font-title-lg text-title-lg text-primary mb-unit-xs">Pro</h2>
+<div class="flex items-baseline gap-1">
+<span class="font-display-lg text-display-lg text-primary">R$ 49</span>
+<span class="font-body-md text-body-md text-secondary">/mês</span>
+</div>
+</div>
+<div class="flex-grow space-y-unit-sm mb-unit-lg">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Selo Vendedor Verificado</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">10 anúncios ativos</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">1 destaque de 7 dias/mês</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Suporte prioritário</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 px-6 rounded font-semibold hover:opacity-90 transition-all shadow-md">Assinar Pro</button>
+</div>
+<!-- Premium Plan -->
+<div class="pricing-card bg-surface-container-lowest border border-outline-variant p-unit-lg flex flex-col">
+<div class="mb-unit-md">
+<h2 class="font-title-lg text-title-lg text-primary mb-unit-xs">Premium</h2>
+<div class="flex items-baseline gap-1">
+<span class="font-display-lg text-display-lg text-primary">R$ 99</span>
+<span class="font-body-md text-body-md text-secondary">/mês</span>
+</div>
+</div>
+<div class="flex-grow space-y-unit-sm mb-unit-lg">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Anúncios ilimitados</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">3 destaques de 15 dias/mês</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Divulgação em redes sociais</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Relatórios de performance</span>
+</div>
+</div>
+<button class="w-full border border-primary text-primary py-3 px-6 rounded font-semibold hover:bg-secondary-container transition-all">Assinar Premium</button>
+</div>
+</div>
+<!-- Comparison Table Section -->
+<section class="mt-unit-xl">
+<h3 class="font-headline-md text-headline-md text-primary text-center mb-unit-lg">Compare os recursos</h3>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-outline-variant bg-white">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="p-unit-md text-left font-title-lg text-title-lg text-primary border-b border-outline-variant">Recurso</th>
+<th class="p-unit-md text-center font-title-lg text-title-lg text-primary border-b border-outline-variant">Basic</th>
+<th class="p-unit-md text-center font-title-lg text-title-lg text-primary border-b border-outline-variant bg-secondary-container">Pro</th>
+<th class="p-unit-md text-center font-title-lg text-title-lg text-primary border-b border-outline-variant">Premium</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<tr class="border-b border-outline-variant">
+<td class="p-unit-md font-semibold">Limite de Anúncios</td>
+<td class="p-unit-md text-center">3 ativos</td>
+<td class="p-unit-md text-center bg-secondary-container/30">10 ativos</td>
+<td class="p-unit-md text-center">Ilimitados</td>
+</tr>
+<tr class="border-b border-outline-variant">
+<td class="p-unit-md font-semibold">Destaques Mensais</td>
+<td class="p-unit-md text-center">—</td>
+<td class="p-unit-md text-center bg-secondary-container/30">1 (7 dias)</td>
+<td class="p-unit-md text-center">3 (15 dias)</td>
+</tr>
+<tr class="border-b border-outline-variant">
+<td class="p-unit-md font-semibold">Selo de Verificação</td>
+<td class="p-unit-md text-center">—</td>
+<td class="p-unit-md text-center bg-secondary-container/30"><span class="material-symbols-outlined text-primary">check_circle</span></td>
+<td class="p-unit-md text-center"><span class="material-symbols-outlined text-primary">check_circle</span></td>
+</tr>
+<tr class="border-b border-outline-variant">
+<td class="p-unit-md font-semibold">Suporte</td>
+<td class="p-unit-md text-center">Padrão</td>
+<td class="p-unit-md text-center bg-secondary-container/30">Prioritário</td>
+<td class="p-unit-md text-center">Gerente de Conta</td>
+</tr>
+<tr class="border-b border-outline-variant">
+<td class="p-unit-md font-semibold">Visibilidade nos Filtros</td>
+<td class="p-unit-md text-center">Padrão</td>
+<td class="p-unit-md text-center bg-secondary-container/30">Aumentada</td>
+<td class="p-unit-md text-center">Máxima</td>
+</tr>
+<tr class="border-b border-outline-variant">
+<td class="p-unit-md font-semibold">Redes Sociais KITE360º</td>
+<td class="p-unit-md text-center">—</td>
+<td class="p-unit-md text-center bg-secondary-container/30">—</td>
+<td class="p-unit-md text-center"><span class="material-symbols-outlined text-primary">check_circle</span></td>
+</tr>
+<tr class="border-b border-outline-variant">
+<td class="p-unit-md font-semibold">Painel de Métricas</td>
+<td class="p-unit-md text-center">Básico</td>
+<td class="p-unit-md text-center bg-secondary-container/30">Intermediário</td>
+<td class="p-unit-md text-center">Avançado</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Atmosphere Visual -->
+<section class="mt-unit-xl relative h-64 overflow-hidden rounded-xl border border-outline-variant group">
+<div class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center p-unit-lg bg-black/40 text-white">
+<h3 class="font-headline-md text-headline-md mb-2">Pronto para vender mais?</h3>
+<p class="font-body-lg text-body-lg max-w-lg mb-unit-md">Junte-se à maior comunidade de esportes de vento do Brasil e transforme seus equipamentos parados em dinheiro.</p>
+<button class="bg-white text-primary px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform">Ver todos os benefícios</button>
+</div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic, high-contrast photograph of a professional kitesurfer performing a jump over turquoise ocean waters at sunset. The lighting is warm and dramatic, highlighting the technical details of the kite and board. The atmosphere is energetic and premium, aligning with the Oceanic Professional aesthetic of KITE360º. Clean horizons and sharp focus create a sense of high-performance gear utility." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTElvXzI6tPr9rcbSHV0xcS3fXoz7vNEKNuiNjdxJJVHmbyvns2jUWcVdyGXbDnlFzhkblN-hRuAxubLB4mycT9T0O2fvbUuqu4Nd_s2ZrGRnZeob9nDung9xu5WKCjGhCmKvYHtXPe27TYGTQ5YgOHjU90wZOdIp_F6CMyglcAaAYKwb2l1QCaB7D0c-yau5M45t0IDTo-YbVS8QFK2L8OPNtNydcubKjxcLuQ-g_hJ7xxRcQmMVvkTsh5G33L521CZAD1ij1fg')"></div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full mt-auto bg-surface-container-low border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-lg px-margin-desktop py-unit-xl max-w-container-max-width mx-auto">
+<div>
+<div class="font-title-lg text-title-lg font-bold text-primary mb-unit-sm">KITE360º</div>
+<p class="font-body-md text-body-md text-secondary max-w-sm">© 2024 KITE360º. Professional Grade Water Sports Equipment.</p>
+</div>
+<div class="grid grid-cols-2 gap-unit-md">
+<div class="flex flex-col gap-unit-xs">
+<a class="text-secondary hover:underline hover:text-primary transition-all font-body-md text-body-md" href="#">About Us</a>
+<a class="text-secondary hover:underline hover:text-primary transition-all font-body-md text-body-md" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-unit-xs">
+<a class="text-secondary hover:underline hover:text-primary transition-all font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-secondary hover:underline hover:text-primary transition-all font-body-md text-body-md" href="#">Contact Support</a>
+<a class="text-secondary hover:underline hover:text-primary transition-all font-body-md text-body-md" href="#">Shipping &amp; Returns</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for plan selection
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                if (!card.classList.contains('border-primary')) {
+                    card.style.borderColor = '#003366';
+                }
+            });
+            card.addEventListener('mouseleave', () => {
+                if (!card.classList.contains('border-primary')) {
+                    card.style.borderColor = '#c3c6d1';
+                }
+            });
+        });
+    </script>
+</body></html>

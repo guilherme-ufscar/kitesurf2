@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kite360º | Verificação de E-mail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#a7c8ff",
+                    "secondary-fixed": "#dae4ed",
+                    "primary": "#001e40",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f9f9fe",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "surface-container-low": "#f4f3f8",
+                    "on-secondary-fixed": "#131d23",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#799dd6",
+                    "tertiary-container": "#592300",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "on-tertiary-container": "#d8885c",
+                    "surface-container": "#eeedf2",
+                    "outline": "#737780",
+                    "background": "#f9f9fe",
+                    "on-background": "#1a1c1f",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1a1c1f",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e2e2e7",
+                    "secondary-fixed-dim": "#bec8d0",
+                    "on-primary-fixed": "#001b3c",
+                    "on-secondary-container": "#5c666d",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#341100",
+                    "inverse-surface": "#2f3034",
+                    "inverse-on-surface": "#f1f0f5",
+                    "tertiary": "#381300",
+                    "secondary": "#566067",
+                    "surface-dim": "#dad9de",
+                    "surface-tint": "#3a5f94",
+                    "surface-container-high": "#e8e8ed",
+                    "primary-fixed": "#d5e3ff",
+                    "surface-container-highest": "#e2e2e7",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "surface": "#f9f9fe",
+                    "primary-container": "#003366",
+                    "outline-variant": "#c3c6d1",
+                    "tertiary-fixed": "#ffdbca",
+                    "on-surface-variant": "#43474f",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "secondary-container": "#dae4ed",
+                    "tertiary-fixed-dim": "#ffb690"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max-width": "1280px",
+                    "unit-xs": "4px",
+                    "unit-xl": "48px",
+                    "unit-md": "16px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "unit-lg": "24px",
+                    "margin-desktop": "32px",
+                    "unit-sm": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "title-lg": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "price-display": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        line-height: 1;
+      }
+      
+      .ocean-bg {
+        background-color: #f9f9fe;
+        background-image: radial-gradient(circle at 2px 2px, #e2e2e7 1px, transparent 0);
+        background-size: 40px 40px;
+      }
+
+      .hover-lift {
+        transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      .hover-lift:hover {
+        transform: translateY(-2px);
+      }
+    </style>
+</head>
+<body class="ocean-bg font-body-md text-on-surface min-h-screen flex flex-col antialiased">
+<!-- Top Bar (Minimal Branding Only) -->
+<header class="w-full flex justify-center py-unit-lg">
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Kite360º</h1>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center px-margin-mobile md:px-0">
+<!-- Verification Card -->
+<div class="bg-surface w-full max-w-[440px] border border-outline-variant p-unit-xl text-center shadow-[0px_4px_12px_rgba(0,0,0,0.05)] rounded-xl relative overflow-hidden">
+<!-- Subtle Decorative Element -->
+<div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+<!-- Icon Header -->
+<div class="mb-unit-lg inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary-container text-primary">
+<span class="material-symbols-outlined !text-[32px]" data-icon="mail">mail</span>
+</div>
+<!-- Content Hierarchy -->
+<div class="space-y-unit-md mb-unit-xl">
+<h2 class="font-headline-lg-mobile md:font-headline-md text-headline-lg-mobile md:text-headline-md text-primary">
+                    Confirme seu e-mail
+                </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[320px] mx-auto leading-relaxed">
+                    Enviamos um link de confirmação para o endereço cadastrado. Por favor, verifique sua caixa de entrada e spam para ativar sua conta.
+                </p>
+</div>
+<!-- Actions Section -->
+<div class="flex flex-col gap-unit-md">
+<button class="w-full bg-primary-container text-white py-3 px-unit-lg rounded font-body-lg text-body-lg font-semibold hover:opacity-90 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2" id="resend-button">
+<span>Reenviar e-mail</span>
+</button>
+<div class="pt-unit-sm">
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="/login">
+<span class="material-symbols-outlined !text-[16px]" data-icon="arrow_back">arrow_back</span>
+                        Voltar ao login
+                    </a>
+</div>
+</div>
+<!-- Information Density Detail (Professional/Technical) -->
+<div class="mt-unit-xl pt-unit-lg border-t border-outline-variant">
+<p class="font-label-md text-label-md text-outline uppercase tracking-widest">
+                    Segurança Técnica Kite360º
+                </p>
+<div class="flex justify-center gap-4 mt-unit-sm">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined !text-[14px]" data-icon="verified_user">verified_user</span>
+<span class="text-[10px]">Criptografia SSL</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined !text-[14px]" data-icon="timer">timer</span>
+<span class="text-[10px]">Link expira em 24h</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Transactional Footer -->
+<footer class="py-unit-lg text-center">
+<p class="font-label-md text-label-md text-on-surface-variant opacity-60">
+            © 2024 Kite360º Marketplace. Equipamentos Profissionais de Esportes Aquáticos.
+        </p>
+</footer>
+<!-- Micro-interaction Script -->
+<script>
+        document.getElementById('resend-button').addEventListener('click', function() {
+            const btn = this;
+            const originalText = btn.innerHTML;
+            
+            // Visual feedback of action
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span> Enviando...';
+            
+            setTimeout(() => {
+                btn.classList.replace('bg-primary-container', 'bg-tertiary-container');
+                btn.innerHTML = '<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span> E-mail enviado!';
+                
+                // Reset after 3 seconds
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.classList.replace('bg-tertiary-container', 'bg-primary-container');
+                    btn.innerHTML = originalText;
+                }, 3000);
+            }, 1200);
+        });
+
+        // Initialize Material Symbols
+        document.querySelectorAll('.material-symbols-outlined').forEach(span => {
+            const icon = span.getAttribute('data-icon');
+            if (icon) span.textContent = icon;
+        });
+    </script>
+</body></html>

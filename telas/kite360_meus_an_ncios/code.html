@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meus Anúncios | AeroSurf KITE360º</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1c1f",
+                        "tertiary-fixed-dim": "#ffb690",
+                        "outline": "#737780",
+                        "on-primary-container": "#799dd6",
+                        "tertiary-fixed": "#ffdbca",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#3a5f94",
+                        "inverse-primary": "#a7c8ff",
+                        "primary-fixed": "#d5e3ff",
+                        "tertiary-container": "#592300",
+                        "on-surface-variant": "#43474f",
+                        "surface-variant": "#e2e2e7",
+                        "inverse-surface": "#2f3034",
+                        "surface-container-high": "#e8e8ed",
+                        "surface": "#f9f9fe",
+                        "on-secondary": "#ffffff",
+                        "primary": "#001e40",
+                        "surface-container-highest": "#e2e2e7",
+                        "surface-bright": "#f9f9fe",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#001b3c",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "background": "#f9f9fe",
+                        "on-tertiary-fixed-variant": "#723610",
+                        "on-tertiary-fixed": "#341100",
+                        "on-secondary-fixed": "#131d23",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#381300",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f1f0f5",
+                        "primary-container": "#003366",
+                        "on-secondary-container": "#5c666d",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#dae4ed",
+                        "surface-dim": "#dad9de",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "on-primary": "#ffffff",
+                        "secondary": "#566067",
+                        "on-surface": "#1a1c1f",
+                        "surface-container-low": "#f4f3f8",
+                        "outline-variant": "#c3c6d1",
+                        "secondary-fixed": "#dae4ed",
+                        "on-secondary-fixed-variant": "#3e484f",
+                        "surface-container": "#eeedf2",
+                        "secondary-fixed-dim": "#bec8d0",
+                        "on-tertiary-container": "#d8885c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit-sm": "8px",
+                        "unit-xs": "4px",
+                        "unit-md": "16px",
+                        "unit-xl": "48px",
+                        "unit-lg": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "title-lg": ["Hanken Grotesk"],
+                        "price-display": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e2e7; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-unit-md">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">AeroSurf</span>
+</div>
+<div class="hidden md:flex flex-1 max-w-xl mx-unit-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-xl focus:outline-none focus:border-primary text-body-md" placeholder="Buscar nos meus anúncios..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-unit-md">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary">help</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-2">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a kitesurfing enthusiast in a clean, minimalist studio setting. The lighting is soft and natural, emphasizing a high-end, performance-oriented aesthetic consistent with a premium water sports marketplace. Alex Rivera, the professional seller, looks confident and trustworthy with an oceanic professional vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOqVQoasrwnd9JoPU3Lc-q_mZBdxZGTP64tItglqfoXI-iuI61H5WpIM-vCWyKkI-8655RJwwSieMG1M3628c9yX0bzZTgrBSiYpekA1_45bZB6kHEOqSVBhl-dJ1SD9EZpBcJY6r1MA_TY0Upnhh9CxnotVhA-WQsRsMfypuF5sxMqJ6pUg5c4TYX3zi5quqXjca4sXS1SfFDoM9rciT5FyK72cSp_rasI4o6z_wSF3k76Oa6gTNDPBu2qvBsN3t5os7MoIb4YA"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-surface-container-low dark:bg-surface-container border-r border-outline-variant dark:border-outline flex flex-col p-unit-md z-40">
+<div class="mb-unit-xl px-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a professional seller named Alex Rivera against a crisp white background. High information density and professional utility are reflected in the clean composition. The lighting is bright and modern, aligned with the oceanic professional aesthetic of the AeroSurf brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCG2bZIsoTnxOPTrdsRVhBFkyBHLIfcK6ACgtrbHAJCBRHEbknC3XT-vBULDJ9WZIqvbMAbMrrVqzcgwSZydrYzmaNmWJFZyPxXF0k9aH0WZKYdPdag05-LxO5eQxpZJS2oCOHt85c_WqX7QzBoqeO8-8a-GKvw2s7TqZmFY-khZsxE_OfTSYBEvRMIdoIJtd66HPK-vcZfz3bOhFT4UStp96xU3nWh1A9S_NVHSr4V0kbUffqf_kJF7ag628Cf3MUBTVccXfnhQ"/>
+</div>
+<div>
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Alex Rivera</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Pro Seller</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-secondary-fixed-variant hover:bg-surface-container-highest transition-all rounded-xl cursor-pointer active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary font-bold rounded-xl cursor-pointer active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="font-label-md text-label-md">My Listings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-secondary-fixed-variant hover:bg-surface-container-highest transition-all rounded-xl cursor-pointer active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined text-filled" style="font-variation-settings: 'FILL' 1;">mail</span>
+<span class="font-label-md text-label-md">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-secondary-fixed-variant hover:bg-surface-container-highest transition-all rounded-xl cursor-pointer active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-secondary-fixed-variant hover:bg-surface-container-highest transition-all rounded-xl cursor-pointer active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-4 pt-4 border-t border-outline-variant">
+<button class="w-full bg-primary-container text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98]">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-label-md text-label-md">Post New Gear</span>
+</button>
+</div>
+<div class="mt-auto pt-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-secondary-fixed-variant hover:bg-surface-container-highest rounded-xl" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/10 rounded-xl" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 pt-16 min-h-screen bg-white">
+<div class="max-w-[1280px] mx-auto p-margin-desktop">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-unit-lg gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary">Meus Anúncios</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Gerencie seu inventário de equipamentos de Kitesurf e Wingfoil.</p>
+</div>
+<button class="bg-primary text-white px-unit-lg py-3 rounded-xl flex items-center gap-2 hover:bg-primary-container transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined">add</span>
+<span class="font-title-lg text-[16px]">Criar novo anúncio</span>
+</button>
+</div>
+<!-- Filter Tabs -->
+<div class="mb-unit-lg border-b border-outline-variant overflow-x-auto custom-scrollbar">
+<div class="flex gap-unit-xl whitespace-nowrap">
+<button class="px-2 py-4 border-b-2 border-primary text-primary font-bold transition-all flex items-center gap-2">
+                        Todos <span class="bg-surface-container-highest px-2 py-0.5 rounded-full text-[10px]">24</span>
+</button>
+<button class="px-2 py-4 border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-all flex items-center gap-2">
+                        Ativos <span class="bg-surface-container-highest px-2 py-0.5 rounded-full text-[10px]">12</span>
+</button>
+<button class="px-2 py-4 border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-all flex items-center gap-2">
+                        Pausados <span class="bg-surface-container-highest px-2 py-0.5 rounded-full text-[10px]">3</span>
+</button>
+<button class="px-2 py-4 border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-all flex items-center gap-2">
+                        Vendidos <span class="bg-surface-container-highest px-2 py-0.5 rounded-full text-[10px]">6</span>
+</button>
+<button class="px-2 py-4 border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-all flex items-center gap-2">
+                        Em moderação <span class="bg-surface-container-highest px-2 py-0.5 rounded-full text-[10px]">1</span>
+</button>
+<button class="px-2 py-4 border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-all flex items-center gap-2">
+                        Expirados <span class="bg-surface-container-highest px-2 py-0.5 rounded-full text-[10px]">2</span>
+</button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="px-unit-lg py-4 font-label-md text-label-md text-on-surface-variant">Equipamento</th>
+<th class="px-unit-md py-4 font-label-md text-label-md text-on-surface-variant">Preço</th>
+<th class="px-unit-md py-4 font-label-md text-label-md text-on-surface-variant">Status</th>
+<th class="px-unit-md py-4 font-label-md text-label-md text-on-surface-variant">Métricas</th>
+<th class="px-unit-md py-4 font-label-md text-label-md text-on-surface-variant">Data</th>
+<th class="px-unit-lg py-4 font-label-md text-label-md text-on-surface-variant text-right">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-unit-lg py-4">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="High-resolution professional product photography of a Cabrinha Switchblade 12m kite in a vibrant blue and orange colorway. The gear is laid out on a clean white sandy beach under bright daylight. The shot is sharp and technical, capturing the fabric texture and bridles, reflecting a premium minimalist sport marketplace aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEE1POVUpAXPXDp3fCFiaUzFHgo4VcOFcg3-IxOqhhfTvRYyDdJUnf8o4Dgi4702T5JwEgiQwvK3yM_MiThuzdMxp7Fyi7s1qFhmtNbPSI2fGr4x5qqlZqnCxJphB-mq9bif-K8yJJ34MpmlpJMY5Rm8Vr86u1SreNR_MXRXB1-yPcUku40-5OhfT3NKFW4igm5_HBocuHS1LzmnFPPGOpKkNb18GIW4eAaygxOwExMllxJGj1Jmo-ybBsogc6QLv-RL6C_lQD8w"/>
+</div>
+<div>
+<h4 class="font-title-lg text-[15px] text-on-surface">Kite Cabrinha Switchblade 12m</h4>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-wider">Kitesurf</span>
+</div>
+</div>
+</td>
+<td class="px-unit-md py-4">
+<span class="font-price-display text-price-display text-primary">R$ 4.500</span>
+</td>
+<td class="px-unit-md py-4">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-800 text-[11px] font-bold">
+<span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span> ATIVO
+                                    </span>
+</td>
+<td class="px-unit-md py-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-body-md">
+<span class="material-symbols-outlined text-[16px]">visibility</span> 1.2k
+                                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-body-md">
+<span class="material-symbols-outlined text-[16px]">chat_bubble</span> 24
+                                        </div>
+</div>
+</td>
+<td class="px-unit-md py-4">
+<span class="font-body-md text-body-md text-on-surface-variant">12 Mai, 2024</span>
+</td>
+<td class="px-unit-lg py-4">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-all" title="Editar"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-on-surface-variant hover:text-yellow-600 hover:bg-yellow-50 rounded-lg transition-all" title="Pausar"><span class="material-symbols-outlined">pause</span></button>
+<button class="p-2 text-on-surface-variant hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" title="Impulsionar"><span class="material-symbols-outlined">bolt</span></button>
+<button class="p-2 text-on-surface-variant hover:text-error hover:bg-error-container/10 rounded-lg transition-all" title="Excluir"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-unit-lg py-4">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A technical studio shot of a Naish Hover Wingfoil board, focusing on its sleek carbon construction and minimalist design. The lighting is crisp and even, highlighting the board's professional grade. The background is a clean, neutral grey, fitting the oceanic professional aesthetic of the KITE360 platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFC9B6P9RgKaelvWE7k5w8iYV3crSiya2fX-8CbpmZUl35Y3lf6XqAb8AwJZ3a5s8Pm1J0SOGkJnSYDBSUBohqVnDzXFOc5diFDo4kN9PFdaNp5f0UFk_ololeHXnZny7MUvg4IA-l2Vqu503JjhjCvxwukh6iA-sJVtRzuPqCugKtYIzZ5Nome00LNtuPnJeDRQX2kRsdMc9sAm1RSFdf8gFHo1pa-ox5BDT613cpaYDkMhYHHS6lqGULsKb7jltXejmXK2yXAQ"/>
+</div>
+<div>
+<h4 class="font-title-lg text-[15px] text-on-surface">Prancha Wingfoil Naish Hover</h4>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-wider">Wingfoil</span>
+</div>
+</div>
+</td>
+<td class="px-unit-md py-4">
+<span class="font-price-display text-price-display text-primary">R$ 7.200</span>
+</td>
+<td class="px-unit-md py-4">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-[11px] font-bold">
+<span class="w-2 h-2 rounded-full bg-yellow-500 mr-2"></span> PAUSADO
+                                    </span>
+</td>
+<td class="px-unit-md py-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-body-md">
+<span class="material-symbols-outlined text-[16px]">visibility</span> 842
+                                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-body-md">
+<span class="material-symbols-outlined text-[16px]">chat_bubble</span> 15
+                                        </div>
+</div>
+</td>
+<td class="px-unit-md py-4">
+<span class="font-body-md text-body-md text-on-surface-variant">08 Mai, 2024</span>
+</td>
+<td class="px-unit-lg py-4">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-all" title="Editar"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-on-surface-variant hover:text-green-600 hover:bg-green-50 rounded-lg transition-all" title="Ativar"><span class="material-symbols-outlined">play_arrow</span></button>
+<button class="p-2 text-on-surface-variant hover:text-on-secondary-container hover:bg-secondary-container rounded-lg transition-all" title="Marcar como Vendido"><span class="material-symbols-outlined">check_circle</span></button>
+<button class="p-2 text-on-surface-variant hover:text-error hover:bg-error-container/10 rounded-lg transition-all" title="Excluir"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-unit-lg py-4">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A detailed macro shot of a North Control System V4 kite bar, showcasing the technical precision of the lines, safety release, and grip. The aesthetic is clean and modern, with a high-contrast palette that emphasizes professional reliability. The lighting is bright and technical, perfect for a high-end equipment marketplace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7nCQ_Y2lsCW8jSHTfc6rDv5leiXM0AyUmRVJ9iBsjjtp6YO3zLZLftLoh_tsH8bev5HQMyt6hMtzKu1SMh0CL8YBtXFmjT6OnCx-0CZYJ4ci16KMn5hvhPTi-bU7wTLbJEcltyka2nLNyG1yLRm0xiO1-IEKwozZkiVnkrUI_JytN5Op3rfyWzer_c3Rk7nLJqwtwY_sxdNmW2dySKq8MtC7HSedH6hN-HmKUj5GuA9XmQyDvuA-_cY7NepHo-4iWi82QrDC5Lw"/>
+</div>
+<div>
+<h4 class="font-title-lg text-[15px] text-on-surface">Barra Control System V4</h4>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-wider">Acessórios</span>
+</div>
+</div>
+</td>
+<td class="px-unit-md py-4">
+<span class="font-price-display text-price-display text-primary">R$ 2.800</span>
+</td>
+<td class="px-unit-md py-4">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-200 text-slate-800 text-[11px] font-bold">
+<span class="w-2 h-2 rounded-full bg-slate-500 mr-2"></span> VENDIDO
+                                    </span>
+</td>
+<td class="px-unit-md py-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-body-md">
+<span class="material-symbols-outlined text-[16px]">visibility</span> 2.1k
+                                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-body-md text-primary font-bold">
+<span class="material-symbols-outlined text-[16px]">sell</span> Vendido em 4 dias
+                                        </div>
+</div>
+</td>
+<td class="px-unit-md py-4">
+<span class="font-body-md text-body-md text-on-surface-variant">25 Abr, 2024</span>
+</td>
+<td class="px-unit-lg py-4">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-all" title="Visualizar Comprovante"><span class="material-symbols-outlined">receipt_long</span></button>
+<button class="p-2 text-on-surface-variant hover:text-error hover:bg-error-container/10 rounded-lg transition-all" title="Excluir"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-unit-lg py-4">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A professional photo of a Duotone Rebel 10m kite being examined for moderation. The kite is pristine white with black accents, laid out in a large, clean warehouse space. The lighting is soft and professional, highlighting the equipment's condition and authenticity for high-end gear resale." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBCfRXB_S4RObFKjR5gP3P74o293ltYbihVajIKRCW2uFVr_8REBWNmKQysMcCKL80lg-5dru60rDZzriXlU4RNu9z6dz5nHm_reRfCU-iRN3keIw-T2FBOmgZyQ4856qh8C-E0zqEj7eLPUwsaz2_Ebjaw_ZrCUpX3IJEqnyPX9ecUm1AmR-f7TDtSlRcypO8A8mp8HwN_0wW9ioV5lt80pOHbcdKmvLbd936_64g-pIf76GIvr6tmIEe9dgxRG2HpzNeT46eQQ"/>
+</div>
+<div>
+<h4 class="font-title-lg text-[15px] text-on-surface">Duotone Rebel 10m SLS</h4>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-wider">Kitesurf</span>
+</div>
+</div>
+</td>
+<td class="px-unit-md py-4">
+<span class="font-price-display text-price-display text-primary">R$ 5.900</span>
+</td>
+<td class="px-unit-md py-4">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-[11px] font-bold">
+<span class="w-2 h-2 rounded-full bg-blue-500 mr-2"></span> MODERAÇÃO
+                                    </span>
+</td>
+<td class="px-unit-md py-4">
+<div class="flex flex-col gap-1">
+<span class="text-[10px] text-on-surface-variant italic">Aguardando aprovação...</span>
+</div>
+</td>
+<td class="px-unit-md py-4">
+<span class="font-body-md text-body-md text-on-surface-variant">Hoje</span>
+</td>
+<td class="px-unit-lg py-4">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-all" title="Editar"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-on-surface-variant hover:text-error hover:bg-error-container/10 rounded-lg transition-all" title="Cancelar"><span class="material-symbols-outlined">close</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-unit-lg py-4 bg-surface-container-low border-t border-outline-variant flex items-center justify-between">
+<p class="font-label-md text-label-md text-on-surface-variant">Mostrando 4 de 24 anúncios</p>
+<div class="flex gap-2">
+<button class="p-2 rounded border border-outline-variant hover:bg-white transition-all disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="px-3 py-1 rounded border border-primary bg-primary text-white font-bold text-label-md">1</button>
+<button class="px-3 py-1 rounded border border-outline-variant hover:bg-white text-on-surface-variant text-label-md">2</button>
+<button class="px-3 py-1 rounded border border-outline-variant hover:bg-white text-on-surface-variant text-label-md">3</button>
+<button class="p-2 rounded border border-outline-variant hover:bg-white transition-all">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Micro-interactions and Tab Switching Logic
+        const tabs = document.querySelectorAll('.border-b-2');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('border-primary', 'text-primary', 'font-bold');
+                    t.classList.add('border-transparent', 'text-on-surface-variant');
+                });
+                tab.classList.add('border-primary', 'text-primary', 'font-bold');
+                tab.classList.remove('border-transparent', 'text-on-surface-variant');
+            });
+        });
+
+        // Simple table row hover effect enhancement
+        const rows = document.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.querySelector('img').classList.add('scale-105');
+            });
+            row.addEventListener('mouseleave', () => {
+                row.querySelector('img').classList.remove('scale-105');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Duotone Rebel SLS 2024 - KITE360º</title>
+<!-- Google Fonts: Hanken Grotesk -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom scrollbar for gallery thumbnails */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Smooth transitions */
+        .transition-all-custom { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#d8885c",
+                      "error-container": "#ffdad6",
+                      "primary": "#001e40",
+                      "surface-container-high": "#e8e8ed",
+                      "primary-fixed-dim": "#a7c8ff",
+                      "surface-dim": "#dad9de",
+                      "secondary-container": "#dae4ed",
+                      "on-background": "#1a1c1f",
+                      "outline": "#737780",
+                      "on-primary": "#ffffff",
+                      "secondary": "#566067",
+                      "on-surface-variant": "#43474f",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#592300",
+                      "tertiary": "#381300",
+                      "outline-variant": "#c3c6d1",
+                      "on-secondary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface-variant": "#e2e2e7",
+                      "secondary-fixed": "#dae4ed",
+                      "inverse-primary": "#a7c8ff",
+                      "on-secondary-container": "#5c666d",
+                      "secondary-fixed-dim": "#bec8d0",
+                      "on-tertiary-fixed": "#341100",
+                      "inverse-surface": "#2f3034",
+                      "background": "#f9f9fe",
+                      "on-surface": "#1a1c1f",
+                      "tertiary-fixed": "#ffdbca",
+                      "primary-fixed": "#d5e3ff",
+                      "on-primary-fixed": "#001b3c",
+                      "error": "#ba1a1a",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#3e484f",
+                      "surface-container-low": "#f4f3f8",
+                      "tertiary-fixed-dim": "#ffb690",
+                      "on-secondary-fixed": "#131d23",
+                      "surface-container": "#eeedf2",
+                      "surface-tint": "#3a5f94",
+                      "surface": "#f9f9fe",
+                      "inverse-on-surface": "#f1f0f5",
+                      "on-primary-fixed-variant": "#1f477b",
+                      "primary-container": "#003366",
+                      "on-tertiary-fixed-variant": "#723610",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-container": "#799dd6",
+                      "surface-bright": "#f9f9fe",
+                      "surface-container-highest": "#e2e2e7"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit-sm": "8px",
+                      "container-max-width": "1280px",
+                      "unit-md": "16px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "unit-lg": "24px",
+                      "margin-desktop": "32px",
+                      "unit-xs": "4px",
+                      "unit-xl": "48px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Hanken Grotesk"],
+                      "price-display": ["Hanken Grotesk"],
+                      "headline-md": ["Hanken Grotesk"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "title-lg": ["Hanken Grotesk"],
+                      "label-md": ["Hanken Grotesk"],
+                      "headline-lg-mobile": ["Hanken Grotesk"],
+                      "display-lg": ["Hanken Grotesk"],
+                      "body-md": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "price-display": ["24px", {"lineHeight": "28px", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max-width mx-auto">
+<div class="flex items-center gap-unit-lg">
+<a class="font-headline-md text-headline-md font-bold text-primary" href="#">KITE360º</a>
+<nav class="hidden md:flex gap-unit-md items-center">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors" href="#">Kitesurf</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors" href="#">Wingfoil</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors" href="#">Pranchas</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors" href="#">Acessórios</a>
+</nav>
+</div>
+<div class="flex items-center gap-unit-md">
+<div class="hidden lg:flex items-center bg-surface-container-low px-unit-md py-unit-xs rounded border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-64" placeholder="Buscar equipamentos..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-unit-md py-unit-xs font-label-md rounded hover:opacity-90 transition-all">Anunciar</button>
+<div class="flex gap-unit-sm">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary p-2">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary p-2">shopping_cart</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary p-2">account_circle</span>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-unit-xl max-w-container-max-width mx-auto px-margin-desktop">
+<!-- Breadcrumb -->
+<nav class="mb-unit-lg flex items-center gap-unit-xs text-on-surface-variant font-label-md">
+<a class="hover:text-primary" href="#">Início</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Kitesurf</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">Duotone Rebel SLS</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-gutter items-start">
+<!-- Left Column: Product Details -->
+<section class="space-y-unit-lg">
+<!-- Gallery Section -->
+<div class="flex flex-col md:flex-row gap-unit-md h-auto lg:h-[600px]">
+<!-- Thumbnails (Desktop side, Mobile bottom) -->
+<div class="flex md:flex-col gap-unit-sm order-2 md:order-1 overflow-x-auto no-scrollbar md:w-24">
+<div class="aspect-square w-20 md:w-full border-2 border-primary rounded-lg cursor-pointer overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up studio shot of a 2024 Duotone Rebel SLS kite in vibrant white and navy blue, focusing on the high-tech Penta TX material and the sleek aerodynamics. The lighting is professional and bright, emphasizing the clean lines and premium branding. The overall aesthetic is high-performance and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGj2m_EgwDTm8HisAfNDZM7IuVQXDyNOGDkB5Qr-MolIGcNYDFhiMI5vq9cxDhBxlxtVsCQbIoiLphnZ81oBlB7t5G8W8GIjhgOER6x1nZXDx9AXeySGwNwdixCmklkRvod6_KEEad6w5oJhQ8DTg_iNUxzh8YqN76oEFvyiuM0X2iW6h0MWb6CtHQdUADi1euHrTDNpxEGlA2aYXPn5DKjaPhYAn4b4vCSnn9o5rmdJDsP0s_lRKcxSbDlMnoBP_QVZzbr_jn0A"/>
+</div>
+<div class="aspect-square w-20 md:w-full border border-outline-variant rounded-lg cursor-pointer hover:border-primary transition-colors overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Side profile of a Duotone Rebel SLS kite lying on a clean white sandy beach under a bright blue coastal sky. The image showcases the large 10m wingspan and the intricate stitching of the leading edge. The atmosphere is sunny, professional, and captures the essence of luxury watersports equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL9JGu6NLdtzXRC-w-lyahjF5UctTGvstXELqdjWd3T5n5mDMCMbdbI-3e-si8oqsLLRPRoSPfqwHvBiI39UWzCigA2DdhMmVJE_4WNI-_pOT-_tJc2ij24nZ-nZaixRwg5xLdTqQt1bAzzbMvMeNvhbFeJwg0MvE-KaRn2SnN_sxXF8UPIiL84tQDZ6WhxAbQ0zzCGXeMGgAi9czDjcVa701iaui1mbS40vq4iRw5vv1UwswxrPpUZ8HR0Iw3xuGFw-L0TTvEeQ"/>
+</div>
+<div class="aspect-square w-20 md:w-full border border-outline-variant rounded-lg cursor-pointer hover:border-primary transition-colors overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Detailed view of the Duotone Rebel SLS control bar and lines, laid out neatly on a minimalist wooden deck. The hardware is shown in sharp focus with high-contrast lighting to highlight the precision engineering and premium materials used. The vibe is technical, clean, and organized." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADtbHyzVi7fPWg4Wz8W_0q3RyG03RFrSq2phRyVU6mxm3WEdAcjzg92n_VlICja9o4LDnc1kxUTr2Ro1IU4loBnTZwd6KMV8a38wexdCGOXvzsJQ6tUkqD9_7NfvnDRcVum-aQsLhfX1f8tqhxhwkhICcqNeTajxSwDZ2cueFErCcZ5o9DYbQ3l1rTXjzLLkVQ3KPsX1AUzK-X1VW_m6rGEi74aLgVHzWeK6xT05PHrkhPK52LLvZSsxzmiZJkkjhGir3WuQXhmw"/>
+</div>
+<div class="aspect-square w-20 md:w-full border border-outline-variant rounded-lg cursor-pointer hover:border-primary transition-colors overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="The 2024 Duotone Rebel SLS kite packed inside its original high-quality technical backpack. The backpack is shown from the front against a neutral grey studio background. This highlights the portability and the condition of the accessories included in the set. Clean and professional product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1EnrN6w3lofBRkmf8XBFFVEJJASH4Iuu0sTTXKX46Wl4zNzIeZie-6h_aIC24ZQROfP39OPmimMjlb4_0LO6hNaasDpRqNxd0AVcsMi-N2R1l4bzpbIMQDzL-v9d6_HWzoFsle0cZOOsSZo_1QHki3MmC3hNX4bOOgnfmPyTR6m0qPeMB5OEbzU9BTnSPD1FGzp6TnuIfPH8y9V11w2rB5aZsIL5au-P1M62qbs8p9zg04Y0OADdzhfogXILKe_gKJC8Q2S9MZw"/>
+</div>
+</div>
+<!-- Main Photo -->
+<div class="flex-1 order-1 md:order-2 border border-outline-variant rounded-xl overflow-hidden bg-white">
+<img class="w-full h-full object-cover" data-alt="Wide angle professional hero shot of a Duotone Rebel SLS 2024 10m kite being handled in a pristine outdoor setting. The kite is the central focus, glowing in the bright daylight with high-end contrast and sharp details. The colors are white, navy, and subtle grey accents, reflecting a premium minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGtbh9rfJbx07LnY6CZB6jDG8iOghuQfu62_QMB9t3mR1-H_ZEDHNUbRPZ2oU4MnI0yw9k_TW9SjSjeCFSZY-7ScnLm3u94kAW2fyvWN7MOHi8IMUihA6V8ujug2ojjhTpS2orHUItpWtOZnp4xTf6GQ0cry3veDoyUYlK4RUUZ0Efetdn3wfI9vZF8fmpXUZoIlUEgVstw3tFFgtNlePlMtKaCQspw6apqU9NhvSxajaCwfVLZn0o8d461lb9ms31w2vkeiE2IQ"/>
+</div>
+</div>
+<!-- Product Header Info -->
+<div class="border-b border-outline-variant pb-unit-lg">
+<div class="flex justify-between items-start mb-unit-sm">
+<h1 class="font-headline-lg text-headline-lg text-primary">Duotone Rebel SLS 2024 - 10m Completo</h1>
+<span class="bg-secondary-container text-on-secondary-container px-unit-md py-1 rounded-full font-label-md uppercase tracking-wider">Novo</span>
+</div>
+<div class="flex items-center gap-unit-md text-on-surface-variant font-body-md mb-unit-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Fortaleza, CE</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Publicado há 2 dias</span>
+</div>
+</div>
+<p class="font-price-display text-[32px] text-primary">R$ 12.450</p>
+</div>
+<!-- Specs Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-unit-md">
+<div class="bg-surface-container-low p-unit-md rounded border border-outline-variant">
+<p class="text-on-surface-variant font-label-md uppercase">Marca</p>
+<p class="font-title-lg text-primary">Duotone</p>
+</div>
+<div class="bg-surface-container-low p-unit-md rounded border border-outline-variant">
+<p class="text-on-surface-variant font-label-md uppercase">Modelo</p>
+<p class="font-title-lg text-primary">Rebel SLS</p>
+</div>
+<div class="bg-surface-container-low p-unit-md rounded border border-outline-variant">
+<p class="text-on-surface-variant font-label-md uppercase">Tamanho</p>
+<p class="font-title-lg text-primary">10m</p>
+</div>
+<div class="bg-surface-container-low p-unit-md rounded border border-outline-variant">
+<p class="text-on-surface-variant font-label-md uppercase">Ano</p>
+<p class="font-title-lg text-primary">2024</p>
+</div>
+<div class="bg-surface-container-low p-unit-md rounded border border-outline-variant">
+<p class="text-on-surface-variant font-label-md uppercase">Estado</p>
+<p class="font-title-lg text-primary">Na caixa</p>
+</div>
+</div>
+<!-- Tabs Section -->
+<div class="pt-unit-lg">
+<div class="flex border-b border-outline-variant mb-unit-lg">
+<button class="px-unit-lg py-unit-md font-title-lg text-primary border-b-2 border-primary">Descrição</button>
+<button class="px-unit-lg py-unit-md font-title-lg text-on-surface-variant hover:text-primary transition-colors">Avaliações</button>
+<button class="px-unit-lg py-unit-md font-title-lg text-on-surface-variant hover:text-primary transition-colors">Sobre o vendedor</button>
+</div>
+<div class="prose prose-slate max-w-none text-on-surface font-body-lg leading-relaxed space-y-unit-md">
+<p>O <strong>Duotone Rebel SLS 2024</strong> redefine o que é possível em termos de freeride e big air. Construído com materiais SLS (Strong Light Superior), este kite é significativamente mais leve e rígido que a versão padrão, oferecendo uma resposta instantânea e um hangtime incomparável.</p>
+<p>Este exemplar de 10m está absolutamente <strong>novo, nunca foi à água</strong>. Foi retirado da caixa apenas para conferência e fotos. Acompanha mochila original, kit de reparos e manual. Ideal para quem busca performance de ponta e durabilidade extrema com a garantia Duotone.</p>
+<ul class="list-disc pl-unit-lg space-y-1">
+<li>Construção Penta TX para maior rigidez</li>
+<li>Perfil otimizado para saltos verticais massivos</li>
+<li>Válvula de inflagem rápida</li>
+<li>Sistema de bridagem flexível para maior controle</li>
+</ul>
+</div>
+</div>
+<!-- Map Section -->
+<div class="pt-unit-xl">
+<h3 class="font-headline-md text-primary mb-unit-md">Localização aproximada</h3>
+<div class="relative w-full h-[300px] rounded-xl overflow-hidden border border-outline-variant">
+<div class="absolute inset-0 bg-surface-container-high flex items-center justify-center">
+<img class="w-full h-full object-cover grayscale opacity-80" data-location="Fortaleza, Brazil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmaSVVU5yU7Ux7LqL4ob5qS45y6m58VPJR8RslSr2pQV2sRUFhKWOzfE-jOeqbCr2CeSI-zseIPH70kT6skcE-0npnaZXqlGS3r-k-U4t3Jf8ifNT8qZgzjSiaWCs0zRBV_qybH70atgwtiejTyKxBMvGOhWhn-1ApeZ8SLSS_8CnvSGyxnhqKmn2jJGmixD82RYOWvGaAuW_1VZdBvsxellTHnGqrY1mwtwPl-sjStPsv4Nwdy1QVWHNwzTAY1V9mGR5L3SYzag"/>
+</div>
+<!-- Circle overlay for privacy -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-32 h-32 bg-primary/10 border-2 border-primary/40 rounded-full animate-pulse"></div>
+</div>
+<div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-unit-md py-unit-sm rounded shadow-sm border border-outline-variant">
+<p class="font-label-md text-primary font-bold">Fortaleza, CE - Praia do Futuro</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Sticky Sidebar -->
+<aside class="space-y-unit-lg lg:sticky lg:top-24">
+<!-- Main Action Card -->
+<div class="bg-surface-container-lowest p-unit-lg rounded-xl border border-outline-variant shadow-sm">
+<button class="w-full bg-primary text-on-primary py-unit-md rounded-lg font-title-lg flex items-center justify-center gap-2 hover:opacity-90 transition-all mb-unit-md">
+<span class="material-symbols-outlined">chat</span>
+                        Conversar com vendedor
+                    </button>
+<button class="w-full border border-outline text-primary py-unit-md rounded-lg font-title-lg flex items-center justify-center gap-2 hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">favorite</span>
+                        Favoritar anúncio
+                    </button>
+<!-- Security Note -->
+<div class="mt-unit-lg p-unit-md bg-secondary-container/30 border border-secondary-container rounded flex gap-unit-md">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+<p class="text-on-secondary-container text-body-md">
+<strong>Dica de Segurança:</strong> Negocie sempre pela plataforma. Não compartilhe contato externo.
+                        </p>
+</div>
+</div>
+<!-- Seller Info Card -->
+<div class="bg-surface-container-lowest p-unit-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-unit-md mb-unit-md">
+<div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Portrait of a professional surf shop owner, smiling warmly, wearing a branded rash guard. Background shows a blurred high-end kitesurf shop with equipment. The lighting is natural and bright, creating an atmosphere of trust and professionalism in a clean, coastal setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjBe5zgMpuUOwJDTHuAWO9G_wur_UBajR9CVpRfh6N_3-610XyTrjJthsKCVL21qP6WEIllPwLYJy9Xj2Qt8kq2Gf9WEi0WqmKoMgDk_DrzuXWciLqdIYgEmUBMuZpfeux2gesaOZhWvV7ipIno7OkNiwxT32yYMyi7VRzIVyLWNVk_J_4uzzJQcMqvELQHQQqQVez21TJDaHoN1lKNxtohzwqRzgKTbgj0L-BvT6WJzAqiAtw3CtsRichzkyOqg2DBaJZGOFxKg"/>
+</div>
+<div>
+<h4 class="font-title-lg text-primary">Ricardo Surf Shop</h4>
+<div class="flex items-center gap-1 text-on-tertiary-container">
+<span class="material-symbols-outlined text-[16px] fill-icon">verified</span>
+<span class="font-label-md">Vendedor Verificado</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center mb-unit-md px-unit-xs">
+<div class="text-center">
+<div class="flex items-center justify-center text-[#FFB800]">
+<span class="material-symbols-outlined text-[20px] fill-icon">star</span>
+<span class="material-symbols-outlined text-[20px] fill-icon">star</span>
+<span class="material-symbols-outlined text-[20px] fill-icon">star</span>
+<span class="material-symbols-outlined text-[20px] fill-icon">star</span>
+<span class="material-symbols-outlined text-[20px] fill-icon">star</span>
+</div>
+<p class="font-label-md text-on-surface-variant">4.9 (112 reviews)</p>
+</div>
+<div class="h-8 w-px bg-outline-variant"></div>
+<div class="text-center">
+<p class="font-title-lg text-primary">42</p>
+<p class="font-label-md text-on-surface-variant">vendas realizadas</p>
+</div>
+</div>
+<a class="block text-center text-primary font-title-lg underline hover:no-underline transition-all" href="#">Ver perfil completo</a>
+</div>
+</aside>
+</div>
+<!-- Similar Listings -->
+<section class="mt-unit-xl">
+<div class="flex justify-between items-end mb-unit-lg">
+<h2 class="font-headline-md text-primary">Anúncios semelhantes</h2>
+<a class="text-primary font-label-md uppercase tracking-widest hover:underline" href="#">Ver tudo</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-white border border-outline-variant rounded-lg overflow-hidden hover:shadow-lg transition-all group">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="North Orbit 2023 kite in bright blue and yellow, high performance big air equipment captured in a bright beach landscape with professional lighting. Premium minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Fcyz7IDcWRMkmMUDXlsqlZt8P3UR3ngM3xw-EIzplEF_ShLF3BlrP9d839ZqWGpdihAGkXlKyMuq1czAoo0k13IkgGhaQIEqMpD2iFhSAn7nADXCGFRT1Teip0_pnGjatEDiam8xcHFilEisZ2tgWUVow4n4fGzC6T11o3DHheHW773UrTowpakW2yVODfX639n-KtJqaUMx-kOk-y10uKDqnnPXcAgDKVmm4FEUaLPlwqLqxitRDbi2rCLhDKaMIjX3oga_jQ"/>
+<span class="absolute top-2 right-2 bg-white px-2 py-1 rounded font-label-md text-primary">Usado</span>
+</div>
+<div class="p-unit-md">
+<h5 class="font-title-lg text-primary line-clamp-1">North Orbit 2023 - 9m</h5>
+<p class="text-on-surface-variant font-label-md">Rio de Janeiro, RJ</p>
+<p class="font-price-display text-primary mt-2">R$ 8.900</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white border border-outline-variant rounded-lg overflow-hidden hover:shadow-lg transition-all group">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Core XR8 high performance kite in black and yellow, shown against a clear coastal background. Sharp details and high-end aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa3fWUfu-oVeq6xcke9XikrAqw2ICD8W1znmrf52L5q92JcbBBFEzYEyeFDGSJyQT1AAblVmrIzNGHYOKd4cmt_9lXzxdO3cyiE8qb0cvHrNWuh7FhRejSgnoNXc_0crdSD7xpXXm8I4z8TT5VRm31ngu4Iuw9LLjeJk5U7G5htW86gGfZ5_xqEILzj--apBZfXW1gwtateJYwPHpl5FXYW2OQUAinh1EH9-mvG61bT8CPq91wge_N5wLBCncYBzGDB1IBDTH0Zw"/>
+<span class="absolute top-2 right-2 bg-primary text-on-primary px-2 py-1 rounded font-label-md">Novo</span>
+</div>
+<div class="p-unit-md">
+<h5 class="font-title-lg text-primary line-clamp-1">Core XR8 2024 - 12m</h5>
+<p class="text-on-surface-variant font-label-md">Florianópolis, SC</p>
+<p class="font-price-display text-primary mt-2">R$ 14.200</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white border border-outline-variant rounded-lg overflow-hidden hover:shadow-lg transition-all group">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="F-One Bandit 2024 kite in bright red, minimalist outdoor photography with soft shadows and high detail of the fabric texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzYTsArTwb5qniExMsxMdX9v_wT9-HcHs53WoE1eojce1ICdtDltD2MyvoqNg3Unca2vCXHdLf1CZ93R1swLPDpH1JvErfzuYPTMvKByNrGws8RNmXA7HK72tljGxQyYwCsp_srgNsM8qg9mZXGAH1ezYxXTMWk3YoKNeUtmNNpNzjaDYLIWslF63xsp9N4oRiqtf_NS6bLYdGynTcmdMqjyeDjL2oO7I8D678bL85qSrVw-bMBt414v4g73dnVLFUS7kQt2qSGA"/>
+<span class="absolute top-2 right-2 bg-primary text-on-primary px-2 py-1 rounded font-label-md">Novo</span>
+</div>
+<div class="p-unit-md">
+<h5 class="font-title-lg text-primary line-clamp-1">F-One Bandit 2024</h5>
+<p class="text-on-surface-variant font-label-md">Cumbuco, CE</p>
+<p class="font-price-display text-primary mt-2">R$ 11.800</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white border border-outline-variant rounded-lg overflow-hidden hover:shadow-lg transition-all group">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Duotone Dice 2023 kite being unpacked on a wooden floor, high quality lighting showing the great condition of the material." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjtaxqqZjmnkoJTxYLB_UBygnkfhnqrfcxeD7XHUoXM3RrrxXOWQUyvvbcI-34NAMrv24pt2H9MRQnvJWNdewjiwriEuWUWsQDh2_-BlssKRpzur6K__xMR014OSid2J8pt5dEf9j6wU2vrZZ_1ESWRYxbmEWrkTdxUmX_NAlFGcvqq3ZLj6TX44qxe-xsCXvDyEELQRSbh1u4A45Nve3Gz1eE5kMg6BfoJpe5VExSpAMu04bYHU05hQtqi-O2y58TKPar2AZ45Q"/>
+<span class="absolute top-2 right-2 bg-white px-2 py-1 rounded font-label-md text-primary">Usado</span>
+</div>
+<div class="p-unit-md">
+<h5 class="font-title-lg text-primary line-clamp-1">Duotone Dice 2023 - 10m</h5>
+<p class="text-on-surface-variant font-label-md">São Sebastião, SP</p>
+<p class="font-price-display text-primary mt-2">R$ 7.500</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter py-unit-xl px-margin-desktop max-w-container-max-width mx-auto">
+<div class="space-y-unit-md">
+<h3 class="font-headline-md text-primary">KITE360º</h3>
+<p class="text-on-surface-variant body-md max-w-xs">
+                    O maior marketplace especializado em equipamentos de Kitesurf e Wingfoil da América Latina.
+                </p>
+</div>
+<div>
+<h4 class="font-title-lg text-primary mb-unit-md">Explorar</h4>
+<ul class="space-y-2 text-on-surface-variant font-body-md">
+<li><a class="hover:text-primary underline-offset-4 hover:underline" href="#">Sobre Nós</a></li>
+<li><a class="hover:text-primary underline-offset-4 hover:underline" href="#">Como Funciona</a></li>
+<li><a class="hover:text-primary underline-offset-4 hover:underline" href="#">Segurança</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-lg text-primary mb-unit-md">Suporte</h4>
+<ul class="space-y-2 text-on-surface-variant font-body-md">
+<li><a class="hover:text-primary underline-offset-4 hover:underline" href="#">Termos de Uso</a></li>
+<li><a class="hover:text-primary underline-offset-4 hover:underline" href="#">Privacidade</a></li>
+<li><a class="hover:text-primary underline-offset-4 hover:underline" href="#">Contato</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-lg text-primary mb-unit-md">Newsletter</h4>
+<p class="text-on-surface-variant body-md mb-unit-md">Receba as melhores ofertas direto no seu email.</p>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-lowest border border-outline-variant px-unit-md py-unit-xs rounded focus:ring-1 focus:ring-primary focus:border-primary outline-none" placeholder="Seu email" type="email"/>
+<button class="bg-primary text-on-primary px-unit-md py-unit-xs rounded font-label-md">Assinar</button>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant py-unit-md text-center">
+<p class="text-on-surface-variant font-label-md">© 2024 KITE360º Marketplace. Todos os direitos reservados.</p>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for gallery switching
+        const thumbnails = document.querySelectorAll('.aspect-square');
+        const mainPhoto = document.querySelector('.flex-1.order-1 img');
+
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                // Update styling
+                thumbnails.forEach(t => {
+                    t.classList.remove('border-primary');
+                    t.classList.remove('border-2');
+                    t.classList.add('border-outline-variant');
+                });
+                thumb.classList.add('border-primary');
+                thumb.classList.add('border-2');
+                thumb.classList.remove('border-outline-variant');
+
+                // In a real app, you would swap the src here
+                // For this demo, we'll just simulate the action
+                console.log('Swapping to image:', thumb.querySelector('img').getAttribute('data-alt'));
+            });
+        });
+
+        // Tab switching logic
+        const tabButtons = document.querySelectorAll('.flex.border-b.border-outline-variant button');
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(b => {
+                    b.classList.remove('text-primary', 'border-b-2', 'border-primary');
+                    b.classList.add('text-on-surface-variant');
+                });
+                button.classList.add('text-primary', 'border-b-2', 'border-primary');
+                button.classList.remove('text-on-surface-variant');
+            });
+        });
+    </script>
+</body></html>

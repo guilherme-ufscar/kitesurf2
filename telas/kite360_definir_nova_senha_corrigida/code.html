@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Definir Nova Senha - KITE360º</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#592300",
+                    "surface-container-highest": "#e2e2e7",
+                    "tertiary": "#381300",
+                    "surface-variant": "#e2e2e7",
+                    "on-secondary-container": "#5c666d",
+                    "inverse-surface": "#2f3034",
+                    "surface-bright": "#f9f9fe",
+                    "surface-dim": "#dad9de",
+                    "on-surface-variant": "#43474f",
+                    "on-primary": "#ffffff",
+                    "outline": "#737780",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#eeedf2",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#dae4ed",
+                    "on-secondary-fixed": "#131d23",
+                    "secondary-fixed-dim": "#bec8d0",
+                    "on-tertiary-container": "#d8885c",
+                    "secondary": "#566067",
+                    "surface-tint": "#3a5f94",
+                    "outline-variant": "#c3c6d1",
+                    "surface-container-low": "#f4f3f8",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1a1c1f",
+                    "primary-container": "#003366",
+                    "on-surface": "#1a1c1f",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f1f0f5",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#001b3c",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "on-primary-container": "#799dd6",
+                    "background": "#f9f9fe",
+                    "surface-container-high": "#e8e8ed",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#dae4ed",
+                    "on-tertiary-fixed": "#341100",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "surface": "#f9f9fe",
+                    "tertiary-fixed": "#ffdbca",
+                    "primary": "#001e40",
+                    "inverse-primary": "#a7c8ff",
+                    "primary-fixed": "#d5e3ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "unit-xl": "48px",
+                    "unit-sm": "8px",
+                    "unit-xs": "4px",
+                    "unit-lg": "24px",
+                    "margin-desktop": "32px",
+                    "gutter": "24px",
+                    "container-max-width": "1280px",
+                    "unit-md": "16px"
+            },
+            "fontFamily": {
+                    "price-display": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "title-lg": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .input-focus-ring:focus {
+            outline: none;
+            border-color: #001e40;
+            box-shadow: 0 0 0 1px #001e40;
+        }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary selection:text-on-primary min-h-screen flex flex-col">
+<!-- Fixed Header -->
+<header class="fixed top-0 left-0 w-full py-unit-md px-margin-desktop border-b border-outline-variant bg-surface-container-lowest z-50">
+<div class="max-w-container-max-width mx-auto flex justify-center md:justify-start">
+<span class="font-display-lg text-[24px] md:text-[32px] font-bold text-primary tracking-tight">KITE360º</span>
+</div>
+</header>
+<!-- Main Content: Perfectly Centered -->
+<main class="flex-grow flex items-center justify-center px-margin-mobile pt-[80px] pb-unit-xl">
+<div class="w-full max-w-[440px] bg-surface-container-lowest border border-outline-variant p-unit-lg md:p-unit-xl shadow-sm">
+<!-- Contextual Icon -->
+<div class="mb-unit-lg flex justify-center">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">lock_reset</span>
+</div>
+</div>
+<!-- Typography Header -->
+<div class="text-center mb-unit-lg">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-unit-xs">Definir nova senha</h1>
+<p class="font-body-md text-body-md text-secondary">Crie uma senha forte e segura para sua conta.</p>
+</div>
+<!-- Form -->
+<form class="space-y-unit-md" id="reset-password-form" onsubmit="return false;">
+<!-- Password Field -->
+<div class="space-y-unit-xs">
+<label class="font-label-md text-label-md text-primary block" for="new_password">Nova senha</label>
+<div class="relative">
+<input class="w-full px-unit-md py-unit-sm border border-outline-variant bg-white font-body-md text-body-md text-on-surface input-focus-ring transition-all placeholder:text-outline-variant" id="new_password" name="new_password" placeholder="Mínimo 8 caracteres" required="" type="password"/>
+<button class="absolute right-unit-md top-1/2 -translate-y-1/2 text-secondary hover:text-primary" onclick="togglePassword('new_password')" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Confirm Password Field -->
+<div class="space-y-unit-xs">
+<label class="font-label-md text-label-md text-primary block" for="confirm_password">Confirmar nova senha</label>
+<div class="relative">
+<input class="w-full px-unit-md py-unit-sm border border-outline-variant bg-white font-body-md text-body-md text-on-surface input-focus-ring transition-all placeholder:text-outline-variant" id="confirm_password" name="confirm_password" placeholder="Repita sua nova senha" required="" type="password"/>
+<button class="absolute right-unit-md top-1/2 -translate-y-1/2 text-secondary hover:text-primary" onclick="togglePassword('confirm_password')" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Security Checklist -->
+<div class="p-unit-sm bg-surface-container-low border border-outline-variant space-y-unit-xs">
+<div class="flex items-center gap-unit-xs text-secondary" id="check-length">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="font-label-md text-[10px] uppercase tracking-wider">Mínimo 8 caracteres</span>
+</div>
+<div class="flex items-center gap-unit-xs text-secondary" id="check-match">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="font-label-md text-[10px] uppercase tracking-wider">As senhas coincidem</span>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full mt-unit-md bg-primary text-on-primary font-body-lg text-body-lg py-unit-md hover:bg-primary-container active:scale-[0.98] transition-all duration-100 flex items-center justify-center gap-unit-sm" type="submit">
+                Salvar nova senha
+                <span class="material-symbols-outlined">save</span>
+</button>
+</form>
+<!-- Back to Login -->
+<div class="mt-unit-lg text-center">
+<a class="font-body-md text-body-md text-secondary hover:text-primary hover:underline transition-colors decoration-primary inline-flex items-center gap-unit-xs" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                Voltar para o login
+            </a>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-low border-t border-outline-variant py-unit-md mt-auto">
+<div class="max-w-container-max-width mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-unit-md">
+<span class="font-body-md text-body-md text-on-secondary-container">© 2024 KITE360º - Marketplace de Esportes Aquáticos.</span>
+<div class="flex gap-unit-lg">
+<a class="font-body-md text-body-md text-on-secondary-container hover:underline decoration-primary transition-all" href="#">Ajuda</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:underline decoration-primary transition-all" href="#">Privacidade</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:underline decoration-primary transition-all" href="#">Segurança</a>
+</div>
+</div>
+</footer>
+<!-- Interactive Script -->
+<script>
+    function togglePassword(id) {
+        const input = document.getElementById(id);
+        const icon = input.nextElementSibling.querySelector('span');
+        if (input.type === 'password') {
+            input.type = 'text';
+            icon.innerText = 'visibility_off';
+        } else {
+            input.type = 'password';
+            icon.innerText = 'visibility';
+        }
+    }
+
+    const newPwd = document.getElementById('new_password');
+    const confirmPwd = document.getElementById('confirm_password');
+    const checkLength = document.getElementById('check-length');
+    const checkMatch = document.getElementById('check-match');
+
+    function validate() {
+        // Check Length
+        if (newPwd.value.length >= 8) {
+            checkLength.classList.replace('text-secondary', 'text-primary');
+            checkLength.querySelector('span').style.fontVariationSettings = "'FILL' 1";
+        } else {
+            checkLength.classList.replace('text-primary', 'text-secondary');
+            checkLength.querySelector('span').style.fontVariationSettings = "'FILL' 0";
+        }
+
+        // Check Match
+        if (newPwd.value !== '' && newPwd.value === confirmPwd.value) {
+            checkMatch.classList.replace('text-secondary', 'text-primary');
+            checkMatch.querySelector('span').style.fontVariationSettings = "'FILL' 1";
+        } else {
+            checkMatch.classList.replace('text-primary', 'text-secondary');
+            checkMatch.querySelector('span').style.fontVariationSettings = "'FILL' 0";
+        }
+    }
+
+    newPwd.addEventListener('input', validate);
+    confirmPwd.addEventListener('input', validate);
+
+    document.getElementById('reset-password-form').addEventListener('submit', function(e) {
+        if (newPwd.value.length < 8 || newPwd.value !== confirmPwd.value) {
+            e.preventDefault();
+            alert('Por favor, verifique se a senha possui 8 caracteres e se as duas coincidem.');
+        } else {
+            const btn = this.querySelector('button[type="submit"]');
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Salvando...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Senha alterada com sucesso! Redirecionando...');
+                window.location.reload();
+            }, 1500);
+        }
+    });
+</script>
+</body></html>

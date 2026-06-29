@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout | KITE360º Professional Water Sports Marketplace</title>
+<!-- Google Fonts: Hanken Grotesk -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#799dd6",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f1f0f5",
+                        "secondary-fixed": "#dae4ed",
+                        "on-secondary-fixed": "#131d23",
+                        "on-error": "#ffffff",
+                        "primary": "#001e40",
+                        "secondary": "#566067",
+                        "outline-variant": "#c3c6d1",
+                        "on-background": "#1a1c1f",
+                        "background": "#f9f9fe",
+                        "primary-container": "#003366",
+                        "on-secondary-container": "#5c666d",
+                        "tertiary": "#381300",
+                        "surface-container-highest": "#e2e2e7",
+                        "inverse-surface": "#2f3034",
+                        "on-tertiary-container": "#d8885c",
+                        "surface-tint": "#3a5f94",
+                        "on-secondary-fixed-variant": "#3e484f",
+                        "outline": "#737780",
+                        "on-tertiary-fixed-variant": "#723610",
+                        "tertiary-fixed": "#ffdbca",
+                        "tertiary-container": "#592300",
+                        "secondary-container": "#dae4ed",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e2e2e7",
+                        "surface-container": "#eeedf2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e8e8ed",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "on-surface-variant": "#43474f",
+                        "tertiary-fixed-dim": "#ffb690",
+                        "inverse-primary": "#a7c8ff",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#341100",
+                        "primary-fixed": "#d5e3ff",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dad9de",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "on-surface": "#1a1c1f",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f4f3f8",
+                        "surface": "#f9f9fe",
+                        "secondary-fixed-dim": "#bec8d0",
+                        "on-primary-fixed": "#001b3c",
+                        "surface-bright": "#f9f9fe",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "unit-md": "16px",
+                        "container-max-width": "1280px",
+                        "unit-lg": "24px",
+                        "unit-sm": "8px",
+                        "unit-xl": "48px",
+                        "unit-xs": "4px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "price-display": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "title-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "price-display": ["20px", { "lineHeight": "24px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .payment-option-checked {
+            border-color: #001e40;
+            background-color: #f4f3f8;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop bg-surface border-b border-outline-variant h-16">
+<div class="flex items-center gap-unit-md">
+<span class="font-headline-md text-headline-md font-bold text-primary">KITE360º</span>
+</div>
+<div class="hidden md:flex items-center gap-unit-lg">
+<nav class="flex gap-unit-md">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Marketplace</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Vender</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Planos</a>
+</nav>
+</div>
+<div class="flex items-center gap-unit-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">shopping_cart</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Close-up professional portrait of a kitesurfing instructor against a blurred coastal background. The lighting is natural and bright, emphasizing a premium light-mode aesthetic. The individual has a friendly, professional expression, fitting for a verified member of a high-end water sports marketplace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZDZuA3CafluuGXDHvZfbrdp-hh9h_BYxfaTTPU2aE20iBOQXxJx0UiqS9JBJwJT13R2ImQuH4va1_wQ2GQsecEYvC5FE1e2rleKdoS3F_XSjrtjhMeJ9YnnADxqYhiud7Ptrq5tXnWnm3WS47qKnJ_zNP_Es1YftTh1Y_Iiuokn4vsNWtJR38E_WHYEg-3fH4oT9D8tBDBNUUGxDSJ3ni2MjUFdhtrVhWflxD1pOcw6BQ8x7zAm4MQO-Q7u0XFNa9Y1U0IAokRg"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-unit-xl px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto">
+<div class="mb-unit-lg">
+<h1 class="font-headline-lg text-headline-lg text-primary">Checkout</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Conclua sua assinatura para começar a vender como um profissional.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Order Summary -->
+<section class="lg:col-span-5 space-y-unit-md">
+<div class="bg-surface-container-low border border-outline-variant p-unit-lg rounded-lg">
+<h2 class="font-title-lg text-title-lg text-primary mb-unit-md">Resumo do Pedido</h2>
+<div class="flex gap-unit-md pb-unit-md border-b border-outline-variant">
+<div class="w-24 h-24 bg-surface-container-highest rounded-lg overflow-hidden flex-shrink-0 border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A premium membership card graphic for a professional water sports marketplace. The card features technical typography, the KITE360 logo, and subtle oceanic textures. High-contrast design with deep navy and soft blue accents, presented in a crisp, modern light-mode studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJJjVCRfb1jx-e2qTA9UvFWH8NLZQt_1JsJGNh1QsbLbUjKMx4L41ufDQf4OlyhFGCG-BaoKFfYxzAcMmrC2jFGeHxGgGdGzTmO0iMpN1rlX-jumQ_rQefYe0-IEe_hbOzB4SH4IKDY-uhsMbYwZusgaGMtYQw_MlhIf7NsGw_LWnjAZn8EOBXLGOBfmzosPxxsRjxKsXOnAFN4vQ9bo6mz9iyeLsVdWW39vf1w86jvc3TG7huSeLpkDN2ePGzPh18ZSAiHVrEYw"/>
+</div>
+<div class="flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md text-primary">Plano Pro Anual</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Vendas ilimitadas, selo de verificado e suporte prioritário 24/7.</p>
+<span class="mt-unit-xs inline-flex items-center px-unit-sm py-1 rounded bg-secondary-container text-on-secondary-container font-label-md text-label-md w-fit">Assinatura Anual</span>
+</div>
+</div>
+<div class="py-unit-md space-y-unit-sm">
+<div class="flex justify-between font-body-md text-body-md">
+<span class="text-on-surface-variant">Subtotal</span>
+<span class="text-on-surface font-semibold">R$ 1.188,00</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md">
+<span class="text-on-surface-variant">Desconto Anual (15%)</span>
+<span class="text-tertiary-container text-on-tertiary-container px-2 rounded">- R$ 178,20</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md">
+<span class="text-on-surface-variant">Taxas</span>
+<span class="text-on-surface font-semibold">R$ 0,00</span>
+</div>
+</div>
+<div class="pt-unit-md border-t border-outline-variant flex justify-between items-baseline">
+<span class="font-title-lg text-title-lg text-primary">Total</span>
+<div class="text-right">
+<span class="block font-price-display text-price-display text-primary">R$ 1.009,80</span>
+<span class="font-label-md text-label-md text-on-surface-variant">ou 12x de R$ 84,15</span>
+</div>
+</div>
+</div>
+<!-- Benefits / Trust Signals -->
+<div class="p-unit-md space-y-unit-sm">
+<div class="flex items-center gap-unit-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-body-md text-body-md">Acesso imediato às ferramentas Pro</span>
+</div>
+<div class="flex items-center gap-unit-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-body-md text-body-md">Pagamento 100% processado de forma segura</span>
+</div>
+<div class="flex items-center gap-unit-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-body-md text-body-md">Cancele sua renovação a qualquer momento</span>
+</div>
+</div>
+</section>
+<!-- Right Column: Payment Form -->
+<section class="lg:col-span-7">
+<div class="bg-surface border border-outline-variant p-unit-lg rounded-lg shadow-sm">
+<h2 class="font-title-lg text-title-lg text-primary mb-unit-lg">Método de Pagamento</h2>
+<!-- Payment Selector -->
+<div class="grid grid-cols-2 gap-unit-md mb-unit-lg">
+<button class="payment-option-checked flex items-center justify-center gap-unit-sm p-unit-md border border-outline rounded-lg transition-all active:scale-[0.98]" id="btn-card" onclick="selectPayment('card')">
+<span class="material-symbols-outlined">credit_card</span>
+<span class="font-title-lg text-title-lg">Cartão</span>
+</button>
+<button class="flex items-center justify-center gap-unit-sm p-unit-md border border-outline-variant rounded-lg transition-all hover:border-primary active:scale-[0.98]" id="btn-pix" onclick="selectPayment('pix')">
+<span class="material-symbols-outlined">qr_code_2</span>
+<span class="font-title-lg text-title-lg">PIX</span>
+</button>
+</div>
+<!-- Credit Card Form -->
+<div class="space-y-unit-md" id="payment-card-form">
+<div class="grid grid-cols-1 gap-unit-md">
+<div class="flex flex-col gap-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">NOME NO CARTÃO</label>
+<input class="w-full bg-surface border border-outline-variant rounded p-unit-md focus:border-primary focus:ring-0 font-body-md transition-colors" placeholder="Como impresso no cartão" type="text"/>
+</div>
+<div class="flex flex-col gap-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">NÚMERO DO CARTÃO</label>
+<div class="relative">
+<input class="w-full bg-surface border border-outline-variant rounded p-unit-md focus:border-primary focus:ring-0 font-body-md transition-colors pr-12" placeholder="0000 0000 0000 0000" type="text"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant">credit_card</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-unit-md">
+<div class="flex flex-col gap-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">VALIDADE (MM/AA)</label>
+<input class="w-full bg-surface border border-outline-variant rounded p-unit-md focus:border-primary focus:ring-0 font-body-md transition-colors" placeholder="MM/AA" type="text"/>
+</div>
+<div class="flex flex-col gap-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">CVV</label>
+<div class="relative">
+<input class="w-full bg-surface border border-outline-variant rounded p-unit-md focus:border-primary focus:ring-0 font-body-md transition-colors pr-12" placeholder="***" type="password"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant">help</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-unit-sm p-unit-md bg-surface-container-low rounded border border-outline-variant/30">
+<input class="mt-1 rounded-sm border-outline text-primary focus:ring-primary" id="save-card" type="checkbox"/>
+<label class="font-body-md text-body-md text-on-surface-variant" for="save-card">Salvar este cartão para compras futuras com segurança criptografada.</label>
+</div>
+</div>
+<!-- PIX Form (Hidden by default) -->
+<div class="hidden space-y-unit-md" id="payment-pix-form">
+<div class="flex flex-col items-center text-center p-unit-lg bg-surface-container-low rounded-lg border border-outline-variant border-dashed">
+<div class="w-48 h-48 bg-white p-4 rounded-lg border border-outline-variant mb-unit-md">
+<img class="w-full h-full object-contain opacity-50 grayscale" data-alt="A clean, minimalist QR code displayed on a modern smartphone screen. The setting is a professional office environment with soft morning light. The composition emphasizes technical precision and security, using a light-mode color palette with subtle navy blue elements to match a premium water sports marketplace brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBJjJUUIcbLc4Y1HJEfE1UTjag8IEvHlNru6vAnn847S3l9bu1aKWnk6eF2DAmf83_O8UOXEAWFJl4qQC9JA8KqY3r1T-JBtEFyPRb8HTfIXApgJ-3B7isgswk74aUoJgxrZwOITuXnyUEyka1Ewlw0vRiMibM7GHaRsZCoOo3VAfgxz0Xk8wwFi-ArRRELfDmziIf_aAk4FrCOu0tYtPfuLZ7lG3qoiDcUNo2bn8XaZM_i8jT5D3Xz-Gt9l-6Iw5qee45F2EX4Q"/>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                                Ao clicar no botão abaixo, um código PIX será gerado para o pagamento. O código expira em 30 minutos.
+                            </p>
+</div>
+</div>
+<div class="mt-unit-xl">
+<button class="w-full bg-primary text-on-primary font-title-lg text-title-lg py-unit-md rounded hover:brightness-110 active:scale-[0.99] transition-all flex items-center justify-center gap-unit-sm">
+                            Finalizar pagamento
+                            <span class="material-symbols-outlined">lock</span>
+</button>
+</div>
+<!-- Trust Badges -->
+<div class="mt-unit-lg flex flex-wrap justify-center items-center gap-unit-lg opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">security</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">SSL Secure</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">shield_lock</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">PCI Compliant</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Safe Checkout</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-unit-xl px-margin-desktop flex flex-col items-center gap-unit-md mt-auto bg-surface-container-highest border-t border-outline-variant">
+<div class="flex flex-wrap justify-center gap-unit-lg mb-unit-md">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Safety Guide</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center opacity-80">
+            © 2024 KITE360º Professional Water Sports Marketplace. All rights reserved.
+        </p>
+</footer>
+<script>
+        function selectPayment(type) {
+            const btnCard = document.getElementById('btn-card');
+            const btnPix = document.getElementById('btn-pix');
+            const formCard = document.getElementById('payment-card-form');
+            const formPix = document.getElementById('payment-pix-form');
+
+            if (type === 'card') {
+                btnCard.classList.add('payment-option-checked', 'border-outline');
+                btnCard.classList.remove('border-outline-variant');
+                btnPix.classList.remove('payment-option-checked', 'border-outline');
+                btnPix.classList.add('border-outline-variant');
+                formCard.classList.remove('hidden');
+                formPix.classList.add('hidden');
+            } else {
+                btnPix.classList.add('payment-option-checked', 'border-outline');
+                btnPix.classList.remove('border-outline-variant');
+                btnCard.classList.remove('payment-option-checked', 'border-outline');
+                btnCard.classList.add('border-outline-variant');
+                formPix.classList.remove('hidden');
+                formCard.classList.add('hidden');
+            }
+        }
+    </script>
+</body></html>

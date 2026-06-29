@@ -1,0 +1,236 @@
+<!DOCTYPE html><html class="light" lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Cadastro - KITE360º</title>
+<!-- Font & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#f9f9fe",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "secondary-fixed": "#dae4ed",
+                    "on-surface-variant": "#43474f",
+                    "inverse-primary": "#a7c8ff",
+                    "on-surface": "#1a1c1f",
+                    "surface-container-highest": "#e2e2e7",
+                    "on-tertiary-fixed": "#341100",
+                    "primary": "#001e40",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "tertiary": "#381300",
+                    "on-primary-fixed": "#001b3c",
+                    "surface-tint": "#3a5f94",
+                    "inverse-on-surface": "#f1f0f5",
+                    "tertiary-container": "#592300",
+                    "secondary": "#566067",
+                    "surface-container-low": "#f4f3f8",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#d5e3ff",
+                    "tertiary-fixed": "#ffdbca",
+                    "background": "#f9f9fe",
+                    "surface-container-high": "#e8e8ed",
+                    "surface": "#f9f9fe",
+                    "secondary-container": "#dae4ed",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "surface-variant": "#e2e2e7",
+                    "secondary-fixed-dim": "#bec8d0",
+                    "on-secondary-fixed": "#131d23",
+                    "primary-container": "#003366",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "surface-dim": "#dad9de",
+                    "on-secondary-container": "#5c666d",
+                    "on-primary-container": "#799dd6",
+                    "inverse-surface": "#2f3034",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#d8885c",
+                    "on-background": "#1a1c1f",
+                    "outline": "#737780",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "surface-container": "#eeedf2",
+                    "outline-variant": "#c3c6d1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "unit-sm": "8px",
+                    "margin-mobile": "16px",
+                    "container-max-width": "1280px",
+                    "unit-xs": "4px",
+                    "margin-desktop": "32px",
+                    "unit-lg": "24px",
+                    "unit-xl": "48px",
+                    "unit-md": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "price-display": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Hanken Grotesk', sans-serif;
+        background-color: #f9f9fe;
+        overflow-x: hidden;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      input:focus {
+        outline: none;
+        border-color: #001e40 !important;
+        box-shadow: none !important;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #e2e2e7;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<main class="min-h-screen w-full flex flex-row h-screen overflow-hidden">
+<!-- Left Side: Visual Anchor -->
+<section class="hidden lg:block lg:w-1/2 xl:w-7/12 relative overflow-hidden h-screen sticky top-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, high-speed action photograph of a professional kitesurfer gliding across pristine turquoise ocean waters. The athlete is leaning hard into a turn, sending a spray of white crystalline sea foam into the air against a backdrop of a clear, bright blue sky. The lighting is intense midday sun, reflecting the premium Oceanic Professional aesthetic of the KITE360 brand. The overall mood is high-performance, technical, and serene, captured with a high-shutter speed for crisp water details." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcs6zGCJAFasnncDCSSNxvt4AAPM8x7vOnVR8heLaCmEOt0SDCihnx9V0Oz75lD-OWbA-CKUMlx2P6ac_H87rO88aDcWf16k1fSpOX1WiG3vHCv3Zo5bH3Xkt4F0jahTtVycJ_RVM6OOUb76kjxwtj7TAXMjkQLQ9jM0QzrOsKfjCZ0jHFd4UGXm1eSiIHWycuxcRBlsez9TW9oMIiWHUVnoRscb2bsCKYtz7EJn7tR91jJnwWG_vHd7pZzYdYy4g1pt6EFGdWfQ')">
+<!-- Branding overlay for impact -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex flex-col justify-end p-margin-desktop">
+<div class="max-w-xl">
+<h2 class="font-display-lg text-display-lg text-white mb-unit-sm">Eleve seu velejo.</h2>
+<p class="font-body-lg text-white/90">A maior plataforma técnica para entusiastas de Kitesurf e Wingfoil no Brasil.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Side: Registration Form Content -->
+<section class="w-full lg:w-1/2 xl:w-5/12 bg-white flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop overflow-y-auto custom-scrollbar h-full">
+<div class="w-full max-w-[440px] py-unit-xl">
+<!-- Logo & Header -->
+<div class="mb-unit-xl flex flex-col items-center lg:items-start">
+<h1 class="font-display-lg text-display-lg font-bold text-primary tracking-tighter">KITE360º</h1>
+<p class="font-body-md text-secondary mt-unit-xs">Crie sua conta para começar a negociar equipamentos profissionais.</p>
+</div>
+<!-- Form -->
+<form class="flex flex-col gap-unit-md" onsubmit="return false;">
+<!-- Full Name -->
+<div class="flex flex-col gap-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase" for="full_name">Nome Completo</label>
+<input class="w-full h-12 px-unit-md bg-white border border-outline-variant text-body-md focus:border-primary transition-all duration-200" id="full_name" placeholder="Ex: Lucas Silva" type="text">
+</div>
+<!-- Email -->
+<div class="flex flex-col gap-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase" for="email">Email</label>
+<input class="w-full h-12 px-unit-md bg-white border border-outline-variant text-body-md focus:border-primary transition-all duration-200" id="email" placeholder="nome@exemplo.com" type="email">
+</div>
+<!-- Phone -->
+<div class="flex flex-col gap-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase" for="phone">Telefone</label>
+<div class="relative">
+<input class="w-full h-12 px-unit-md bg-white border border-outline-variant text-body-md focus:border-primary transition-all duration-200" id="phone" placeholder="(00) 00000-0000" type="tel">
+<span class="material-symbols-outlined absolute right-unit-md top-1/2 -translate-y-1/2 text-outline-variant">call</span>
+</div>
+</div>
+<!-- Passwords Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-md">
+<div class="flex flex-col gap-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase" for="password">Senha</label>
+<input class="w-full h-12 px-unit-md bg-white border border-outline-variant text-body-md focus:border-primary transition-all duration-200" id="password" placeholder="••••••••" type="password">
+</div>
+<div class="flex flex-col gap-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase" for="confirm_password">Confirmar Senha</label>
+<input class="w-full h-12 px-unit-md bg-white border border-outline-variant text-body-md focus:border-primary transition-all duration-200" id="confirm_password" placeholder="••••••••" type="password">
+</div>
+</div>
+<!-- Terms -->
+<div class="flex items-start gap-unit-sm mt-unit-xs">
+<input class="mt-1 w-4 h-4 text-primary border-outline-variant focus:ring-0 cursor-pointer" id="terms" type="checkbox">
+<label class="font-body-md text-body-md text-secondary cursor-pointer leading-tight" for="terms">
+                            Aceito os <a class="text-primary font-semibold hover:underline decoration-primary" href="#">termos de uso</a> e <a class="text-primary font-semibold hover:underline decoration-primary" href="#">política de privacidade</a>.
+                        </label>
+</div>
+<!-- Captcha Widget Placeholder -->
+<div class="mt-unit-sm bg-surface-container-low border border-outline-variant p-unit-md flex items-center justify-between min-h-[64px]">
+<div class="flex items-center gap-unit-sm">
+<div class="w-6 h-6 border-2 border-primary border-t-transparent animate-spin rounded-full"></div>
+<span class="font-body-md text-secondary">Verificando segurança...</span>
+</div>
+<div class="flex flex-col items-end opacity-60">
+<span class="text-[10px] font-bold text-primary">Turnstile</span>
+<span class="text-[8px] text-secondary">Cloudflare Protected</span>
+</div>
+</div>
+<!-- Action Button -->
+<button class="mt-unit-sm w-full h-14 bg-primary text-white font-headline-md text-headline-md active:scale-95 duration-100 transition-transform shadow-sm flex items-center justify-center gap-unit-sm">
+                        Criar conta
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<!-- Notice -->
+<div class="mt-unit-sm flex items-start gap-unit-sm p-unit-sm bg-primary-fixed/20">
+<span class="material-symbols-outlined text-primary text-lg">info</span>
+<p class="font-label-md text-label-md text-on-primary-fixed-variant">
+                            Enviaremos um email de verificação para confirmar sua identidade após o cadastro.
+                        </p>
+</div>
+<!-- Footer Link -->
+<div class="mt-unit-lg text-center">
+<p class="font-body-md text-secondary">
+                            Já tenho conta? 
+                            <a class="text-primary font-bold hover:underline transition-all duration-200" href="#">Entrar</a>
+</p>
+</div>
+</form>
+<!-- Help link -->
+<div class="mt-unit-xl flex justify-center lg:justify-start gap-unit-lg opacity-40">
+<a class="font-label-md text-label-md uppercase tracking-widest hover:opacity-100 transition-opacity" href="#">Ajuda</a>
+<a class="font-label-md text-label-md uppercase tracking-widest hover:opacity-100 transition-opacity" href="#">Privacidade</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label')?.classList.add('text-primary');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('</script>
+
+</body></html>

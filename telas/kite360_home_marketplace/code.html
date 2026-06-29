@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KITE360º | Marketplace de Esportes Aquáticos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#1f477b",
+                    "surface-container-low": "#f4f3f8",
+                    "on-primary-fixed": "#001b3c",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e2e2e7",
+                    "background": "#f9f9fe",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#592300",
+                    "on-primary-container": "#799dd6",
+                    "surface-bright": "#f9f9fe",
+                    "on-secondary-container": "#5c666d",
+                    "surface-tint": "#3a5f94",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "on-background": "#1a1c1f",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "tertiary": "#381300",
+                    "primary": "#001e40",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "outline": "#737780",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1a1c1f",
+                    "surface-variant": "#e2e2e7",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#eeedf2",
+                    "inverse-surface": "#2f3034",
+                    "surface-dim": "#dad9de",
+                    "surface-container-high": "#e8e8ed",
+                    "inverse-on-surface": "#f1f0f5",
+                    "secondary-container": "#dae4ed",
+                    "on-tertiary-fixed": "#341100",
+                    "on-tertiary-container": "#d8885c",
+                    "primary-container": "#003366",
+                    "surface": "#f9f9fe",
+                    "on-secondary-fixed": "#131d23",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#a7c8ff",
+                    "primary-fixed": "#d5e3ff",
+                    "outline-variant": "#c3c6d1",
+                    "on-surface-variant": "#43474f",
+                    "secondary": "#566067",
+                    "tertiary-fixed": "#ffdbca",
+                    "secondary-fixed": "#dae4ed",
+                    "secondary-fixed-dim": "#bec8d0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit-xs": "4px",
+                    "unit-md": "16px",
+                    "margin-mobile": "16px",
+                    "container-max-width": "1280px",
+                    "unit-sm": "8px",
+                    "unit-lg": "24px",
+                    "unit-xl": "48px",
+                    "gutter": "24px",
+                    "margin-desktop": "32px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "title-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "price-display": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .active-nav-link { font-weight: 700; border-bottom: 2px solid #001e40; color: #001e40; }
+        .product-card-hover:hover { transform: translateY(-2px); box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant">
+<div class="flex flex-col w-full max-w-container-max-width mx-auto px-margin-desktop">
+<!-- Main Header Row -->
+<div class="flex items-center justify-between py-unit-sm gap-gutter">
+<!-- Logo -->
+<div class="font-display-lg text-display-lg font-bold text-primary shrink-0">KITE360º</div>
+<!-- Search Bar -->
+<div class="flex-1 max-w-3xl relative">
+<input class="w-full h-10 pl-10 pr-4 bg-surface-container-low border-none rounded-lg text-body-md focus:ring-2 focus:ring-primary-container" placeholder="Buscar kites, pranchas, wings..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline">search</span>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-unit-md">
+<button class="bg-primary text-on-primary px-unit-lg py-2 rounded-lg font-bold text-body-md hover:bg-primary-container transition-colors active:scale-95 duration-100">Anunciar</button>
+<div class="flex items-center gap-unit-sm text-secondary">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors"><span class="material-symbols-outlined">mail</span></button>
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+</div>
+<div class="w-9 h-9 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young athletic male kitesurfer with a friendly smile, outdoor lighting at sunset. The style is clean, sharp, and modern, fitting a high-end sports community profile image." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaHmuywaPV00P2MGU4NSOcsTEFGBN3Uhf5P4iNjysAxm4n2nc-ik2iUJF-8GI1gydk04e-M8kr6o-Y4LkaKxbGloDrkN2krUDRM_8aDYVKxTUf8pfp6ETNoMffdHP8k8Z-cFgrYLkXwJLOa6FvCRUmrlDuAjnQLJ_vdmb8lTUv6PQOts_2kt4vBYo-h_UKB3kXzSAaBfa2WZLt1jAgddSb6wvkwMszkHG0Ole2GTif14eAZegOkKddte3KwojqILnF8ZSozDgobg"/>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex items-center gap-unit-lg h-10">
+<a class="text-body-md text-secondary hover:text-primary transition-colors py-2 active-nav-link" href="#">Home</a>
+<a class="text-body-md text-secondary hover:text-primary transition-colors py-2" href="#">Kitesurf</a>
+<a class="text-body-md text-secondary hover:text-primary transition-colors py-2" href="#">Wingfoil</a>
+<a class="text-body-md text-secondary hover:text-primary transition-colors py-2" href="#">Windsurf</a>
+<a class="text-body-md text-secondary hover:text-primary transition-colors py-2" href="#">Surf</a>
+<a class="text-body-md text-secondary hover:text-primary transition-colors py-2" href="#">Acessórios</a>
+</nav>
+</div>
+</header>
+<main class="mt-28 w-full max-w-container-max-width mx-auto px-margin-desktop mb-unit-xl">
+<!-- Hero Banner -->
+<section class="mb-unit-xl">
+<div class="relative w-full h-[320px] rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Wide cinematic shot of a professional kitesurfer performing a jump over turquoise ocean waters. Bright sunny day, crisp water droplets, and a clear blue sky. Professional sports photography style, high contrast, clean minimalist feel, showcasing high-performance kite gear in action." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAYcBBIdtl7vQuE7pNxctGrg7mHa66IgLqoT3hwW-nJQ8BpQv4uIsbyBrwuhc5at53NSgwDP2TZbykAziRgE_DUGE-SlvyiYqYYF-6hEFHhFmi8_8DQH9IE-TWExKAwUGWIi7Aav6EdPXcxHpI7ASy8-gMc3eLSaNYSXGQ_mtDeGfIHJ4ILMzUihSi8K7odmAXCTnPx0Qe_hMCxeR-n2xEBN4KztPFr-Zimrkbu6btjU4-S6bb2X5dYVMgKCriLh9iQQHqaYGV8w"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/40 to-transparent flex items-center p-unit-xl">
+<div class="max-w-md text-white">
+<h1 class="font-headline-lg text-headline-lg mb-unit-sm">Equipamentos de Performance</h1>
+<p class="font-body-lg text-body-lg opacity-90">O maior marketplace especializado em esportes de vento do Brasil.</p>
+</div>
+</div>
+</div>
+</section>
+<div class="flex gap-gutter">
+<!-- Main Content Area -->
+<div class="flex-1">
+<!-- Sponsored Ads Section -->
+<section class="mb-unit-xl">
+<div class="flex items-center justify-between mb-unit-md">
+<h2 class="font-headline-md text-headline-md text-primary">Anúncios em Destaque</h2>
+<a class="text-primary font-bold text-body-md hover:underline" href="#">Ver tudo</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Sponsored Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden product-card-hover transition-all flex flex-col relative">
+<span class="absolute top-2 left-2 z-10 bg-secondary-container text-on-secondary-fixed text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Patrocinado</span>
+<div class="aspect-[4/3] bg-surface-container-low overflow-hidden relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Close up product shot of a brand new Duotone Rebel SLS 2024 kite, vibrant colors, resting on white sand. Sharp technical details visible. High-end marketplace aesthetic, professional studio-quality outdoor lighting, 4:3 aspect ratio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFraXYWU7HZjBn79gk0CN1WBBVMhOX1tZ6vWOsdi2YSiwKDRUJ3ZuNIWgIxxl3PPFOosIyVplNcwKBpjv1KtPcP3dO5GkY2bdshNlqaE6yIbR9G6T3rbMYKVVc3F1C4UN1h0RXKfRx4Up4TMHC3tQeJJ-TjYWEitY9dEJ6QqgIfGFpRJS3FZTJ-g_RiHOx0EM-1uW2z-nVSHpg3fWPbEL-eRhQ2wJc5LWrtc4gcmPFJoSD3_NzWsk_dEXkEhGmfRpzI_JcvARw9A"/>
+<button class="absolute top-2 right-2 p-1.5 bg-white/80 backdrop-blur-sm rounded-full text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-unit-md flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<span class="text-label-md font-label-md text-on-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded">Novo</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[10px] font-bold uppercase">Verificado</span>
+</div>
+</div>
+<h3 class="font-body-md text-body-md font-bold text-on-surface mb-2 line-clamp-2">Duotone Rebel SLS 10m 2024 - Nova na Caixa</h3>
+<div class="mt-auto">
+<div class="font-price-display text-price-display text-primary">R$ 12.500</div>
+<div class="text-[11px] text-outline mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                        Florianópolis, SC
+                                    </div>
+</div>
+</div>
+</div>
+<!-- Repeat sponsored cards -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden product-card-hover transition-all flex flex-col relative">
+<span class="absolute top-2 left-2 z-10 bg-secondary-container text-on-secondary-fixed text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Patrocinado</span>
+<div class="aspect-[4/3] bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Core Nexus 3 Kite 12m in vivid yellow and black. Photographed against a clean blue sky. Professional water sports equipment listing style, 4:3 ratio, sharp detail, modern minimalist design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_OvKqTuBf93yTDjLjfLCt5pe9tFnuOd3T5DZHy07NJuDf0ZoEZ5c0l0nc86r9ZUps-QHk_7151U-QxLv1gWoks5q__OqVv8Vjgzkk0ci0aQIaS8HrhkIt7jFeEXc--PmCK8P7F8zTiDyWcRwHxcjnAvWBEuArmKtT8yjg-xWQjp3K67vfJ7sj8J9YomctncsNv4RgjypQZ38Ol5noExigwdN0Du8RxZi7v5Je9SLgHdGEWfFPA6JYbVRFYsgSlOAEC3jlNXBiZg"/>
+</div>
+<div class="p-unit-md">
+<h3 class="font-body-md text-body-md font-bold mb-2">Core Nexus 3 - 12m - Impecável</h3>
+<div class="font-price-display text-price-display text-primary">R$ 8.900</div>
+<div class="text-[11px] text-outline mt-1">Fortaleza, CE</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden product-card-hover transition-all flex flex-col relative">
+<span class="absolute top-2 left-2 z-10 bg-secondary-container text-on-secondary-fixed text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Patrocinado</span>
+<div class="aspect-[4/3] bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="North Orbit Kite 9m, oceanic blue color. Studio shot feel but outdoors on a grass lawn near the water. Commercial marketplace style, sharp focus, 4:3 aspect ratio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCG8wCzO0Urdvo3eDhIkFWI2gS1cRRlfpInmJnq8t2CKMtBE6x84FkpnXZWTOoNU2g74dy_lkgI4f_OU_vNDqCowRKDoKG0TGEyBUaMe14pTyPRilxkZs4sDbTaItqSHXXgIIa9e7fbBiTQiuwxS6m-ENCDWWs1vefyA7BZNIKW2McJiC0Yh43NXdNQq4KLuP0ng7OkBXbD6q2zLK4ziO5v-9szBWGd1I8_4L9rsG0vAms9p_rjU8pduKOFYI1-Z-drbq4VQWclg"/>
+</div>
+<div class="p-unit-md">
+<h3 class="font-body-md text-body-md font-bold mb-2">North Orbit 9m 2023 - Pouco Uso</h3>
+<div class="font-price-display text-price-display text-primary">R$ 7.200</div>
+<div class="text-[11px] text-outline mt-1">Ilhabela, SP</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden product-card-hover transition-all flex flex-col relative">
+<span class="absolute top-2 left-2 z-10 bg-secondary-container text-on-secondary-fixed text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Patrocinado</span>
+<div class="aspect-[4/3] bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="F-One Strike V3 Wing 5m in light grey and orange. Displayed inflated on a clean platform. Premium technical water sports gear, minimalist presentation, 4:3 aspect ratio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOnPcwu6RIq0JR2LZ2ua9lwp8WjWS8c8zUwuWvh4N8SmqV9I3V1LhMnslmeEr4ymHAa0p35NAj65a9Bq08FNFk9V3zKAjSDW7b9DRJq-2SFVU9gmHA_-LTwHx0s9ep_VXL6Zdv-21SzOTQUaAbvodxhFt3NNWihhuPS9BTDWO5eyuceJ5xPOBfgm0BNH5W-J9K3hPbXnFUv_5JAxXJHJeDbl5podE-K3rq-W2pFw_JhsN9IDiAQCc_0MxyDBLyQdDG2Ht-5WyHIA"/>
+</div>
+<div class="p-unit-md">
+<h3 class="font-body-md text-body-md font-bold mb-2">Wing F-One Strike V3 5.0m</h3>
+<div class="font-price-display text-price-display text-primary">R$ 6.450</div>
+<div class="text-[11px] text-outline mt-1">Jericoacoara, CE</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recently Added Section -->
+<section>
+<div class="flex items-center justify-between mb-unit-md">
+<h2 class="font-headline-md text-headline-md text-primary">Recém-anunciados</h2>
+<div class="flex gap-2">
+<button class="px-4 py-1.5 border border-outline-variant rounded-full text-body-md hover:bg-surface-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span> Filtrar
+                            </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden product-card-hover transition-all flex flex-col">
+<div class="aspect-[4/3] bg-surface-container-low overflow-hidden relative group">
+<img class="w-full h-full object-cover" data-alt="Cabrinha Switchblade 12m kite lying on a beach. Technical equipment detail, worn but well maintained. Authentic user-generated listing style, professional lighting, clean ocean background, 4:3 aspect ratio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcxz_yZZA8cQfWkYH0jUdlv12MUDxiCqOyMZmVQRfsUjghhrSTiW2agc6hfv_2uxaOaOMzw4xL6OaYKn6gKeEaEeyUxRXYi0mHY3rvm639j_XfB0OsHZAwcMJmWB_CNnPau3ToqPdTodfavKvmYLN7WtjW1__sxzz4oPexoCNtCgzZSGmmyxRYzWpzhM2Gsc71DWZS8a07DMK_PlSBI6WBt19DbYWXGmLpo2C9wwiiMZBz9mTBNLVF7BABXqS6A_wMtSxznvga-w"/>
+<button class="absolute top-2 right-2 p-1.5 bg-white/80 backdrop-blur-sm rounded-full text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-unit-md flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold uppercase text-secondary bg-secondary-container/30 px-2 py-0.5 rounded">Usado</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[10px] font-bold uppercase">Verificado</span>
+</div>
+</div>
+<h3 class="font-body-md text-body-md font-bold text-on-surface mb-2 line-clamp-2">Kite Cabrinha Switchblade 12m - 2021</h3>
+<div class="mt-auto">
+<div class="font-price-display text-price-display text-primary">R$ 5.400</div>
+<div class="text-[11px] text-outline mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                        Cumbuco, CE
+                                    </div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden product-card-hover transition-all flex flex-col">
+<div class="aspect-[4/3] bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Naish Hover Wing Foil board leaning against a palm tree. Clean beach environment, professional outdoor gear photography, high detail, 4:3 aspect ratio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU7dJFVCZihGtHo5ZxAyznoO25qY7h2acRzU1BoOLPw4Qp2u8z_jABvulLe0p5sZL2q6uYm5M2zLGslstyxPvtSootlKfH3DyjEpgO7MJfgioxggE8YeEEF9zHZs0TC5UitFKDd6eEaBU4XBa1jfxBdBrqzGwwHNZ99DW0PE5BJ3SAJnJk7KiOoPa3rPCbYtSYaQA_LvJCDnacE_8djifMwu24YB8QELvLUHeVC2K2S6tWJ3TExVRwZG6GE527ggCoGSPNbNtBGg"/>
+</div>
+<div class="p-unit-md">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold uppercase text-secondary bg-secondary-container/30 px-2 py-0.5 rounded">Usado</span>
+</div>
+<h3 class="font-body-md text-body-md font-bold mb-2">Prancha Wing Foil Naish 85L</h3>
+<div class="font-price-display text-price-display text-primary">R$ 4.800</div>
+<div class="text-[11px] text-outline mt-1">Preá, CE</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden product-card-hover transition-all flex flex-col">
+<div class="aspect-[4/3] bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Set of kitesurfing accessories: a harness, pump, and leash arranged neatly on a wooden deck. Modern minimal equipment layout, technical feel, 4:3 aspect ratio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQuuO-xtA6_7axQtG5WfE9S-diZZQEEQgABejCk6mWczm3ZSCgJeHhUmfafRy0QLIvVd6cXjv9Tyv92tEZ6wV-lUWOCY7yW7V5zop9yj7JNzWaShwV66G8giADjTGjjyvMN8-3oIPUTIWNjMWAKMLL_fqNmcrBUm3sVDI0H88hJDOVh09HDsxxXoC-iI1FLV-wt8WhspQq7FH2QfU75NCCPeIf5pnuYL89-MB32PHMtLuZ24UCiz2j5owvvmdVsHT2WDRb9dDrNg"/>
+</div>
+<div class="p-unit-md">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold uppercase text-secondary bg-secondary-container/30 px-2 py-0.5 rounded">Usado</span>
+</div>
+<h3 class="font-body-md text-body-md font-bold mb-2">Trapézio ION Ripper - Tamanho L</h3>
+<div class="font-price-display text-price-display text-primary">R$ 1.200</div>
+<div class="text-[11px] text-outline mt-1">Rio de Janeiro, RJ</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden product-card-hover transition-all flex flex-col">
+<div class="aspect-[4/3] bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Liquid Force Echo kiteboard with bindings. Close up showing the carbon fiber texture and graphics. Premium sporting goods aesthetic, 4:3 aspect ratio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACzIyMe9QEF9EpNtw6J1hrPTgheGQDst0vaJDKyjAat7DV7wQpvd85OYaVlCUKIhGaFsoS668AJDZQKeBAXHxp1dabW-eGotmrTUGPa_362z07VJj1fw1KVpNJ7lGjrikk0xyY5r3OYwvTTLip5ezRKhEyFwj1bS2pF6sJDQBtCIHLRObqOpRLH80MwdThNnbmIg7zQoMMZHCap-p43BtfOMR-THoO-pevo6cezv4gQ8_5m6yh1iwFghWEq4o_kZe_FNacZ6vjsA"/>
+</div>
+<div class="p-unit-md">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold uppercase text-secondary bg-secondary-container/30 px-2 py-0.5 rounded">Usado</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[10px] font-bold uppercase">Verificado</span>
+</div>
+</div>
+<h3 class="font-body-md text-body-md font-bold mb-2">Prancha Bidirecional Liquid Force</h3>
+<div class="font-price-display text-price-display text-primary">R$ 2.900</div>
+<div class="text-[11px] text-outline mt-1">Araruama, RJ</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar Banner -->
+<aside class="hidden lg:block w-[200px] shrink-0">
+<div class="sticky top-32 w-full h-[600px] rounded-lg border border-outline-variant bg-surface-container-low overflow-hidden">
+<div class="relative w-full h-full group cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Vertical advertising banner for a premium kiteboarding travel agency. High-quality imagery of a tropical lagoon with kites in the air. Text overlay saying 'VEM PRO PREÁ' in bold modern typography. Professional ad layout, vibrant tropical colors, minimalist high-end feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVaXAfBw-yagtCvBQ59T0UgmTsw3x4GUvOLnbNklCC1F0tK5aToRCMZNhqj6TGu4RQFi91w33RxBRwqyeJHcXZRi_mnnFKlSyrBhd50bpZ5OzLT79xO3QJsFybpTtznwvLaMaNnEycHM9e3pGrOXOU-f2ofYhyZCQQ23io4sbGwnsLXcPhRqvW4U4k__9Ta8iujyFEg920Swo0BJNwWPiIaMTaIztErt_D7zd-QM01RrCCuie5KIdM3tmUKkzqvPGbEOn_y84ypg"/>
+<div class="absolute bottom-0 w-full p-4 bg-primary/80 backdrop-blur-md text-white text-center">
+<div class="text-[10px] uppercase font-bold tracking-widest mb-1">Publicidade</div>
+<div class="font-bold text-body-md">Kite Camp Outubro</div>
+<div class="text-[11px] opacity-80">Vagas Limitadas</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-unit-xl bg-surface-container-low border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-unit-xl max-w-container-max-width mx-auto">
+<div class="flex flex-col gap-unit-md">
+<div class="font-headline-md text-headline-md font-bold text-primary">KITE360º</div>
+<p class="font-body-md text-body-md text-secondary">A maior plataforma de compra e venda de equipamentos náuticos do Brasil.</p>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-4">Marketplace</h4>
+<ul class="flex flex-col gap-2 font-body-md text-body-md text-on-secondary-container">
+<li><a class="hover:underline decoration-primary" href="#">Kitesurf</a></li>
+<li><a class="hover:underline decoration-primary" href="#">Wingfoil</a></li>
+<li><a class="hover:underline decoration-primary" href="#">Windsurf</a></li>
+<li><a class="hover:underline decoration-primary" href="#">Surf</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-4">Institucional</h4>
+<ul class="flex flex-col gap-2 font-body-md text-body-md text-on-secondary-container">
+<li><a class="hover:underline decoration-primary" href="#">Sobre Nós</a></li>
+<li><a class="hover:underline decoration-primary" href="#">Termos de Uso</a></li>
+<li><a class="hover:underline decoration-primary" href="#">Privacidade</a></li>
+<li><a class="hover:underline decoration-primary" href="#">Segurança</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-4">Suporte</h4>
+<ul class="flex flex-col gap-2 font-body-md text-body-md text-on-secondary-container">
+<li><a class="hover:underline decoration-primary" href="#">Ajuda</a></li>
+<li><a class="hover:underline decoration-primary" href="#">Contato</a></li>
+<li><a class="hover:underline decoration-primary" href="#">Dicas de Segurança</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 py-4 px-margin-desktop max-w-container-max-width mx-auto">
+<p class="text-center font-body-md text-body-md text-secondary opacity-60">
+                © 2024 KITE360º - Marketplace de Esportes Aquáticos. Todos os direitos reservados.
+            </p>
+</div>
+</footer>
+<script>
+        // Micro-interaction for favorite icons
+        document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+            if (icon.textContent === 'favorite') {
+                icon.parentElement.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const isFilled = this.querySelector('span').style.fontVariationSettings.includes("'FILL' 1");
+                    this.querySelector('span').style.fontVariationSettings = isFilled ? "'FILL' 0" : "'FILL' 1";
+                    this.classList.toggle('text-error', !isFilled);
+                });
+            }
+        });
+    </script>
+</body></html>

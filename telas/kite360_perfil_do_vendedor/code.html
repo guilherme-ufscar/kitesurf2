@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perfil do Vendedor | KITE360º</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c3c6d1",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f9f9fe",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "inverse-surface": "#2f3034",
+                    "primary-container": "#003366",
+                    "secondary-fixed": "#dae4ed",
+                    "secondary": "#566067",
+                    "on-surface": "#1a1c1f",
+                    "on-primary-container": "#799dd6",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "on-primary-fixed": "#001b3c",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#381300",
+                    "primary-fixed": "#d5e3ff",
+                    "on-tertiary-container": "#d8885c",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#eeedf2",
+                    "inverse-primary": "#a7c8ff",
+                    "surface-variant": "#e2e2e7",
+                    "tertiary-container": "#592300",
+                    "surface-bright": "#f9f9fe",
+                    "on-secondary-fixed": "#131d23",
+                    "surface-tint": "#3a5f94",
+                    "on-tertiary-fixed": "#341100",
+                    "primary": "#001e40",
+                    "on-surface-variant": "#43474f",
+                    "on-error": "#ffffff",
+                    "surface": "#f9f9fe",
+                    "tertiary-fixed": "#ffdbca",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#5c666d",
+                    "secondary-container": "#dae4ed",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "outline": "#737780",
+                    "surface-dim": "#dad9de",
+                    "inverse-on-surface": "#f1f0f5",
+                    "surface-container-low": "#f4f3f8",
+                    "surface-container-highest": "#e2e2e7",
+                    "surface-container-high": "#e8e8ed",
+                    "on-background": "#1a1c1f",
+                    "secondary-fixed-dim": "#bec8d0",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#1f477b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit-xl": "48px",
+                    "unit-lg": "24px",
+                    "container-max-width": "1280px",
+                    "unit-sm": "8px",
+                    "unit-md": "16px",
+                    "margin-desktop": "32px",
+                    "unit-xs": "4px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "price-display": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "title-lg": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .active-tab {
+            border-bottom: 2px solid #001e40;
+            color: #001e40;
+            font-weight: 700;
+        }
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #f9f9fe;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant">
+<div class="flex flex-col w-full max-w-container-max-width mx-auto px-margin-desktop h-16 md:h-20 justify-center">
+<div class="flex items-center justify-between gap-gutter">
+<!-- Brand -->
+<div class="flex items-center gap-unit-lg">
+<span class="font-display-lg text-display-lg font-bold text-primary">KITE360º</span>
+<!-- Desktop Nav Links -->
+<nav class="hidden lg:flex items-center gap-unit-md ml-unit-lg">
+<a class="font-body-md text-secondary hover:text-primary transition-colors" href="#">Kitesurf</a>
+<a class="font-body-md text-secondary hover:text-primary transition-colors" href="#">Wingfoil</a>
+<a class="font-body-md text-secondary hover:text-primary transition-colors" href="#">Windsurf</a>
+<a class="font-body-md text-secondary hover:text-primary transition-colors" href="#">Surf</a>
+<a class="font-body-md text-secondary hover:text-primary transition-colors" href="#">Acessórios</a>
+</nav>
+</div>
+<!-- Search & Actions -->
+<div class="flex flex-1 items-center justify-end gap-unit-md">
+<div class="hidden md:flex relative w-full max-w-xs">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg text-body-md focus:outline-none focus:border-primary" placeholder="Buscar equipamentos..." type="text"/>
+</div>
+<button class="hidden md:flex items-center justify-center px-6 py-2 bg-primary text-on-primary font-bold rounded hover:bg-opacity-90 active:scale-95 transition-all">
+                        Anunciar
+                    </button>
+<div class="flex items-center gap-unit-sm">
+<button class="p-2 text-primary hover:bg-surface-variant rounded-full transition-colors relative">
+<span class="material-symbols-outlined">mail</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 text-primary hover:bg-surface-variant rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-10 h-10 rounded-full bg-secondary-container border border-outline-variant overflow-hidden cursor-pointer active:scale-95 transition-all">
+<img class="w-full h-full object-cover" data-alt="A high-quality professional portrait of a modern Brazilian male in his late 30s with a warm and professional smile. He has short dark hair and is wearing a premium casual navy blue polo shirt. The background is a clean, bright, and slightly out-of-focus high-end coastal interior with soft daylight, maintaining the professional minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABsQhc3oKBxXKVJKi7gF-wV0w6TBMxj7srj8f_lvXS8IUPfzT_fRQ6PXmiWyIFFf1RQZK2hVIoRTjFgd9NTGcEGuO3WTJjrDLjBZMDhlInEKXzHLEOpx-DTOKJv2oUKG7fDophD3yz0QLYdcva18nCGmX3SphuC9JRxnhdonKIXtaZZXKMuuxLdXPVYmJbeAO7o4xrtL6UvR5XyEGr8ZajxHyGx1BM5qOqfe4Vo0fXqmAoWYfkX7IlQpTpswetBy1QNZcTOG0-lQ"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="mt-24 md:mt-32 max-w-container-max-width mx-auto px-margin-desktop mb-unit-xl">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-unit-xs text-label-md font-label-md text-secondary mb-unit-lg">
+<a class="hover:text-primary" href="#">Início</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Vendedores</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Ricardo S. Almeida</span>
+</nav>
+<!-- Profile Header Section -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-lg md:p-unit-xl mb-unit-lg">
+<div class="flex flex-col md:flex-row items-start md:items-center gap-unit-lg justify-between">
+<div class="flex items-center gap-unit-lg">
+<!-- Avatar -->
+<div class="relative">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-surface-container-low overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close-up headshot of Ricardo Almeida, a confident and friendly seller with sun-kissed skin and athletic features. He is smiling genuinely at the camera, wearing professional watersports gear. The lighting is crisp and natural, highlighting a clean, high-contrast professional look against a bright white oceanic background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSttu9-LJSej7mZPWyrdkxSQF_x0MLk3x1wXIngM6x03tyY31g48KNXgig68oIOMoSmv2GJi1S1nH1AakIeZEXi-Xj1azIwfr3xeu9J_EUnsvTF4mrrooT3LwWn_OxUtogvWtyzMOm_EaNTeDGCKQsx0EuVa0-T1GIcCmmX7brAEpWrVNoLGItctAFcO010JfctkQ3dRoOzQVNM8iVeE65YLu6Gen5Z9_F0NFkurhpWekG48t5dIVLBF6nX7yVXfAY7bDOSvvEYg"/>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-on-primary rounded-full p-1 border-2 border-white flex items-center justify-center" title="Vendedor Verificado">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<!-- Identity -->
+<div>
+<div class="flex items-center gap-unit-sm mb-1">
+<h1 class="font-headline-lg text-headline-lg md:text-headline-lg text-primary">Ricardo S. Almeida</h1>
+<span class="hidden md:inline-flex px-2 py-1 bg-primary-fixed text-on-primary-fixed text-label-md rounded font-bold uppercase tracking-tight">Vendedor Verificado</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-unit-md gap-y-unit-xs text-body-md text-secondary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">location_on</span> Fortaleza, CE</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">calendar_today</span> Membro desde Jan 2022</span>
+<span class="flex items-center gap-1 font-bold text-primary"><span class="material-symbols-outlined text-[18px] text-tertiary-container" style="font-variation-settings: 'FILL' 1;">star</span> 4.9 (128 vendas)</span>
+</div>
+</div>
+</div>
+<!-- Primary Action -->
+<div class="w-full md:w-auto flex flex-col gap-unit-sm">
+<button class="w-full md:w-auto flex items-center justify-center gap-unit-sm px-unit-lg py-3 bg-primary text-on-primary font-bold rounded-lg hover:bg-opacity-95 active:scale-95 transition-all">
+<span class="material-symbols-outlined">chat</span>
+                        Conversar
+                    </button>
+<div class="flex items-center justify-between md:justify-end gap-unit-md px-2">
+<div class="text-right">
+<p class="text-label-md text-secondary">Reputação</p>
+<p class="text-body-md font-bold text-primary">98% Positiva</p>
+</div>
+<div class="text-right">
+<p class="text-label-md text-secondary">Resposta</p>
+<p class="text-body-md font-bold text-primary">~30 min</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Content Area -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left: Filters/Stats (Small Column) -->
+<aside class="md:col-span-3 space-y-unit-lg">
+<div class="bg-surface-container-low p-unit-lg rounded-xl border border-outline-variant">
+<h3 class="font-title-lg text-title-lg text-primary mb-unit-md">Estatísticas</h3>
+<div class="space-y-unit-md">
+<div class="flex justify-between items-center">
+<span class="text-body-md text-secondary">Anúncios Ativos</span>
+<span class="text-body-md font-bold text-primary">14</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md text-secondary">Vendas Totais</span>
+<span class="text-body-md font-bold text-primary">128</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md text-secondary">Tempo Médio Venda</span>
+<span class="text-body-md font-bold text-primary">4 dias</span>
+</div>
+<hr class="border-outline-variant"/>
+<div class="flex items-center gap-unit-sm text-label-md text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+                            Documentação Validada
+                        </div>
+</div>
+</div>
+</aside>
+<!-- Right: Tabs & Listings (Main Column) -->
+<div class="md:col-span-9">
+<!-- Tabs -->
+<div class="flex border-b border-outline-variant mb-unit-lg overflow-x-auto">
+<button class="px-unit-lg py-4 font-body-lg text-body-lg active-tab whitespace-nowrap">
+                        Anúncios ativos (14)
+                    </button>
+<button class="px-unit-lg py-4 font-body-lg text-body-lg text-secondary hover:text-primary whitespace-nowrap transition-colors">
+                        Avaliações (42)
+                    </button>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="group bg-white border border-outline-variant rounded-lg overflow-hidden hover:shadow-md transition-all">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A detailed professional product photo of a Duotone Rebel SLS kitesurfing kite in vibrant blue and white colors, displayed against a clean, sandy beach background with a clear blue sky. The lighting is bright and crisp, emphasizing the premium textures and technical details of the material. Minimalist and high-end photographic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmxAOqQxx9DJHkmlZxjnphsgYdJ5McE7tQ-NJcKrk3Cb-NgEqxbXdFg63G-mpuX8pgwXdgafYcHG28iKHe5zl2gzzbJHTYN0_hEp6bsVsqAAeceoqdPpoILAUNFdVJzP4Kokkur5V9D3T_61QFTCj9XS6fpWl0tuLjQgNEZE8Rl869DcfbR8lulMucMJzpPZcIQocPUKL7f00g4ZBPchVoHJXK_c8hfytjwn4iT2eILrnSmGjn3bDpSTB2T4u7Fh3QZkWE_0mqjQ"/>
+<div class="absolute top-2 right-2 flex flex-col gap-unit-xs">
+<span class="bg-primary text-on-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Novo</span>
+<button class="p-1.5 bg-white rounded-full shadow-sm text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-unit-md">
+<div class="flex items-center gap-1 mb-1">
+<span class="text-label-md text-on-secondary-container font-bold px-2 py-0.5 bg-secondary-container rounded">Kitesurf</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<h4 class="font-title-lg text-title-lg text-primary line-clamp-1 mb-1">Kite Duotone Rebel SLS 2024</h4>
+<p class="text-body-md text-secondary flex items-center gap-1 mb-unit-md">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Fortaleza, CE
+                            </p>
+<div class="flex items-center justify-between">
+<span class="font-price-display text-price-display text-primary">R$ 12.500</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white border border-outline-variant rounded-lg overflow-hidden hover:shadow-md transition-all">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-resolution technical shot of a professional Wing Foil board with a carbon fiber finish. The board is propped up against a minimalist modern background with soft natural lighting coming from the side. The image captures the sleek, high-performance design and premium craftsmanship. Professional marketplace photography style with high contrast and sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnVvQ4-wy13VcRyaXRyq0w0fl3XFjBIKKtQPdivvJkFbDecgM342y-nZDKeU6Tnv3s-o7Ym00mGVXXJqGgRx4syEzHwIDFgYG0_Ivpjb6DCP8W9bqu1tTt2lm0vkX3MphP-7FyojwFOD6j-1tPSMqaavRhz7z1LSfdZBjzLH3itxhPAF5ff6Y0QoRd85pZBFRVTClp-Xkcr_EeFGdw2DrQMnWsUMARi-L3GWX4DKnfwwunFPH9RO3A2bG1Vw_Au89x6bp2zHWogw"/>
+<div class="absolute top-2 right-2 flex flex-col gap-unit-xs">
+<span class="bg-secondary text-on-secondary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Usado</span>
+<button class="p-1.5 bg-white rounded-full shadow-sm text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-unit-md">
+<div class="flex items-center gap-1 mb-1">
+<span class="text-label-md text-on-secondary-container font-bold px-2 py-0.5 bg-secondary-container rounded">Wingfoil</span>
+</div>
+<h4 class="font-title-lg text-title-lg text-primary line-clamp-1 mb-1">Prancha Fanatic Sky Wing 5'4"</h4>
+<p class="text-body-md text-secondary flex items-center gap-1 mb-unit-md">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Fortaleza, CE
+                            </p>
+<div class="flex items-center justify-between">
+<span class="font-price-display text-price-display text-primary">R$ 5.900</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white border border-outline-variant rounded-lg overflow-hidden hover:shadow-md transition-all">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A set of high-end carbon fiber wingfoil accessories including a front wing and stabilizer, arranged neatly on a clean white technical background. Soft overhead lighting creates subtle shadows, emphasizing the aerodynamic curves and sophisticated material. Clean, catalog-style photography consistent with a premium sports marketplace aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfLAmalDlZIuScc5WV4b8KM5yrTABk5969XJX3F7Ze6iAfnwu3H0uiP6_YAEVL5d7yR655Ss0dX8QhMsUoX7tlx7RDzgZBbQKQuuZBBsSuOQksguXc8SLaOIkpDWm2R-CBJ63-SVcCvlaztOMiq4cQapw7ZzDlKUXdBMIXq-xUgBGDYRVxwc9F8jMkvlNkn_1t9yn2NRqeGHTU8C3M_grflEuQzVu6A77YbXgBhn9a48qXBP-tEQlcLMkVUdsZ5T1gE7WSb9atdQ"/>
+<div class="absolute top-2 right-2 flex flex-col gap-unit-xs">
+<span class="bg-primary text-on-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Novo</span>
+<button class="p-1.5 bg-white rounded-full shadow-sm text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-unit-md">
+<div class="flex items-center gap-1 mb-1">
+<span class="text-label-md text-on-secondary-container font-bold px-2 py-0.5 bg-secondary-container rounded">Acessórios</span>
+</div>
+<h4 class="font-title-lg text-title-lg text-primary line-clamp-1 mb-1">Conjunto de Foil Carbono 1500</h4>
+<p class="text-body-md text-secondary flex items-center gap-1 mb-unit-md">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Fortaleza, CE
+                            </p>
+<div class="flex items-center justify-between">
+<span class="font-price-display text-price-display text-primary">R$ 8.200</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-white border border-outline-variant rounded-lg overflow-hidden hover:shadow-md transition-all">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional action shot of a sleek kiteboard leaning against a piece of driftwood on a sunny beach. The board features modern graphics in shades of navy and teal. Bright tropical lighting and high-contrast detail, showcasing the condition and build quality of the equipment. Modern minimalist professional photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3AHuN59j1sNPMI1WM16hkd47cbrjZ6NwDH4k18Q8GxHwRQWQVPaGcZBufXaYtb8te6LcZAXqFZtspe03ENoNA2wynxpSjg5GNToFQNkm-_m4USYP3-HXhlhib2OfnenqQaYhnvdgNIQ1raQ1-NTQjspyiQOEG5tqACi9FN1S75wHNM3IL5LyZtHp-jJB8IvMqrPYvMt_KDZY8nQ7BySRLYeDreBEdRy0qmYkRRBoWQoEHrQGiwUv9Ux6vfomjuifPC0q_hAg0PA"/>
+<div class="absolute top-2 right-2 flex flex-col gap-unit-xs">
+<span class="bg-secondary text-on-secondary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Usado</span>
+<button class="p-1.5 bg-white rounded-full shadow-sm text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-unit-md">
+<div class="flex items-center gap-1 mb-1">
+<span class="text-label-md text-on-secondary-container font-bold px-2 py-0.5 bg-secondary-container rounded">Kitesurf</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<h4 class="font-title-lg text-title-lg text-primary line-clamp-1 mb-1">Prancha Twintip North Focus 136</h4>
+<p class="text-body-md text-secondary flex items-center gap-1 mb-unit-md">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Fortaleza, CE
+                            </p>
+<div class="flex items-center justify-between">
+<span class="font-price-display text-price-display text-primary">R$ 3.200</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination (Placeholder) -->
+<div class="mt-unit-xl flex justify-center">
+<nav class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center bg-primary text-on-primary font-bold rounded">1</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded hover:bg-surface-container-low transition-colors font-bold text-primary">2</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded hover:bg-surface-container-low transition-colors font-bold text-primary">3</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-unit-xl max-w-container-max-width mx-auto">
+<div class="space-y-unit-md">
+<span class="font-headline-md text-headline-md font-bold text-primary">KITE360º</span>
+<p class="text-body-md text-secondary">A maior plataforma especializada em compra e venda de equipamentos de kitesurf e wingfoil do Brasil.</p>
+<div class="flex gap-unit-md">
+<a class="text-primary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">public</span></a>
+</div></div></div></footer></body></html>

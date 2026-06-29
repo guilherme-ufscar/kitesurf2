@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recuperar Senha | KITE360º</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#592300",
+                    "surface-container-highest": "#e2e2e7",
+                    "tertiary": "#381300",
+                    "surface-variant": "#e2e2e7",
+                    "on-secondary-container": "#5c666d",
+                    "inverse-surface": "#2f3034",
+                    "surface-bright": "#f9f9fe",
+                    "surface-dim": "#dad9de",
+                    "on-surface-variant": "#43474f",
+                    "on-primary": "#ffffff",
+                    "outline": "#737780",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#eeedf2",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#dae4ed",
+                    "on-secondary-fixed": "#131d23",
+                    "secondary-fixed-dim": "#bec8d0",
+                    "on-tertiary-container": "#d8885c",
+                    "secondary": "#566067",
+                    "surface-tint": "#3a5f94",
+                    "outline-variant": "#c3c6d1",
+                    "surface-container-low": "#f4f3f8",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1a1c1f",
+                    "primary-container": "#003366",
+                    "on-surface": "#1a1c1f",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f1f0f5",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#001b3c",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "on-primary-container": "#799dd6",
+                    "background": "#f9f9fe",
+                    "surface-container-high": "#e8e8ed",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#dae4ed",
+                    "on-tertiary-fixed": "#341100",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "surface": "#f9f9fe",
+                    "tertiary-fixed": "#ffdbca",
+                    "primary": "#001e40",
+                    "inverse-primary": "#a7c8ff",
+                    "primary-fixed": "#d5e3ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "unit-xl": "48px",
+                    "unit-sm": "8px",
+                    "unit-xs": "4px",
+                    "unit-lg": "24px",
+                    "margin-desktop": "32px",
+                    "gutter": "24px",
+                    "container-max-width": "1280px",
+                    "unit-md": "16px"
+            },
+            "fontFamily": {
+                    "price-display": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "title-lg": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .ocean-bg-pattern {
+            background-color: #f9f9fe;
+            background-image: radial-gradient(#001e40 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex flex-col items-center justify-center ocean-bg-pattern relative overflow-x-hidden">
+<!-- Atmospheric subtle background elements fixed to viewport -->
+<div class="fixed -top-64 -right-64 w-[600px] h-[600px] bg-secondary-container rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse pointer-events-none"></div>
+<div class="fixed -bottom-64 -left-64 w-[600px] h-[600px] bg-primary-container rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse pointer-events-none" style="animation-delay: 2s"></div>
+<main class="relative z-10 w-full max-w-[440px] px-margin-mobile md:px-0 py-unit-xl flex flex-col items-center justify-center min-h-screen">
+<!-- Logo Header -->
+<div class="flex justify-center mb-unit-lg">
+<h1 class="font-display-lg text-display-lg font-bold text-primary tracking-tighter">KITE360º</h1>
+</div>
+<!-- Recovery Card -->
+<div class="w-full bg-surface-container-lowest border border-outline-variant shadow-[0px_4px_12px_rgba(0,0,0,0.05)] p-unit-lg md:p-unit-xl rounded-lg">
+<header class="mb-unit-lg text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-unit-sm">Recuperar senha</h2>
+<p class="font-body-md text-body-md text-secondary">
+                    Insira seu e-mail abaixo e enviaremos um link para você definir uma nova senha.
+                </p>
+</header>
+<form class="space-y-unit-md" id="recovery-form">
+<!-- Email Input -->
+<div class="flex flex-col gap-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="email">E-mail</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<input class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-lg text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-200" id="email" placeholder="exemplo@email.com" required="" type="email"/>
+</div>
+</div>
+<!-- Simulated Cloudflare Turnstile -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 border-2 border-outline rounded-full flex items-center justify-center cursor-pointer hover:border-primary transition-colors" id="captcha-trigger">
+<div class="w-2 h-2 bg-primary rounded-full opacity-0 transition-opacity" id="captcha-dot"></div>
+</div>
+<span class="text-label-md text-on-surface-variant">Verificando se você é humano...</span>
+</div>
+<div class="flex flex-col items-end opacity-50">
+<div class="flex items-center gap-1">
+<span class="text-[10px] font-bold text-secondary">Cloudflare</span>
+</div>
+<span class="text-[8px] text-secondary">Privacy • Terms</span>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-primary text-on-primary py-4 px-unit-lg rounded-lg font-title-lg text-title-lg hover:bg-primary-container active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 group" type="submit">
+                    Enviar link de recuperação
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</form>
+<!-- Footer Links -->
+<footer class="mt-unit-lg pt-unit-md border-t border-outline-variant text-center">
+<a class="inline-flex items-center gap-1 font-body-md text-body-md text-secondary hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                    Voltar para o login
+                </a>
+</footer>
+</div>
+<!-- Technical Metadata (Subtle) -->
+<div class="mt-unit-md text-center">
+<p class="font-label-md text-label-md text-outline-variant uppercase">Marketplace de Esportes Aquáticos de Alta Performance</p>
+</div>
+</main>
+<!-- Success Modal (Hidden by default) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-margin-mobile opacity-0 pointer-events-none transition-opacity duration-300" id="success-modal">
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-sm"></div>
+<div class="relative bg-white p-unit-xl rounded-xl shadow-2xl max-w-sm w-full text-center scale-95 transition-transform duration-300 transform" id="modal-content">
+<div class="w-16 h-16 bg-secondary-container text-primary rounded-full flex items-center justify-center mx-auto mb-unit-md">
+<span class="material-symbols-outlined text-[32px]">check_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-unit-xs">E-mail enviado!</h3>
+<p class="font-body-md text-body-md text-secondary mb-unit-lg">
+                Se este e-mail estiver cadastrado, você receberá as instruções em instantes. Verifique também sua pasta de spam.
+            </p>
+<button class="w-full border border-outline text-primary py-3 px-6 rounded-lg font-semibold hover:bg-surface-container transition-colors" onclick="closeModal()">
+                Entendido
+            </button>
+</div>
+</div>
+<script>
+        // Micro-interactions and simulation logic
+        const captchaTrigger = document.getElementById('captcha-trigger');
+        const captchaDot = document.getElementById('captcha-dot');
+        const form = document.getElementById('recovery-form');
+        const successModal = document.getElementById('success-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        let isVerified = false;
+
+        captchaTrigger.addEventListener('click', () => {
+            isVerified = !isVerified;
+            if(isVerified) {
+                captchaTrigger.classList.add('border-primary');
+                captchaTrigger.innerHTML = '<span class="material-symbols-outlined text-primary text-[16px]">check</span>';
+            } else {
+                captchaTrigger.classList.remove('border-primary');
+                captchaTrigger.innerHTML = '<div id="captcha-dot" class="w-2 h-2 bg-primary rounded-full opacity-0 transition-opacity"></div>';
+            }
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerHTML;
+            
+            // Loading state
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Enviando...';
+            
+            setTimeout(() => {
+                showModal();
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+            }, 1500);
+        });
+
+        function showModal() {
+            successModal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            successModal.classList.add('opacity-0', 'pointer-events-none');
+            modalContent.classList.add('scale-95');
+            modalContent.classList.remove('scale-100');
+        }
+    </script>
+</body></html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KITE360º Experience | Preá, Ceará</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f4f3f8",
+                    "primary-container": "#003366",
+                    "tertiary": "#381300",
+                    "surface-tint": "#3a5f94",
+                    "outline": "#737780",
+                    "surface": "#f9f9fe",
+                    "inverse-on-surface": "#f1f0f5",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1a1c1f",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "secondary": "#566067",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#dae4ed",
+                    "primary": "#001e40",
+                    "on-surface-variant": "#43474f",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e2e2e7",
+                    "primary-fixed": "#d5e3ff",
+                    "on-tertiary-container": "#d8885c",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "on-primary-container": "#799dd6",
+                    "surface-dim": "#dad9de",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#001b3c",
+                    "tertiary-container": "#592300",
+                    "on-tertiary-fixed": "#341100",
+                    "on-secondary-container": "#5c666d",
+                    "surface-container-high": "#e8e8ed",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1a1c1f",
+                    "on-secondary-fixed": "#131d23",
+                    "inverse-surface": "#2f3034",
+                    "secondary-fixed-dim": "#bec8d0",
+                    "secondary-container": "#dae4ed",
+                    "inverse-primary": "#a7c8ff",
+                    "surface-bright": "#f9f9fe",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e2e2e7",
+                    "surface-container": "#eeedf2",
+                    "background": "#f9f9fe",
+                    "tertiary-fixed": "#ffdbca",
+                    "outline-variant": "#c3c6d1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit-sm": "8px",
+                    "unit-xs": "4px",
+                    "container-max-width": "1280px",
+                    "unit-md": "16px",
+                    "unit-lg": "24px",
+                    "gutter": "24px",
+                    "unit-xl": "48px",
+                    "margin-desktop": "32px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "price-display": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "title-lg": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(0, 30, 64, 0.8) 0%, rgba(0, 30, 64, 0.4) 50%, rgba(0, 30, 64, 0) 100%);
+        }
+        .scroll-smooth { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-background text-on-background scroll-smooth">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max-width mx-auto">
+<div class="flex items-center gap-unit-xl">
+<span class="font-headline-md text-headline-md font-bold text-primary">KITE360º</span>
+<div class="hidden md:flex gap-unit-lg items-center">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#program">Programação</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#location">Localização</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#registration">Inscrição</a>
+</div>
+</div>
+<div class="flex items-center gap-unit-md">
+<span class="material-symbols-outlined text-primary cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-primary cursor-pointer">account_circle</span>
+<a class="hidden md:block bg-primary text-on-primary px-unit-lg py-unit-sm rounded-lg font-label-md hover:opacity-90 transition-all" href="#registration">Quero Participar</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center overflow-hidden pt-16">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A wide cinematic shot of the Preá beach in Northeast Brazil at sunset. The turquoise ocean is filled with professional kitesurfers performing jumps against a clear golden-hour sky. The white sand dunes and rustic beach infrastructure are visible in the background, creating a high-performance yet premium sporting atmosphere. The lighting is warm and high-contrast, reflecting a professional aquatic sports brand identity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7u4XkJ92faDTN9xagXu5Qzl0d-qxdf9QMl8YtcJHRaC0S7W6NQNlnTySn_WZkuxy0c9AKB_Y8Gd6sVwl3R6JAJTlhA9qCKStp2NDPnNEgK5ZzJzXLoGzV-6dqplPtybUpBw8bXHMOQzFNxdtX1muUNW1_6Crpp8vzdgTZEdMBysxJ56aZXreV75GlfGPJse0bGwnbCgrv7O2hPj67zdnIBya__Lo7D1qC6cFnhphK0SZ4mJsVv0SKiGSJD2vrjTBoQvGyXcAuTg')">
+</div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 px-margin-desktop max-w-container-max-width mx-auto w-full">
+<div class="max-w-2xl text-on-primary">
+<h1 class="font-display-lg text-display-lg mb-unit-sm leading-tight">KITE360º Experience</h1>
+<p class="font-headline-md text-headline-md mb-unit-lg text-primary-fixed opacity-90">O maior encontro de esportes de vento do Brasil</p>
+<div class="flex flex-col md:flex-row gap-unit-lg mb-unit-xl">
+<div class="flex items-center gap-unit-sm">
+<span class="material-symbols-outlined text-primary-fixed">calendar_today</span>
+<span class="font-title-lg text-title-lg">15 a 18 de Setembro</span>
+</div>
+<div class="flex items-center gap-unit-sm">
+<span class="material-symbols-outlined text-primary-fixed">location_on</span>
+<span class="font-title-lg text-title-lg">Preá, Ceará</span>
+</div>
+</div>
+<a class="inline-flex items-center justify-center bg-white text-primary-container px-10 py-4 rounded-xl font-headline-md hover:bg-primary-fixed transition-colors shadow-xl" href="#registration">
+                    Quero Participar
+                </a>
+</div>
+</div>
+</section>
+<!-- Program Section -->
+<section class="py-unit-xl bg-surface" id="program">
+<div class="px-margin-desktop max-w-container-max-width mx-auto">
+<div class="text-center mb-unit-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-unit-xs">Programação Técnica &amp; Lazer</h2>
+<div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Program Item 1 -->
+<div class="bg-white p-unit-lg border border-outline-variant hover:shadow-lg transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-unit-md">sailing</span>
+<h3 class="font-title-lg text-title-lg mb-unit-sm text-primary">Downwinds Guiados</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Travessias técnicas guiadas por atletas profissionais ao longo da costa cearense, com total suporte náutico.</p>
+</div>
+<!-- Program Item 2 -->
+<div class="bg-white p-unit-lg border border-outline-variant hover:shadow-lg transition-all">
+<span class="material-symbols-outlined text-primary text-4xl mb-unit-md">forum</span>
+<h3 class="font-title-lg text-title-lg mb-unit-sm text-primary">Palestras &amp; Painéis</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Discussões sobre aerodinâmica, novos materiais, segurança no mar e o futuro do kitesurf e wingfoil no Brasil.</p>
+</div>
+<!-- Program Item 3 -->
+<div class="bg-white p-unit-lg border border-outline-variant hover:shadow-lg transition-all">
+<span class="material-symbols-outlined text-primary text-4xl mb-unit-md">settings_input_component</span>
+<h3 class="font-title-lg text-title-lg mb-unit-sm text-primary">Demo Day</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Test-drive exclusivo das coleções 2024/2025 das maiores marcas mundiais de equipamentos de ponta.</p>
+</div>
+<!-- Program Item 4 -->
+<div class="bg-white p-unit-lg border border-outline-variant hover:shadow-lg transition-all">
+<span class="material-symbols-outlined text-primary text-4xl mb-unit-md">music_note</span>
+<h3 class="font-title-lg text-title-lg mb-unit-sm text-primary">Shows ao Pôr do Sol</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Momentos de descontração com bandas ao vivo e DJs no beach club oficial do evento para fechar o dia com energia.</p>
+</div>
+<!-- Program Item 5 -->
+<div class="bg-white p-unit-lg border border-outline-variant hover:shadow-lg transition-all">
+<span class="material-symbols-outlined text-primary text-4xl mb-unit-md">campaign</span>
+<h3 class="font-title-lg text-title-lg mb-unit-sm text-primary">Ativações de Marcas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Experiências imersivas dos patrocinadores, lounges VIP, workshops de manutenção e sorteio de brindes.</p>
+</div>
+<!-- Call to action card -->
+<div class="bg-primary-container p-unit-lg border border-primary text-on-primary flex flex-col justify-center items-center text-center">
+<h3 class="font-title-lg text-title-lg mb-unit-md">Vagas Limitadas!</h3>
+<p class="font-body-md mb-unit-lg opacity-80">Garanta seu kit de atleta e acesso total aos painéis técnicos.</p>
+<a class="bg-white text-primary-container px-6 py-2 rounded font-label-md hover:bg-secondary-fixed transition-colors" href="#registration">Inscrever-se Agora</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Sponsors Section -->
+<section class="py-unit-xl bg-surface-container-low">
+<div class="px-margin-desktop max-w-container-max-width mx-auto">
+<h2 class="font-label-md text-label-md text-center text-on-surface-variant uppercase tracking-widest mb-unit-xl">Patrocinadores Master</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter mb-unit-xl">
+<div class="h-48 bg-white border border-outline-variant flex items-center justify-center p-unit-xl grayscale hover:grayscale-0 transition-all cursor-pointer">
+<img class="h-16 object-contain" data-alt="Minimalist vector logo for a high-end luxury kiteboarding equipment manufacturer, featuring clean typography and a stylized wing icon. The logo is displayed in deep navy on a white background, representing premium quality and engineering excellence in extreme sports gear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAj9UITIH2S3ZOVPlI2sZ2omzUMkhhCOiPxaLfAqg1I3VprVcsTHmSS4KxQvjCYTXJf1qKF59oN5-KcdN9pHXDpZ7jWqcfpPg9C_mVwzTFqRT7HlUbkDkLVEuzkezPM0-9SHBF9G6jz_UTwLmLiBgM6szETTlmM0p874lbnvWjkmWU3a-oNp9CbLyfebsu71WCAemzk-KjuUtgZ1cf-UbNwDsq6rDG1jKwt3f98hfeG2G39sq5Hkp-uecmzZ3yfSSKK7Cm0Rv5nw"/>
+</div>
+<div class="h-48 bg-white border border-outline-variant flex items-center justify-center p-unit-xl grayscale hover:grayscale-0 transition-all cursor-pointer">
+<img class="h-16 object-contain" data-alt="Clean corporate logo for a global solar energy or renewable power company, using sharp geometric shapes and a modern professional font. The visual identity suggests sustainability, coastal energy, and technological innovation, perfectly aligned with a wind-sports event." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFuOQZWTgjBFtnLw17FczQI1s68U_oS8E3YL0CNucih5VBdcRUfWLi42X03k2cx_yTRgNjxvX6yAtdKk_UF3G63x4KOd-Tid128ZXtEtuwQyvU9CgOUyYY5erVj3KfYqwQmSrDveVUXMfZMIkjYp5oFEVVeD1P0Y1nszLnsIGGlmzAesqFN4u95GjC8JXzT3fS8Uq5rgZhAe4rOC6jXH7IGF7xvwC7gLtzSsxg1tXc4PSCi9eP8UIDojdrpe41V-f_iCDvpL4A9g"/>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-unit-md">
+<!-- Partner Logos -->
+<div class="h-24 bg-white/50 border border-outline-variant flex items-center justify-center p-unit-md grayscale hover:grayscale-0 transition-all">
+<div class="w-16 h-8 bg-surface-variant rounded"></div>
+</div>
+<div class="h-24 bg-white/50 border border-outline-variant flex items-center justify-center p-unit-md grayscale hover:grayscale-0 transition-all">
+<div class="w-16 h-8 bg-surface-variant rounded"></div>
+</div>
+<div class="h-24 bg-white/50 border border-outline-variant flex items-center justify-center p-unit-md grayscale hover:grayscale-0 transition-all">
+<div class="w-16 h-8 bg-surface-variant rounded"></div>
+</div>
+<div class="h-24 bg-white/50 border border-outline-variant flex items-center justify-center p-unit-md grayscale hover:grayscale-0 transition-all">
+<div class="w-16 h-8 bg-surface-variant rounded"></div>
+</div>
+<div class="h-24 bg-white/50 border border-outline-variant flex items-center justify-center p-unit-md grayscale hover:grayscale-0 transition-all">
+<div class="w-16 h-8 bg-surface-variant rounded"></div>
+</div>
+<div class="h-24 bg-white/50 border border-outline-variant flex items-center justify-center p-unit-md grayscale hover:grayscale-0 transition-all">
+<div class="w-16 h-8 bg-surface-variant rounded"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section class="py-unit-xl" id="location">
+<div class="px-margin-desktop max-w-container-max-width mx-auto">
+<div class="flex flex-col lg:flex-row gap-gutter">
+<div class="lg:w-1/3">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-unit-md">O Paraíso do Vento</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-unit-lg">A Vila do Preá oferece as condições perfeitas de vento constante, águas quentes e uma estrutura de hospitalidade de alto padrão para receber o KITE360º Experience.</p>
+<div class="space-y-unit-md">
+<div class="flex items-start gap-unit-md">
+<span class="material-symbols-outlined text-primary mt-1">flight</span>
+<div>
+<p class="font-title-lg text-title-lg text-primary">Acesso</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Próximo ao Aeroporto Regional de Jericoacoara (JJD).</p>
+</div>
+</div>
+<div class="flex items-start gap-unit-md">
+<span class="material-symbols-outlined text-primary mt-1">hotel</span>
+<div>
+<p class="font-title-lg text-title-lg text-primary">Hospedagem</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Confira nossa rede de hotéis parceiros com tarifas especiais.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-2/3 h-[450px] relative border border-outline-variant">
+<!-- Map Placeholder -->
+<div class="w-full h-full bg-surface-variant flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-location="Preá, Ceará" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADFk7HGxh0npQ6epgapM3o4yM3UD4I-SHmRy95GREE069fZvXLBQjBlOlZkftWyno7FQBkpQ8pi1cZr8LZzWtVQlWHktZHNBusqPJxsXumS9-NXATfXuOE4v3urohdBvgciURuG3MCzB4gGkiaQwafyupvU5GbUm2QX9U6RnW-v61_WSC-3f5BB-ItcH8hdYupMraorVthVfTuTvL2FQwEWeUh2G-XTpeUkRm8zn_LrpVpqijhkozsSafnZycAEZnwmcLaBSpuaw"/>
+<!-- Custom Marker UI -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="bg-primary text-on-primary px-unit-md py-unit-xs rounded shadow-lg font-label-md mb-2">KITE360º HQ</div>
+<span class="material-symbols-outlined text-primary text-5xl drop-shadow-md" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Registration Section -->
+<section class="py-unit-xl bg-primary-container text-on-primary" id="registration">
+<div class="px-margin-desktop max-w-container-max-width mx-auto">
+<div class="max-w-3xl mx-auto">
+<div class="text-center mb-unit-xl">
+<h2 class="font-headline-lg text-headline-lg mb-unit-md">Garanta sua Vaga</h2>
+<p class="font-body-lg text-body-lg opacity-80">Preencha os dados abaixo para receber os detalhes de pagamento e confirmação.</p>
+</div>
+<form class="bg-white p-unit-xl rounded-xl shadow-2xl text-on-background">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-unit-lg">
+<div class="space-y-unit-xs">
+<label class="font-label-md text-label-md text-primary">Nome Completo</label>
+<input class="w-full border-outline-variant rounded-lg p-unit-md focus:ring-primary focus:border-primary" placeholder="Seu nome" type="text"/>
+</div>
+<div class="space-y-unit-xs">
+<label class="font-label-md text-label-md text-primary">E-mail Corporativo</label>
+<input class="w-full border-outline-variant rounded-lg p-unit-md focus:ring-primary focus:border-primary" placeholder="email@exemplo.com" type="email"/>
+</div>
+<div class="space-y-unit-xs">
+<label class="font-label-md text-label-md text-primary">Telefone / WhatsApp</label>
+<input class="w-full border-outline-variant rounded-lg p-unit-md focus:ring-primary focus:border-primary" placeholder="(00) 00000-0000" type="tel"/>
+</div>
+<div class="space-y-unit-xs">
+<label class="font-label-md text-label-md text-primary">Nível de Experiência</label>
+<select class="w-full border-outline-variant rounded-lg p-unit-md focus:ring-primary focus:border-primary">
+<option>Iniciante / Enthusiasta</option>
+<option>Amador Avançado</option>
+<option>Profissional / Atleta</option>
+<option>Empresário / Parceiro</option>
+</select>
+</div>
+</div>
+<!-- Captcha Placeholder -->
+<div class="mb-unit-lg bg-surface-container-low p-unit-md flex items-center justify-between border border-outline-variant rounded">
+<div class="flex items-center gap-unit-md">
+<div class="w-6 h-6 border-2 border-outline rounded"></div>
+<span class="font-body-md">Eu sou humano</span>
+</div>
+<div class="text-[10px] text-outline text-right">
+                            Cloudflare Turnstile<br/>Privacy • Terms
+                        </div>
+</div>
+<button class="w-full bg-primary-container text-on-primary py-unit-lg rounded-xl font-headline-md hover:opacity-90 transition-all shadow-lg" type="submit">
+                        Confirmar Pré-Inscrição
+                    </button>
+<p class="text-center font-label-md text-on-surface-variant mt-unit-md">
+                        Ao se inscrever você concorda com nossos <a class="underline" href="#">Termos e Privacidade</a>.
+                    </p>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter py-unit-xl px-margin-desktop max-w-container-max-width mx-auto">
+<div class="space-y-unit-md">
+<span class="font-headline-md text-headline-md font-bold text-primary">KITE360º</span>
+<p class="font-body-md text-body-md text-secondary">A maior plataforma de conexão e marketplace de kitesurf da América Latina.</p>
+<div class="flex gap-unit-md text-primary">
+<span class="material-symbols-outlined cursor-pointer">share</span>
+<span class="material-symbols-outlined cursor-pointer">camera</span>
+<span class="material-symbols-outlined cursor-pointer">alternate_email</span>
+</div>
+</div>
+<div class="space-y-unit-md">
+<h4 class="font-label-md text-label-md text-primary uppercase">Evento</h4>
+<ul class="space-y-unit-sm font-body-md text-secondary">
+<li><a class="hover:text-primary hover:underline" href="#program">Cronograma</a></li>
+<li><a class="hover:text-primary hover:underline" href="#">Logística &amp; Transfer</a></li>
+<li><a class="hover:text-primary hover:underline" href="#">Hospedagem</a></li>
+<li><a class="hover:text-primary hover:underline" href="#">FAQ</a></li>
+</ul>
+</div>
+<div class="space-y-unit-md">
+<h4 class="font-label-md text-label-md text-primary uppercase">Marketplace</h4>
+<ul class="space-y-unit-sm font-body-md text-secondary">
+<li><a class="hover:text-primary hover:underline" href="#">Kitesurf</a></li>
+<li><a class="hover:text-primary hover:underline" href="#">Wingfoil</a></li>
+<li><a class="hover:text-primary hover:underline" href="#">Pranchas Usadas</a></li>
+<li><a class="hover:text-primary hover:underline" href="#">Anunciar Gear</a></li>
+</ul>
+</div>
+<div class="space-y-unit-md">
+<h4 class="font-label-md text-label-md text-primary uppercase">Contato</h4>
+<ul class="space-y-unit-sm font-body-md text-secondary">
+<li class="flex items-center gap-unit-sm"><span class="material-symbols-outlined text-sm">mail</span> experience@kite360.com.br</li>
+<li class="flex items-center gap-unit-sm"><span class="material-symbols-outlined text-sm">phone</span> +55 (85) 99999-9999</li>
+<li class="flex items-center gap-unit-sm"><span class="material-symbols-outlined text-sm">location_on</span> Preá - Cruz, Ceará</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-outline-variant py-unit-md">
+<div class="px-margin-desktop max-w-container-max-width mx-auto flex flex-col md:flex-row justify-between items-center text-center gap-unit-sm">
+<span class="font-label-md text-label-md text-secondary">© 2024 KITE360º Marketplace. Todos os direitos reservados.</span>
+<div class="flex gap-unit-lg font-label-md text-secondary">
+<a class="hover:text-primary" href="#">Termos de Uso</a>
+<a class="hover:text-primary" href="#">Privacidade</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple scroll effect for navbar
+        window.addEventListener('scroll', () =></script></body></html>

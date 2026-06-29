@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AeroSurf | Configurações de Conta</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#799dd6",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f1f0f5",
+                    "secondary-fixed": "#dae4ed",
+                    "on-secondary-fixed": "#131d23",
+                    "on-error": "#ffffff",
+                    "primary": "#001e40",
+                    "secondary": "#566067",
+                    "outline-variant": "#c3c6d1",
+                    "on-background": "#1a1c1f",
+                    "background": "#f9f9fe",
+                    "primary-container": "#003366",
+                    "on-secondary-container": "#5c666d",
+                    "tertiary": "#381300",
+                    "surface-container-highest": "#e2e2e7",
+                    "inverse-surface": "#2f3034",
+                    "on-tertiary-container": "#d8885c",
+                    "surface-tint": "#3a5f94",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "outline": "#737780",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "tertiary-fixed": "#ffdbca",
+                    "tertiary-container": "#592300",
+                    "secondary-container": "#dae4ed",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e2e2e7",
+                    "surface-container": "#eeedf2",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e8e8ed",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "on-surface-variant": "#43474f",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "inverse-primary": "#a7c8ff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#341100",
+                    "primary-fixed": "#d5e3ff",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#dad9de",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "on-surface": "#1a1c1f",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f4f3f8",
+                    "surface": "#f9f9fe",
+                    "secondary-fixed-dim": "#bec8d0",
+                    "on-primary-fixed": "#001b3c",
+                    "surface-bright": "#f9f9fe",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit-lg": "24px",
+                    "unit-md": "16px",
+                    "container-max-width": "1280px",
+                    "unit-sm": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "unit-xs": "4px",
+                    "margin-desktop": "32px",
+                    "unit-xl": "48px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "title-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"]
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e2e7; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-unit-md">
+<span class="font-headline-md text-headline-md font-bold text-primary">AeroSurf</span>
+<div class="hidden md:flex ml-unit-xl gap-unit-lg">
+<nav class="flex gap-unit-lg">
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors px-unit-sm py-1 rounded font-body-md text-body-md" href="#">Explorar</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors px-unit-sm py-1 rounded font-body-md text-body-md" href="#">Vender Equipamento</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors px-unit-sm py-1 rounded font-body-md text-body-md" href="#">Comunidade</a>
+</nav>
+</div>
+</div>
+<div class="flex items-center gap-unit-md">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-body-md w-64 focus:ring-2 focus:ring-primary" placeholder="Buscar kite, boards..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-primary p-2 hover:bg-surface-container-low rounded-full transition-colors">notifications</button>
+<div class="w-8 h-8 rounded-full bg-primary-fixed overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional close-up studio portrait of a kiteboarding instructor, Alex Rivera, wearing a premium navy blue technical polo. The background is a clean, neutral grey that emphasizes the high-contrast lighting on his determined face. The image is crisp, modern, and conveys a sense of expertise and elite athleticism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYPDR8ZLVOyC0vVzkiFF_DcaFBcf9xcH2W_GuqhVmpqUlcGbz9sVv3kqgaoJ-BhItlZ9tiwke-jdIxjp2uGBOf22cuix8-HiRnsj-AlTjWvFRbprgXE4Yf--_VsaeQLdHSTpwo8y7iwrhOfYddDca28gnPKW6geay6ZwQYfcg8aDt_j-OWo8-PDbnHcq3lb04U517-iAvtJtX4cnm-48DyxBOqs7_vgtA39fv5dQCnTLKmudRiY4Yl4hH9-zLym5GwcLOo3buRow"/>
+</div>
+</div>
+</header>
+<div class="pt-16 flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 flex flex-col p-unit-md bg-surface-container-low border-r border-outline-variant hidden md:flex">
+<div class="flex items-center gap-unit-sm mb-unit-xl px-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">person_heart</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-primary">Alex Rivera</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Membro Pro</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<button class="nav-tab w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-150 active:translate-x-1 font-bold bg-secondary-container text-on-secondary-container" data-tab="perfil" onclick="switchTab('perfil')">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Perfil</span>
+</button>
+<button class="nav-tab w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-150 active:translate-x-1 text-on-secondary-fixed-variant hover:bg-surface-container-highest" data-tab="seguranca" onclick="switchTab('seguranca')">
+<span class="material-symbols-outlined">shield</span>
+<span class="font-label-md text-label-md">Segurança</span>
+</button>
+<button class="nav-tab w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-150 active:translate-x-1 text-on-secondary-fixed-variant hover:bg-surface-container-highest" data-tab="notificacoes" onclick="switchTab('notificacoes')">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-label-md text-label-md">Notificações</span>
+</button>
+<button class="nav-tab w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-150 active:translate-x-1 text-on-secondary-fixed-variant hover:bg-surface-container-highest" data-tab="privacidade" onclick="switchTab('privacidade')">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-label-md text-label-md">Privacidade</span>
+</button>
+<button class="nav-tab w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-150 active:translate-x-1 text-on-secondary-fixed-variant hover:bg-surface-container-highest" data-tab="aparencia" onclick="switchTab('aparencia')">
+<span class="material-symbols-outlined">palette</span>
+<span class="font-label-md text-label-md">Aparência</span>
+</button>
+</nav>
+<div class="mt-auto pt-unit-md border-t border-outline-variant space-y-1">
+<button class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-on-secondary-fixed-variant hover:bg-surface-container-highest transition-all duration-150">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-label-md text-label-md">Suporte</span>
+</button>
+<button class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-error hover:bg-error-container transition-all duration-150">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Sair</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-unit-md md:p-unit-xl max-w-4xl">
+<!-- Breadcrumbs Mobile -->
+<div class="md:hidden flex items-center gap-2 mb-unit-md text-on-surface-variant font-label-md text-label-md">
+<span>Configurações</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold active-tab-label">Perfil</span>
+</div>
+<!-- Content Sections Container -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<!-- Perfil Section -->
+<section class="tab-content block p-unit-lg" id="content-perfil">
+<div class="mb-unit-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-1">Perfil Público</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Como os outros veem você na plataforma AeroSurf.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-unit-xl mb-unit-xl">
+<!-- Avatar Upload -->
+<div class="flex flex-col items-center gap-unit-md">
+<div class="relative group">
+<div class="w-32 h-32 rounded-full overflow-hidden border-4 border-surface-container shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A high-resolution profile picture of a professional surfer with wind-swept hair, smiling warmly. The photo is taken at a beach during the golden hour, with soft, warm sunlight illuminating the subject. The background shows a blurry turquoise ocean and white sand, creating a fresh, athletic, and premium water-sports atmosphere." id="avatar-preview" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJUlMze5YRP3Y1CEStKSyYD9CHBkrTDYbwGoceCaEqqHKLy7BnexWBAK9QmvhZduo5eFIDuwEc9eYuhMY4jjhYJ4QdtzdDSPae8HrswLaKho6nXu2OkW1tfmDthqDi-4eVRAPXfrg1WPuFS-dSHHgL0ANxlfVwJj2iyzh9MQmWxMOK3XXwUpfgOnEg0IajQB_kOdFod2nVG7RqeSgEvOsB0_ZOkU3SXF8iM9wxK9JuxUzoKDL2qVLRMy18zytUxtsCfyI4EhZV-g"/>
+</div>
+<label class="absolute inset-0 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover:opacity-100 cursor-pointer transition-opacity" for="avatar-input">
+<span class="material-symbols-outlined">photo_camera</span>
+</label>
+<input class="hidden" id="avatar-input" type="file"/>
+</div>
+<div class="text-center">
+<button class="text-primary font-label-md text-label-md hover:underline">Trocar foto</button>
+<p class="text-[10px] text-outline mt-1 uppercase">JPG, PNG ou WEBP. Máx 2MB.</p>
+</div>
+</div>
+<!-- Profile Form -->
+<div class="flex-1 space-y-unit-md">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-unit-md">
+<div class="space-y-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Nome Completo</label>
+<input class="w-full border border-outline-variant rounded-lg p-3 font-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none" type="text" value="Alex Rivera"/>
+</div>
+<div class="space-y-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Localização</label>
+<input class="w-full border border-outline-variant rounded-lg p-3 font-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none" type="text" value="Cumbuco, CE"/>
+</div>
+</div>
+<div class="space-y-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Bio</label>
+<textarea class="w-full border border-outline-variant rounded-lg p-3 font-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none resize-none" rows="4">Kitesurfista profissional com 10 anos de experiência. Especialista em Big Air e instrutor certificado. Sempre em busca dos melhores ventos do Nordeste.</textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- Segurança Section -->
+<section class="tab-content hidden p-unit-lg" id="content-seguranca">
+<div class="mb-unit-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-1">Segurança</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Gerencie sua senha e sessões ativas.</p>
+</div>
+<div class="space-y-unit-xl">
+<div class="p-unit-md bg-surface-container-low rounded-xl border border-outline-variant">
+<h3 class="font-title-lg text-title-lg mb-unit-md">Alterar Senha</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-unit-md">
+<div class="space-y-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Senha atual</label>
+<input class="w-full border border-outline-variant rounded-lg p-3 font-body-md focus:ring-2 focus:ring-primary outline-none" type="password"/>
+</div>
+<div class="space-y-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Nova senha</label>
+<input class="w-full border border-outline-variant rounded-lg p-3 font-body-md focus:ring-2 focus:ring-primary outline-none" type="password"/>
+</div>
+<div class="space-y-unit-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Confirmar nova senha</label>
+<input class="w-full border border-outline-variant rounded-lg p-3 font-body-md focus:ring-2 focus:ring-primary outline-none" type="password"/>
+</div>
+</div>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg mb-unit-md">Sessões Ativas</h3>
+<div class="space-y-unit-sm">
+<div class="flex items-center justify-between p-unit-md border border-outline-variant rounded-lg">
+<div class="flex items-center gap-unit-md">
+<span class="material-symbols-outlined text-primary">laptop</span>
+<div>
+<p class="font-label-md text-label-md">Chrome no macOS • Fortaleza, Brasil</p>
+<p class="text-[10px] text-on-surface-variant uppercase">Sessão atual</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold rounded">ATIVO</span>
+</div>
+<div class="flex items-center justify-between p-unit-md border border-outline-variant rounded-lg">
+<div class="flex items-center gap-unit-md">
+<span class="material-symbols-outlined text-on-surface-variant">smartphone</span>
+<div>
+<p class="font-label-md text-label-md">iPhone 13 • Jericoacoara, Brasil</p>
+<p class="text-[10px] text-on-surface-variant uppercase">Último acesso: há 2 horas</p>
+</div>
+</div>
+<button class="text-error font-label-md text-label-md hover:underline">Desconectar</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Notificações Section -->
+<section class="tab-content hidden p-unit-lg" id="content-notificacoes">
+<div class="mb-unit-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-1">Notificações</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Escolha como quer ser avisado sobre novidades.</p>
+</div>
+<div class="space-y-unit-xl">
+<div>
+<h3 class="font-title-lg text-title-lg mb-unit-md border-b border-outline-variant pb-2">Plataforma</h3>
+<div class="space-y-unit-md">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-body-lg text-body-lg font-semibold">Novas mensagens</p>
+<p class="text-body-md text-on-surface-variant">Avisar quando receber uma proposta ou dúvida.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="font-body-lg text-body-lg font-semibold">Alertas de preço</p>
+<p class="text-body-md text-on-surface-variant">Avisar quando um item da sua lista de desejos baixar o preço.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg mb-unit-md border-b border-outline-variant pb-2">E-mail</h3>
+<div class="space-y-unit-md">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-body-lg text-body-lg font-semibold">Resumo semanal</p>
+<p class="text-body-md text-on-surface-variant">Novidades do mercado e melhores ofertas da semana.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="font-body-lg text-body-lg font-semibold">Novidades da plataforma</p>
+<p class="text-body-md text-on-surface-variant">Novas funcionalidades e atualizações do sistema.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Privacidade Section -->
+<section class="tab-content hidden p-unit-lg" id="content-privacidade">
+<div class="mb-unit-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-1">Privacidade</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Controle a visibilidade dos seus dados.</p>
+</div>
+<div class="space-y-unit-xl">
+<div class="p-unit-md border border-outline-variant rounded-xl space-y-unit-md">
+<div class="flex items-start gap-unit-md">
+<input checked="" class="mt-1 text-primary focus:ring-primary" id="vis-public" name="visibility" type="radio"/>
+<label for="vis-public">
+<p class="font-body-lg text-body-lg font-semibold">Perfil Público</p>
+<p class="text-body-md text-on-surface-variant">Qualquer pessoa pode ver seu perfil, histórico de vendas e avaliações.</p>
+</label>
+</div>
+<div class="flex items-start gap-unit-md">
+<input class="mt-1 text-primary focus:ring-primary" id="vis-private" name="visibility" type="radio"/>
+<label for="vis-private">
+<p class="font-body-lg text-body-lg font-semibold">Perfil Privado</p>
+<p class="text-body-md text-on-surface-variant">Apenas usuários logados que entrarem em contato podem ver seus detalhes.</p>
+</label>
+</div>
+</div>
+<div class="space-y-unit-md">
+<h3 class="font-title-lg text-title-lg">Uso de Dados</h3>
+<div class="flex items-center gap-unit-md">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" id="data-share" type="checkbox"/>
+<label class="text-body-md text-on-surface-variant" for="data-share">Permitir o uso de dados de navegação para melhorar recomendações de equipamentos.</label>
+</div>
+<button class="text-primary font-label-md text-label-md flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                                Baixar meus dados (.json)
+                            </button>
+</div>
+</div>
+</section>
+<!-- Aparência Section -->
+<section class="tab-content hidden p-unit-lg" id="content-aparencia">
+<div class="mb-unit-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-1">Aparência</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Personalize o visual do seu dashboard.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-unit-md mb-unit-lg">
+<div class="theme-card cursor-pointer border-2 border-primary rounded-xl p-unit-md bg-white text-center transition-all" id="theme-claro" onclick="selectTheme('claro')">
+<div class="w-full h-24 bg-surface-container rounded-lg mb-unit-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant">light_mode</span>
+</div>
+<p class="font-label-md text-label-md font-bold">Claro</p>
+</div>
+<div class="theme-card cursor-pointer border border-outline-variant rounded-xl p-unit-md bg-zinc-900 text-white text-center hover:bg-zinc-800 transition-all" id="theme-escuro" onclick="selectTheme('escuro')">
+<div class="w-full h-24 bg-zinc-800 rounded-lg mb-unit-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-zinc-400">dark_mode</span>
+</div>
+<p class="font-label-md text-label-md font-bold">Escuro</p>
+</div>
+<div class="theme-card cursor-pointer border border-outline-variant rounded-xl p-unit-md bg-gradient-to-br from-white to-zinc-900 text-center hover:shadow-md transition-all" id="theme-auto" onclick="selectTheme('auto')">
+<div class="w-full h-24 bg-surface-container-highest rounded-lg mb-unit-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary">brightness_auto</span>
+</div>
+<p class="font-label-md text-label-md font-bold">Automático</p>
+</div>
+</div>
+<div class="p-unit-md bg-secondary-container/30 rounded-lg flex items-start gap-unit-md">
+<span class="material-symbols-outlined text-on-secondary-container">info</span>
+<p class="text-body-md text-on-secondary-container">Suas preferências de tema são salvas automaticamente no navegador e sincronizadas entre dispositivos.</p>
+</div>
+</section>
+<!-- Action Bar -->
+<div class="bg-surface-container-low px-unit-lg py-4 border-t border-outline-variant flex justify-end gap-unit-md">
+<button class="px-6 py-2 text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest rounded-lg transition-colors">Descartar</button>
+<button class="px-8 py-2 bg-primary text-on-primary font-label-md text-label-md font-bold rounded-lg hover:shadow-lg active:scale-95 transition-all">Salvar alterações</button>
+</div>
+</div>
+</main>
+</div>
+<!-- Mobile Bottom Navigation -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface border-t border-outline-variant flex justify-around items-center h-16 px-4 z-50">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-label-md">Explorar</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-label-md">Desejos</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-[10px] font-label-md font-bold">Perfil</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">mail</span>
+<span class="text-[10px] font-label-md">Mensagens</span>
+</button>
+</nav>
+<script>
+        function switchTab(tabId) {
+            // Hide all sections
+            document.querySelectorAll('.tab-content').forEach(section => {
+                section.classList.add('hidden');
+            });
+            // Show selected section
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+
+            // Update sidebar buttons
+            document.querySelectorAll('.nav-tab').forEach(btn => {
+                btn.classList.remove('bg-secondary-container', 'text-on-secondary-container', 'font-bold');
+                btn.classList.add('text-on-secondary-fixed-variant', 'hover:bg-surface-container-highest');
+            });
+            
+            const activeBtn = document.querySelector(`[data-tab="${tabId}"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-secondary-container', 'text-on-secondary-container', 'font-bold');
+                activeBtn.classList.remove('text-on-secondary-fixed-variant', 'hover:bg-surface-container-highest');
+            }
+
+            // Update mobile breadcrumb label
+            const labelMap = {
+                'perfil': 'Perfil',
+                'seguranca': 'Segurança',
+                'notificacoes': 'Notificações',
+                'privacidade': 'Privacidade',
+                'aparencia': 'Aparência'
+            };
+            document.querySelector('.active-tab-label').innerText = labelMap[tabId];
+        }
+
+        function selectTheme(theme) {
+            document.querySelectorAll('.theme-card').forEach(card => {
+                card.classList.remove('border-primary', 'border-2');
+                card.classList.add('border', 'border-outline-variant');
+            });
+            const activeCard = document.getElementById('theme-' + theme);
+            activeCard.classList.add('border-primary', 'border-2');
+            activeCard.classList.remove('border', 'border-outline-variant');
+        }
+
+        // Simple animation for the save button
+        const saveBtn = document.querySelector('button.bg-primary');
+        saveBtn.addEventListener('click', () => {
+            const originalText = saveBtn.innerText;
+            saveBtn.innerText = 'Salvando...';
+            saveBtn.disabled = true;
+            saveBtn.classList.add('opacity-70');
+            
+            setTimeout(() => {
+                saveBtn.innerText = 'Alterações salvas!';
+                saveBtn.classList.remove('bg-primary');
+                saveBtn.classList.add('bg-green-600');
+                
+                setTimeout(() => {
+                    saveBtn.innerText = originalText;
+                    saveBtn.classList.remove('bg-green-600', 'opacity-70');
+                    saveBtn.classList.add('bg-primary');
+                    saveBtn.disabled = false;
+                }, 2000);
+            }, 1000);
+        });
+    </script>
+</body></html>

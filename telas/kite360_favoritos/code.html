@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kite360º | Meus Favoritos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#341100",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#381300",
+                    "on-surface-variant": "#43474f",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "surface": "#f9f9fe",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "inverse-primary": "#a7c8ff",
+                    "on-error": "#ffffff",
+                    "primary": "#001e40",
+                    "outline": "#737780",
+                    "on-surface": "#1a1c1f",
+                    "on-primary-fixed": "#001b3c",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "on-secondary-fixed": "#131d23",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#592300",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#dae4ed",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#d8885c",
+                    "surface-variant": "#e2e2e7",
+                    "surface-dim": "#dad9de",
+                    "surface-container": "#eeedf2",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#5c666d",
+                    "on-background": "#1a1c1f",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "surface-container-low": "#f4f3f8",
+                    "secondary-fixed-dim": "#bec8d0",
+                    "inverse-on-surface": "#f1f0f5",
+                    "primary-container": "#003366",
+                    "background": "#f9f9fe",
+                    "on-primary-container": "#799dd6",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#d5e3ff",
+                    "secondary-fixed": "#dae4ed",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e2e2e7",
+                    "surface-container-high": "#e8e8ed",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "surface-bright": "#f9f9fe",
+                    "tertiary-fixed": "#ffdbca",
+                    "inverse-surface": "#2f3034",
+                    "secondary": "#566067",
+                    "outline-variant": "#c3c6d1",
+                    "surface-tint": "#3a5f94"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "unit-lg": "24px",
+                    "unit-sm": "8px",
+                    "unit-xl": "48px",
+                    "unit-md": "16px",
+                    "unit-xs": "4px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "32px",
+                    "container-max-width": "1280px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "price-display": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "title-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopNavBar -->
+<nav class="bg-surface border-b border-outline-variant docked full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center px-margin-desktop py-unit-sm w-full max-w-container-max-width mx-auto">
+<div class="flex items-center gap-gutter">
+<span class="font-headline-md text-headline-md font-bold text-primary">Kite360º</span>
+<div class="hidden md:flex items-center bg-surface-container-low px-unit-md py-unit-xs rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant mr-unit-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-64" placeholder="Buscar equipamentos..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-unit-lg">
+<button class="hidden lg:block text-primary font-bold px-unit-md py-unit-sm rounded hover:bg-surface-container-low transition-all">Anunciar</button>
+<div class="flex items-center gap-unit-md text-secondary">
+<button class="p-unit-sm hover:bg-surface-container-low rounded-full transition-colors relative">
+<span class="material-symbols-outlined">mail</span>
+</button>
+<button class="p-unit-sm hover:bg-surface-container-low rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A professional close-up studio portrait of a sporty user with a friendly expression. The lighting is crisp and clean, reflecting a high-end marketplace aesthetic with a neutral, light-grey studio background. The style is modern and minimalist, highlighting trust and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2cHY-D1LrfBZfoxFkRbCpUBWfDebyTGeD5PK8tkcA1XfpSUh_uaOVFC2xUNHF6_sCYw0Vyi_t8tgcpXRIShwbcR4OrEQ-60PwkS1aBeTeSjDvjasY6ehVGJzkoM4Hrb0nKwyDNjQBfa4k3mYm0pGJ6aokZIZT7tCvBTE0PbTGKbc8k25KVJSes0gwADAE9E6LmqHMDV0Gq7sXr6fZ--8gGEqatXheLffZoEoKuYqtbYWvTe67QwsefQBP44UIXHjteESvzwP0Mg"/>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Category Bar) -->
+<div class="bg-surface-container-lowest border-b border-outline-variant h-12 w-full">
+<div class="flex gap-gutter px-margin-desktop items-center w-full max-w-container-max-width mx-auto h-full overflow-x-auto no-scrollbar">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider mr-unit-md">Categorias:</span>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all whitespace-nowrap" href="#">Kitesurf</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all whitespace-nowrap" href="#">Wingfoil</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all whitespace-nowrap" href="#">Windsurf</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all whitespace-nowrap" href="#">Surf</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all whitespace-nowrap" href="#">Paddle</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all whitespace-nowrap" href="#">Accessories</a>
+</div>
+</div>
+<main class="max-w-container-max-width mx-auto px-margin-desktop py-unit-xl min-h-[614px]">
+<!-- Page Header -->
+<header class="mb-unit-xl flex justify-between items-end">
+<div>
+<nav class="flex items-center gap-unit-xs text-on-surface-variant font-label-md text-label-md mb-unit-sm">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Favoritos</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-primary">Meus Favoritos</h1>
+<p class="text-on-surface-variant font-body-md text-body-md mt-unit-xs">Gerencie os equipamentos que você salvou para ver mais tarde.</p>
+</div>
+<div class="flex items-center gap-unit-md">
+<span class="font-label-md text-label-md px-unit-md py-unit-xs bg-secondary-container text-on-secondary-container rounded-full" id="favorites-count">4 ITENS</span>
+</div>
+</header>
+<!-- Favorites Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter" id="favorites-grid">
+<!-- Product Card 1 -->
+<article class="bg-surface border border-outline-variant group hover:shadow-lg transition-all duration-300 relative flex flex-col">
+<button class="absolute top-unit-md right-unit-md z-10 bg-white/80 backdrop-blur-sm p-unit-sm rounded-full text-error hover:scale-110 transition-transform shadow-sm" onclick="this.closest('article').remove(); updateCount();">
+<span class="material-symbols-outlined fill-icon">favorite</span>
+</button>
+<div class="aspect-[4/3] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional product shot of a vibrant blue North Reach 12m kite spread out on a white sandy beach with turquoise ocean water in the background. High-key natural sunlight creates sharp details and realistic textures of the kite fabric. Minimalist, premium outdoor sports photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaBHusWU4oZxKaZLR-HQV9pBNbslCb2RgqdfHAbhfEQz_fxfmKs0LrRuk6_3h_cXFrjDta4BoTEXES_gOXA9U6yGA15LAomfkh1aqcSWDCtxMSagY3_QzTe6UJH7pXHGby9y7PU0ZU330MftX9UXtwC2VnrRotv3q9OP7sPN-Yiw8XwSk6y599v6Pm2F126nJxXbqsXBj2ByYBGxLF6YLcuWyzR_d9IuNe9haIImdch8Z2tRFvgRkmtCkUPzi4UdKSUgIMxKOBtw"/>
+</div>
+<div class="p-unit-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-unit-xs">
+<span class="font-label-md text-label-md text-primary-container px-unit-sm py-[2px] bg-primary-fixed rounded uppercase">Usado</span>
+<span class="text-on-surface-variant font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Ceará, BR
+                        </span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary mb-unit-sm line-clamp-2">Kite North Reach 12m - 2023</h3>
+<div class="mt-auto">
+<p class="font-price-display text-price-display text-primary">R$ 5.400</p>
+<button class="w-full mt-unit-md py-unit-sm bg-primary text-on-primary font-label-md text-label-md rounded uppercase tracking-widest hover:bg-primary-container transition-colors">Ver Detalhes</button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="bg-surface border border-outline-variant group hover:shadow-lg transition-all duration-300 relative flex flex-col">
+<button class="absolute top-unit-md right-unit-md z-10 bg-white/80 backdrop-blur-sm p-unit-sm rounded-full text-error hover:scale-110 transition-transform shadow-sm" onclick="this.closest('article').remove(); updateCount();">
+<span class="material-symbols-outlined fill-icon">favorite</span>
+</button>
+<div class="aspect-[4/3] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of a sleek, carbon fiber wingfoil board resting on a wooden deck by the sea. The board features orange and black accents. The morning sun creates gentle reflections on the carbon texture. Sophisticated, technical sport gear aesthetic with shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnI7gywyEaW82QfUw5KR5KgmxO-L399Z5wVL0KnZ1-YZJxWh2D5C5wmPoQe_ZUxPoEzKyz4cqE_O_Ptiu5GU6pfP6_z1IFrTJjn_xh2oy8x8aEjyUfvRtXkcEA1daxJF4RLYIu3ZISLqe5HPqKTE0fjn5gnL5HG-GV1CwkymbByhbR04vPhAJyNj73W8N-dinT5fXjsfnALQb0szCRKGSsDnjk0EClGsGVI33ioSbA3ce781nSmvhJcAYXNs-_WHKr9vkCN3vd2Q"/>
+</div>
+<div class="p-unit-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-unit-xs">
+<span class="font-label-md text-label-md text-on-tertiary-fixed-variant px-unit-sm py-[2px] bg-tertiary-fixed rounded uppercase">Novo</span>
+<span class="text-on-surface-variant font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Rio, BR
+                        </span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary mb-unit-sm line-clamp-2">Prancha Wingfoil Fanatic Sky Free</h3>
+<div class="mt-auto">
+<p class="font-price-display text-price-display text-primary">R$ 8.200</p>
+<button class="w-full mt-unit-md py-unit-sm bg-primary text-on-primary font-label-md text-label-md rounded uppercase tracking-widest hover:bg-primary-container transition-colors">Ver Detalhes</button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="bg-surface border border-outline-variant group hover:shadow-lg transition-all duration-300 relative flex flex-col">
+<button class="absolute top-unit-md right-unit-md z-10 bg-white/80 backdrop-blur-sm p-unit-sm rounded-full text-error hover:scale-110 transition-transform shadow-sm" onclick="this.closest('article').remove(); updateCount();">
+<span class="material-symbols-outlined fill-icon">favorite</span>
+</button>
+<div class="aspect-[4/3] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional studio photo of a set of neon green kiteboard fins and a matching handle. The lighting is focused and dramatic, highlighting the sharp edges and technical material. The background is a clean white, giving it a high-end catalog feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_EhJM8ihnmKP5S25a01Qp1cT6SlJFFtOK1k6kL8BJ3u-mkiqYOqK24taFQH14thA4TcwJom04pvFnGJg2Mua4Iqad48gy7NdP0oqWoukKhDWD-wsXukQYdxjTaBGo0j9dgn0F9PVWXZxNWhs0feUmQKSYftGOYJNIvMzM_K3VUShMdpUaCoNPit1nT8dKmtY431h1AsN6e_YCMroHugVTHRId6OjXTyfElkyf2frECpsRgGgSuns-sM3VDqTgA6N2LqUlADB3Sw"/>
+</div>
+<div class="p-unit-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-unit-xs">
+<span class="font-label-md text-label-md text-primary-container px-unit-sm py-[2px] bg-primary-fixed rounded uppercase">Usado</span>
+<span class="text-on-surface-variant font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Natal, BR
+                        </span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary mb-unit-sm line-clamp-2">Jogo de Quilhas Carbono + Alça</h3>
+<div class="mt-auto">
+<p class="font-price-display text-price-display text-primary">R$ 450</p>
+<button class="w-full mt-unit-md py-unit-sm bg-primary text-on-primary font-label-md text-label-md rounded uppercase tracking-widest hover:bg-primary-container transition-colors">Ver Detalhes</button>
+</div>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="bg-surface border border-outline-variant group hover:shadow-lg transition-all duration-300 relative flex flex-col">
+<button class="absolute top-unit-md right-unit-md z-10 bg-white/80 backdrop-blur-sm p-unit-sm rounded-full text-error hover:scale-110 transition-transform shadow-sm" onclick="this.closest('article').remove(); updateCount();">
+<span class="material-symbols-outlined fill-icon">favorite</span>
+</button>
+<div class="aspect-[4/3] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, full-frame shot of a black and white Duotone Dice kite lying in a green grassy rigging area. The sun is bright, highlighting the kite's panel structure and reinforcements. The style is professional, realistic, and clearly shows the gear's condition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAflezxoayE49WOBDbk9XxbH_SVcr_dUBztaAxaRciSxB_dgmpnA-acJDiUbVGx_aqJwq0xjYuKHWnjCTUkd-_rp56T_VMP6MKAGi9Iv7z8Kt-Ns7um9FjquCYA5hovcE-1uxG6T2aOE2Cn0pzLKcL1MwllcjER9UydZiC05Q6KuYc1nnK_5V3p1U0wyWSIr040D9NIQViBLVIfZ27p1FqC8UVceiJThogWNkAhCVQZ2vhve3EtFoyQ49PgrRe5rnnvIJE_KqovLQ"/>
+</div>
+<div class="p-unit-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-unit-xs">
+<span class="font-label-md text-label-md text-primary-container px-unit-sm py-[2px] bg-primary-fixed rounded uppercase">Usado</span>
+<span class="text-on-surface-variant font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Floripa, BR
+                        </span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary mb-unit-sm line-clamp-2">Kite Duotone Dice 9m - 2022</h3>
+<div class="mt-auto">
+<p class="font-price-display text-price-display text-primary">R$ 4.900</p>
+<button class="w-full mt-unit-md py-unit-sm bg-primary text-on-primary font-label-md text-label-md rounded uppercase tracking-widest hover:bg-primary-container transition-colors">Ver Detalhes</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Empty State (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center text-center py-unit-xl space-y-unit-lg" id="empty-state">
+<div class="w-64 h-64 opacity-20">
+<span class="material-symbols-outlined text-[128px] text-primary">heart_broken</span>
+</div>
+<div class="space-y-unit-sm">
+<h2 class="font-headline-md text-headline-md text-primary">Você ainda não tem favoritos</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg max-w-md">Salve os equipamentos que você mais gostou para acessá-los rapidamente nesta página.</p>
+</div>
+<a class="px-unit-xl py-unit-md bg-primary text-on-primary font-label-md text-label-md rounded uppercase tracking-widest hover:bg-primary-container transition-all shadow-md" href="#">Explore Gear</a>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high w-full mt-unit-xl border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-unit-xl w-full max-w-container-max-width mx-auto">
+<div class="col-span-1 md:col-span-1">
+<span class="font-title-lg text-title-lg text-primary font-bold">Kite360º</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-unit-sm">O maior marketplace especializado em equipamentos de alta performance para esportes de água no Brasil.</p>
+</div>
+<div class="flex flex-col gap-unit-sm">
+<span class="font-label-md text-label-md text-primary uppercase font-bold mb-unit-xs">Links Úteis</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Institutional</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Safety Tips</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-unit-sm">
+<span class="font-label-md text-label-md text-primary uppercase font-bold mb-unit-xs">Comunidade</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Verified Seller Info</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+</div>
+<div class="flex flex-col gap-unit-sm">
+<span class="font-label-md text-label-md text-primary uppercase font-bold mb-unit-xs">Social</span>
+<div class="flex gap-unit-md">
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary">language</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary">share</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary">anchor</span>
+</div>
+</div>
+</div>
+<div class="w-full border-t border-outline-variant/30 py-unit-md text-center">
+<p class="font-body-md text-body-md text-on-surface-variant/60">© 2024 Kite360º Marketplace. Professional Water Sports Equipment.</p>
+</div>
+</footer>
+<script>
+        function updateCount() {
+            const grid = document.getElementById('favorites-grid');
+            const emptyState = document.getElementById('empty-state');
+            const countLabel = document.getElementById('favorites-count');
+            const items = grid.querySelectorAll('article');
+            
+            countLabel.textContent = `${items.length} ${items.length === 1 ? 'ITEM' : 'ITENS'}`;
+            
+            if (items.length === 0) {
+                grid.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                emptyState.classList.add('flex');
+            }
+        }
+
+        // Initialize state check
+        window.addEventListener('DOMContentLoaded', updateCount);
+    </script>
+</body></html>

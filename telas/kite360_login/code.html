@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Login | KITE360º - Marketplace de Esportes Aquáticos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#5c666d",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#592300",
+                    "outline": "#737780",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "on-primary-container": "#799dd6",
+                    "surface-container-low": "#f4f3f8",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "surface-container": "#eeedf2",
+                    "primary": "#001e40",
+                    "surface-container-highest": "#e2e2e7",
+                    "outline-variant": "#c3c6d1",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f9f9fe",
+                    "on-tertiary-container": "#d8885c",
+                    "on-surface-variant": "#43474f",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "error-container": "#ffdad6",
+                    "on-background": "#1a1c1f",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e2e2e7",
+                    "secondary": "#566067",
+                    "secondary-fixed-dim": "#bec8d0",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#dae4ed",
+                    "primary-fixed": "#d5e3ff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "on-tertiary-fixed": "#341100",
+                    "inverse-on-surface": "#f1f0f5",
+                    "surface-container-high": "#e8e8ed",
+                    "on-secondary-fixed": "#131d23",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "on-primary-fixed": "#001b3c",
+                    "surface": "#f9f9fe",
+                    "secondary-fixed": "#dae4ed",
+                    "tertiary-fixed": "#ffdbca",
+                    "tertiary": "#381300",
+                    "on-surface": "#1a1c1f",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#003366",
+                    "surface-tint": "#3a5f94",
+                    "inverse-surface": "#2f3034",
+                    "background": "#f9f9fe",
+                    "surface-dim": "#dad9de",
+                    "inverse-primary": "#a7c8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "32px",
+                    "container-max-width": "1280px",
+                    "unit-sm": "8px",
+                    "unit-xs": "4px",
+                    "unit-lg": "24px",
+                    "unit-md": "16px",
+                    "margin-mobile": "16px",
+                    "unit-xl": "48px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "title-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "price-display": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Hanken Grotesk', sans-serif;
+        background-color: #f9f9fe;
+        color: #1a1c1f;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .input-transition:focus {
+        border-color: #001e40;
+        box-shadow: none;
+        outline: none;
+      }
+    </style>
+</head>
+<body class="min-h-screen overflow-hidden">
+<main class="flex min-h-screen w-full h-screen">
+<!-- Left Side: Hero Image -->
+<section class="hidden md:flex md:w-1/2 lg:w-3/5 relative overflow-hidden h-full">
+<div class="absolute inset-0 z-0 h-full w-full bg-primary">
+<div class="h-full w-full bg-cover" data-alt="A cinematic, high-action photograph of a professional kitesurfer performing a high jump over a turquoise ocean under a bright, clear sun. The composition is epic, capturing spray from the waves and the vibrant kite against a deep blue sky. The lighting is high-contrast and professional, emphasizing high-performance gear and a sense of absolute freedom. The style is modern, sharp, and premium, reflecting the oceanic professional brand identity of KITE360." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCrVZQapEgDUPBjAJ9PqOFU7smS6fiMYWOr-Aib2CdXvMLtPxjMOFnMv9r3S8k_tWItnq-qa2vDDwhZLKE4ZC2nnbaJI-EtUBERGr4QwVl7LRNv6gmVt-zOqaVgRdjkYOS7pKq_ZcaMqHxLBlPe0TFEa_hBQoqUoHySikxl7EEaVE-Hw9YFlHx4qfbfUetyUEklhYYNSdPbUOlp1IwpuEJfSjgIg1jsIpNJRMFjbFyFop29ELOlEpUuidZ6MvQcylezzJvbdDfqUQ&quot;);">
+</div>
+<!-- Overlay for depth -->
+<div class="absolute inset-0 bg-gradient-to-r from-transparent to-black/20"></div>
+</div>
+<div class="relative z-10 p-unit-xl flex flex-col justify-between h-full w-full">
+<div>
+<!-- Brand Mark (Optional decorative) -->
+</div>
+<div class="max-w-md">
+<h2 class="font-display-lg text-display-lg text-white mb-unit-md leading-tight">
+                        Alta performance no mar.
+                    </h2>
+<p class="font-body-lg text-body-lg text-white/80">
+                        O marketplace definitivo para kitesurf, wingfoil e esportes aquáticos. Encontre equipamentos de elite e venda para quem entende de mar.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Right Side: Login Form -->
+<section class="w-full md:w-1/2 lg:w-2/5 flex flex-col justify-center items-center bg-surface-container-lowest px-margin-mobile md:px-margin-desktop h-full">
+<div class="w-full max-w-sm">
+<!-- Header -->
+<div class="text-center mb-unit-xl">
+<h1 class="font-display-lg text-display-lg font-bold text-primary tracking-tight">
+                        KITE360º
+                    </h1>
+<p class="font-body-md text-body-md text-secondary mt-unit-xs">
+                        Entre na sua conta para gerenciar seus equipamentos.
+                    </p>
+</div>
+<!-- Form -->
+<form class="space-y-unit-lg" onsubmit="event.preventDefault();">
+<!-- Email Field -->
+<div class="space-y-unit-xs">
+<label class="font-label-md text-label-md text-on-surface uppercase tracking-wider block" for="email">
+                            E-mail
+                        </label>
+<div class="relative">
+<input class="w-full px-unit-md py-unit-md bg-white border border-outline-variant rounded-none font-body-md text-body-md input-transition transition-all duration-200" id="email" placeholder="seu@email.com" type="email">
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-unit-xs">
+<label class="font-label-md text-label-md text-on-surface uppercase tracking-wider block" for="password">
+                            Senha
+                        </label>
+<div class="relative">
+<input class="w-full px-unit-md py-unit-md bg-white border border-outline-variant rounded-none font-body-md text-body-md input-transition transition-all duration-200" id="password" placeholder="••••••••" type="password">
+</div>
+<div class="flex justify-end">
+<a class="font-label-md text-label-md text-primary-container hover:underline transition-all" href="#">
+                                Esqueci minha senha
+                            </a>
+</div>
+</div>
+<!-- Cloudflare Turnstile Mockup -->
+<div class="flex justify-center py-unit-sm">
+<div class="w-full bg-surface-container border border-outline-variant p-unit-sm flex items-center justify-between rounded-lg">
+<div class="flex items-center gap-unit-md">
+<div class="w-6 h-6 border-2 border-primary-container/30 rounded flex items-center justify-center bg-white">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Verificando segurança...</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[10px] font-bold text-on-surface-variant/60 leading-none">Cloudflare</span>
+<span class="text-[8px] text-on-surface-variant/40">Turnstile</span>
+</div>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full py-unit-md bg-primary text-white font-title-lg text-title-lg rounded-none hover:bg-primary-container active:scale-95 transition-all duration-200 shadow-sm" type="submit">
+                        Entrar
+                    </button>
+</form>
+<!-- Footer Links -->
+<div class="mt-unit-xl text-center space-y-unit-md">
+<p class="font-body-md text-body-md text-secondary">
+                        Não tem conta? 
+                        <a class="font-semibold text-primary-container hover:underline transition-all" href="#">
+                            Cadastre-se
+                        </a>
+</p>
+<div class="flex items-center justify-center gap-unit-lg pt-unit-md opacity-40">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+<span class="material-symbols-outlined text-[20px]">encrypted</span>
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.previousElementSibling.classList.add('text-primary');
+                input.parentElement.previousElementSibling.classList.add('font-bold');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.previousElementSibling.classList.remove('text-primary');
+                input.parentElement.previousElementSibling.classList.remove('font-bold');
+            });
+        });
+    </script>
+
+
+</body></html>

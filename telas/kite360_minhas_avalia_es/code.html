@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Minhas Avaliações | KITE360º</title>
+<!-- Google Fonts: Hanken Grotesk -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#381300",
+                    "primary-fixed": "#d5e3ff",
+                    "on-tertiary-container": "#d8885c",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "on-primary-fixed": "#001b3c",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#131d23",
+                    "surface-container": "#eeedf2",
+                    "inverse-primary": "#a7c8ff",
+                    "surface-variant": "#e2e2e7",
+                    "tertiary-container": "#592300",
+                    "surface-bright": "#f9f9fe",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "outline-variant": "#c3c6d1",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f9f9fe",
+                    "secondary": "#566067",
+                    "on-surface": "#1a1c1f",
+                    "on-primary-container": "#799dd6",
+                    "inverse-surface": "#2f3034",
+                    "primary-container": "#003366",
+                    "secondary-fixed": "#dae4ed",
+                    "surface-dim": "#dad9de",
+                    "inverse-on-surface": "#f1f0f5",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "outline": "#737780",
+                    "secondary-fixed-dim": "#bec8d0",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "surface-container-low": "#f4f3f8",
+                    "surface-container-highest": "#e2e2e7",
+                    "surface-container-high": "#e8e8ed",
+                    "on-background": "#1a1c1f",
+                    "surface": "#f9f9fe",
+                    "tertiary-fixed": "#ffdbca",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "surface-tint": "#3a5f94",
+                    "on-tertiary-fixed": "#341100",
+                    "primary": "#001e40",
+                    "on-surface-variant": "#43474f",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#dae4ed",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#5c666d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max-width": "1280px",
+                    "unit-xl": "48px",
+                    "unit-lg": "24px",
+                    "margin-desktop": "32px",
+                    "unit-sm": "8px",
+                    "unit-md": "16px",
+                    "margin-mobile": "16px",
+                    "unit-xs": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "price-display": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #f9f9fe;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .star-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- Shell Layout Wrapper -->
+<div class="flex min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container-lowest border-r border-outline-variant dark:border-outline flex flex-col py-unit-lg z-20">
+<div class="px-unit-md mb-unit-xl">
+<span class="font-headline-md text-headline-md text-primary font-bold">KITE360º</span>
+</div>
+<div class="px-unit-md mb-unit-lg flex items-center gap-unit-md">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a kiteboarding instructor in his 30s, Alex Rivers, looking confident and smiling. He has wind-swept hair and is wearing a sleek navy blue performance water sports polo. The lighting is bright, natural morning sun at a coastal location, matching a premium oceanic professional UI aesthetic with high clarity and trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV9pi2zRIV9njcMp6qS_TwyXFJ_FTVkB5Ds6_T96njcMSwz6C8ThiDsMDOpDhCtexNhl0speBEbaP_yjx8MwLIV8WS_onzywtndffuozOhfcahf_hpTBmcpE-Y4qhPX-EbIlW81sZ1fETxYk0BMKjkUofW2GQCXLFQTgxr_wIP4kCO0isl22gl63G2-mozEuq_CsSTLBjFL-LxAdStKsIce8eTVAomE5TEPM2mGIa2wZ3ScslErOZRMXpNPDbwGT_gFqbBnIigCQ"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Alex Rivers</span>
+<span class="font-label-md text-[10px] text-on-surface-variant">Pro Seller</span>
+</div>
+</div>
+<nav class="flex-grow">
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all text-on-surface-variant hover:bg-surface-variant font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all text-on-surface-variant hover:bg-surface-variant font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">sell</span>
+                    My Listings
+                </a>
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all text-on-surface-variant hover:bg-surface-variant font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">history</span>
+                    Sales History
+                </a>
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all bg-primary-container text-on-primary-container font-bold rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                    Minhas Avaliações
+                </a>
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all text-on-surface-variant hover:bg-surface-variant font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">chat</span>
+                    Inquiries
+                </a>
+<a class="flex items-center gap-unit-md p-unit-md m-unit-xs transition-all text-on-surface-variant hover:bg-surface-variant font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+</nav>
+<div class="px-unit-md mt-auto">
+<button class="w-full bg-primary text-on-primary py-unit-sm rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+                    Upgrade to Pro
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-grow ml-64 p-margin-desktop max-w-container-max-width mx-auto">
+<!-- Header Section -->
+<header class="mb-unit-xl">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-unit-xs">Minhas Avaliações</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Veja o que a comunidade KITE360º está dizendo sobre suas negociações e equipamentos.</p>
+</header>
+<!-- Reputation Summary (Bento Grid Style) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-unit-xl">
+<!-- Main Score Card -->
+<div class="md:col-span-4 bg-surface border border-outline-variant p-unit-lg rounded-xl flex flex-col justify-center items-center text-center">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-unit-xs">Média Geral</span>
+<div class="text-[64px] font-bold text-primary leading-none mb-unit-xs">4.9</div>
+<div class="flex gap-unit-xs text-primary mb-unit-sm">
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Baseado em 48 avaliações</span>
+</div>
+<!-- Breakdown Card -->
+<div class="md:col-span-8 bg-surface border border-outline-variant p-unit-lg rounded-xl">
+<h3 class="font-title-lg text-title-lg text-primary mb-unit-md">Distribuição de Notas</h3>
+<div class="space-y-unit-sm">
+<!-- 5 Stars -->
+<div class="flex items-center gap-unit-md">
+<span class="font-label-md text-label-md w-12 text-on-surface">5 estrelas</span>
+<div class="flex-grow h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 85%;"></div>
+</div>
+<span class="font-label-md text-label-md w-8 text-on-surface-variant">41</span>
+</div>
+<!-- 4 Stars -->
+<div class="flex items-center gap-unit-md">
+<span class="font-label-md text-label-md w-12 text-on-surface">4 estrelas</span>
+<div class="flex-grow h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 10%;"></div>
+</div>
+<span class="font-label-md text-label-md w-8 text-on-surface-variant">5</span>
+</div>
+<!-- 3 Stars -->
+<div class="flex items-center gap-unit-md">
+<span class="font-label-md text-label-md w-12 text-on-surface">3 estrelas</span>
+<div class="flex-grow h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 5%;"></div>
+</div>
+<span class="font-label-md text-label-md w-8 text-on-surface-variant">2</span>
+</div>
+<!-- 2 Stars -->
+<div class="flex items-center gap-unit-md">
+<span class="font-label-md text-label-md w-12 text-on-surface">2 estrelas</span>
+<div class="flex-grow h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 0%;"></div>
+</div>
+<span class="font-label-md text-label-md w-8 text-on-surface-variant">0</span>
+</div>
+<!-- 1 Star -->
+<div class="flex items-center gap-unit-md">
+<span class="font-label-md text-label-md w-12 text-on-surface">1 estrela</span>
+<div class="flex-grow h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 0%;"></div>
+</div>
+<span class="font-label-md text-label-md w-8 text-on-surface-variant">0</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews List Section -->
+<section class="space-y-gutter">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-primary">Comentários Recentes</h2>
+<div class="flex items-center gap-unit-sm">
+<span class="font-body-md text-body-md text-on-surface-variant">Filtrar por:</span>
+<select class="bg-surface border border-outline-variant text-body-md font-body-md rounded px-unit-sm py-1 focus:ring-primary focus:border-primary">
+<option>Mais recentes</option>
+<option>Melhor nota</option>
+<option>Menor nota</option>
+</select>
+</div>
+</div>
+<!-- Review Item 1 -->
+<article class="bg-surface border border-outline-variant p-unit-lg rounded-xl hover:shadow-[0px_4px_12px_rgba(0,0,0,0.05)] transition-all">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-unit-md mb-unit-md">
+<div>
+<div class="flex gap-unit-xs text-primary mb-unit-xs">
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface italic">"O kite estava exatamente como descrito, muito bem cuidado. A negociação com o Alex foi super rápida e transparente. Recomendo 100%!"</p>
+</div>
+<div class="text-right shrink-0">
+<span class="block font-title-lg text-title-lg text-on-surface">Ricardo Mendes</span>
+<span class="block font-label-md text-label-md text-on-surface-variant uppercase">há 2 dias</span>
+</div>
+</div>
+<div class="flex items-center gap-unit-sm pt-unit-md border-t border-outline-variant">
+<span class="material-symbols-outlined text-secondary text-sm">inventory_2</span>
+<span class="font-body-md text-body-md text-secondary">Referente ao anúncio: <a class="text-primary font-bold hover:underline" href="#">Kite North Reach 12m (2022)</a></span>
+</div>
+</article>
+<!-- Review Item 2 -->
+<article class="bg-surface border border-outline-variant p-unit-lg rounded-xl hover:shadow-[0px_4px_12px_rgba(0,0,0,0.05)] transition-all">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-unit-md mb-unit-md">
+<div>
+<div class="flex gap-unit-xs text-primary mb-unit-xs">
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface italic">"Vendedor muito atencioso, tirou todas as dúvidas sobre o desgaste da barra. Envio foi feito no mesmo dia da compra."</p>
+</div>
+<div class="text-right shrink-0">
+<span class="block font-title-lg text-title-lg text-on-surface">Carla Fonseca</span>
+<span class="block font-label-md text-label-md text-on-surface-variant uppercase">há 1 semana</span>
+</div>
+</div>
+<div class="flex items-center gap-unit-sm pt-unit-md border-t border-outline-variant">
+<span class="material-symbols-outlined text-secondary text-sm">inventory_2</span>
+<span class="font-body-md text-body-md text-secondary">Referente ao anúncio: <a class="text-primary font-bold hover:underline" href="#">Barra Duotone Trust Bar S/M</a></span>
+</div>
+</article>
+<!-- Review Item 3 -->
+<article class="bg-surface border border-outline-variant p-unit-lg rounded-xl hover:shadow-[0px_4px_12px_rgba(0,0,0,0.05)] transition-all">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-unit-md mb-unit-md">
+<div>
+<div class="flex gap-unit-xs text-primary mb-unit-xs">
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface italic">"A prancha é excelente, apenas um pequeno detalhe no bico que não estava 100% claro nas fotos, mas nada que comprometa a performance. Alex foi honesto no ajuste do preço."</p>
+</div>
+<div class="text-right shrink-0">
+<span class="block font-title-lg text-title-lg text-on-surface">Bruno Costa</span>
+<span class="block font-label-md text-label-md text-on-surface-variant uppercase">há 2 semanas</span>
+</div>
+</div>
+<div class="flex items-center gap-unit-sm pt-unit-md border-t border-outline-variant">
+<span class="material-symbols-outlined text-secondary text-sm">inventory_2</span>
+<span class="font-body-md text-body-md text-secondary">Referente ao anúncio: <a class="text-primary font-bold hover:underline" href="#">Prancha de Wing Foil Fanatic Sky Wing</a></span>
+</div>
+</article>
+<!-- Pagination -->
+<div class="flex items-center justify-center gap-unit-md pt-unit-xl">
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<span class="font-body-md text-body-md text-on-surface">Página 1 de 5</span>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded hover:bg-surface-container transition-colors text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+</div>
+<!-- Footer Component -->
+<footer class="w-full mt-auto bg-surface-container-highest dark:bg-surface-container border-t border-outline-variant dark:border-outline">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter px-margin-desktop py-unit-xl max-w-container-max-width mx-auto">
+<div>
+<span class="font-headline-md text-headline-md text-primary font-bold block mb-unit-sm">KITE360º</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Equipamentos profissionais de water sports selecionados para atletas que buscam performance e segurança.</p>
+</div>
+<div class="flex flex-col md:flex-row md:justify-end gap-unit-lg">
+<div class="flex flex-col gap-unit-xs">
+<span class="font-label-md text-label-md text-primary uppercase font-bold mb-unit-xs">Suporte</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Contact Support</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Shipping Guide</a>
+</div>
+<div class="flex flex-col gap-unit-xs">
+<span class="font-label-md text-label-md text-primary uppercase font-bold mb-unit-xs">Legal</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a>
+</div>
+</div>
+<div class="md:col-span-2 border-t border-outline-variant pt-unit-lg mt-unit-lg text-center">
+<span class="font-body-md text-body-md text-on-surface-variant">© 2024 KITE360º. Professional Water Sports Equipment.</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for review hover effects
+        document.querySelectorAll('article').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-2px)';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>
