@@ -9,7 +9,6 @@ import type { Conversation, Message, User } from '@/types'
 import toast from 'react-hot-toast'
 import { io, Socket } from 'socket.io-client'
 
-// Server-side contact filter hint shown to user
 const CONTACT_BLOCKED_MSG = 'Mensagem não enviada. Por segurança, não compartilhe contatos fora da plataforma.'
 
 function ChatContent() {
@@ -68,14 +67,17 @@ function ChatContent() {
   }
 
   const activeConvData = conversations.find((c) => c.id === activeConv)
+  // On mobile: show list if no active conv, show chat if active conv selected
+  const showList = !activeConv || !activeConvData
+  const showChat = activeConv && activeConvData
 
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="flex flex-col md:flex-row min-h-screen bg-background">
       <DashboardSidebar userName={user?.name} userAvatar={user?.avatar} />
 
       <div className="flex-1 flex overflow-hidden">
-        {/* Conversations list */}
-        <div className="w-80 shrink-0 border-r border-outline-variant bg-surface-container-lowest flex flex-col">
+        {/* Conversations list — hidden on mobile when chat is open */}
+        <div className={`${showChat ? 'hidden md:flex' : 'flex'} w-full md:w-80 shrink-0 border-r border-outline-variant bg-surface-container-lowest flex-col`}>
           <div className="p-unit-lg border-b border-outline-variant">
             <h1 className="text-title-lg font-bold text-on-surface">Mensagens</h1>
           </div>
@@ -121,14 +123,20 @@ function ChatContent() {
         </div>
 
         {/* Chat window */}
-        {activeConv && activeConvData ? (
+        {showChat ? (
           <div className="flex-1 flex flex-col">
-            {/* Chat header */}
+            {/* Chat header with back button on mobile */}
             <div className="px-unit-lg py-unit-md border-b border-outline-variant bg-surface-container-lowest flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+              <button
+                onClick={() => setActiveConv(null)}
+                className="md:hidden p-1 rounded-lg hover:bg-surface-container mr-1"
+              >
+                <Icon name="arrow_back" size={22} className="text-on-surface" />
+              </button>
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold shrink-0">
                 {activeConvData.otherUser.name[0]}
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className="text-body-md font-bold text-on-surface">{activeConvData.otherUser.name}</div>
                 <div className="text-label-md text-secondary truncate">{activeConvData.listing.title}</div>
               </div>
@@ -137,7 +145,7 @@ function ChatContent() {
             {/* Security notice */}
             <div className="px-unit-lg py-2 bg-primary/5 border-b border-outline-variant flex items-center gap-2 text-label-md text-secondary">
               <Icon name="security" size={14} className="text-primary shrink-0" />
-              Por segurança, não compartilhe contatos externos. O chat monitora tentativas automaticamente.
+              Por segurança, não compartilhe contatos externos.
             </div>
 
             {/* Messages */}
@@ -147,7 +155,7 @@ function ChatContent() {
                 return (
                   <div key={m.id} className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}>
                     <div
-                      className={`max-w-[70%] px-unit-md py-2 rounded-xl text-body-md ${
+                      className={`max-w-[80%] px-unit-md py-2 rounded-xl text-body-md ${
                         m.isBlocked
                           ? 'bg-error-container text-on-error-container italic text-label-md'
                           : isMe
@@ -178,14 +186,14 @@ function ChatContent() {
               <button
                 type="submit"
                 disabled={!input.trim() || sending}
-                className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center disabled:opacity-50 transition-opacity hover:bg-primary-container"
+                className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center disabled:opacity-50 transition-opacity"
               >
                 <Icon name="send" size={18} />
               </button>
             </form>
           </div>
         ) : (
-          <div className="flex-1 flex flex-col items-center justify-center gap-4 text-center">
+          <div className="hidden md:flex flex-1 flex-col items-center justify-center gap-4 text-center">
             <Icon name="chat" size={64} className="text-outline-variant" />
             <h2 className="text-title-lg font-bold text-on-surface">Selecione uma conversa</h2>
             <p className="text-body-md text-secondary">Escolha uma conversa à esquerda para começar.</p>

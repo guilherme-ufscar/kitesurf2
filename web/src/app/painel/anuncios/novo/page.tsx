@@ -82,7 +82,7 @@ export default function NovoAnuncioPage() {
   }
 
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="flex flex-col md:flex-row min-h-screen bg-background">
       <DashboardSidebar />
 
       <main className="flex-1 p-unit-xl overflow-auto">
