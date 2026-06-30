@@ -14,7 +14,7 @@ export default function MinhasAvaliacoesPage() {
 
   useEffect(() => {
     Promise.all([authApi.me(), reviewsApi.mine()])
-      .then(([u, r]) => { setUser(u.data); setReviews(r.data.data ?? []) })
+      .then(([u, r]) => { setUser(u.data); setReviews(r.data.reviews ?? []) })
       .finally(() => setLoading(false))
   }, [])
 

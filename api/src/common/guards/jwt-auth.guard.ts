@@ -6,5 +6,5 @@ export class JwtAuthGuard extends AuthGuard('jwt') {}
 
 @Injectable()
 export class OptionalJwtAuthGuard extends AuthGuard('jwt') {
-  handleRequest(err: unknown, user: unknown) { return user }
+  handleRequest(_err: any, user: any): any { return user }
 }

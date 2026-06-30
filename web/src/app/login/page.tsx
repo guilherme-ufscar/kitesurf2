@@ -1,6 +1,8 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import { Logo } from '@/components/ui/Logo'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -44,21 +46,22 @@ export default function LoginPage() {
     <main className="flex min-h-screen w-full">
       {/* Hero image side */}
       <section className="hidden md:flex md:w-1/2 lg:w-3/5 relative overflow-hidden bg-primary">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-container opacity-90" />
+        <Image src="/imagens/surfer.webp" alt="Surfista" fill priority sizes="60vw" className="object-cover" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 p-unit-xl flex flex-col justify-end h-full">
           <div className="max-w-md mb-unit-xl">
-            <Link href="/" className="text-4xl font-black text-on-primary mb-unit-lg block">KITE360º</Link>
-            <h2 className="text-headline-lg font-black text-on-primary mb-unit-md leading-tight">
+            <Logo size={60} variant="branco" withWordmark={false} className="mb-unit-lg" />
+            <h2 className="text-headline-lg font-black text-white mb-unit-md leading-tight">
               Alta performance<br />no mar.
             </h2>
-            <p className="text-body-lg text-on-primary/80">
+            <p className="text-body-lg text-white/80">
               O marketplace definitivo para kitesurf, wingfoil e esportes aquáticos.
               Encontre equipamentos de elite e venda para quem entende de mar.
             </p>
           </div>
           <div className="flex gap-unit-lg">
             {['verified_user', 'encrypted', 'security'].map((icon) => (
-              <Icon key={icon} name={icon} size={24} className="text-on-primary/40" />
+              <Icon key={icon} name={icon} size={24} className="text-white/40" />
             ))}
           </div>
         </div>
@@ -68,7 +71,7 @@ export default function LoginPage() {
       <section className="w-full md:w-1/2 lg:w-2/5 flex flex-col justify-center items-center bg-surface-container-lowest px-margin-mobile md:px-margin-desktop py-unit-xl">
         <div className="w-full max-w-sm">
           <div className="text-center mb-unit-xl">
-            <Link href="/" className="text-3xl font-black text-primary tracking-tight">KITE360º</Link>
+            <div className="flex justify-center"><Logo size={54} /></div>
             <p className="text-body-md text-secondary mt-unit-xs">Entre na sua conta</p>
           </div>
 

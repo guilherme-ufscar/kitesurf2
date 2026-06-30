@@ -12,7 +12,7 @@ export default function EventoPage() {
   return (
     <>
       <Header />
-      <main className="mt-28 mb-unit-xl">
+      <main className="header-offset mb-unit-xl">
         {/* Hero */}
         <div className="relative bg-primary text-on-primary py-unit-xl mb-unit-xl overflow-hidden">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-on-primary to-transparent" />

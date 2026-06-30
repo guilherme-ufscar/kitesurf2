@@ -14,7 +14,7 @@ export default function FavoritosPage() {
 
   useEffect(() => {
     Promise.all([authApi.me(), favoritesApi.list()])
-      .then(([u, f]) => { setUser(u.data); setFavorites(f.data.data ?? []) })
+      .then(([u, f]) => { setUser(u.data); setFavorites(f.data ?? []) })
       .finally(() => setLoading(false))
   }, [])
 

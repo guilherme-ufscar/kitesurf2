@@ -11,7 +11,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant = 'primary', size = 'md', loading, className, children, disabled, ...props }, ref) => {
     const base = 'inline-flex items-center justify-center gap-2 font-semibold transition-all duration-150 active:scale-95 disabled:opacity-50 disabled:pointer-events-none rounded-lg'
     const variants = {
-      primary:   'bg-primary text-on-primary hover:bg-primary-container',
+      primary:   'btn-primary hover:opacity-80',
       secondary: 'bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed-dim',
       ghost:     'bg-transparent border border-outline-variant text-on-surface hover:bg-surface-container',
       danger:    'bg-error text-on-error hover:opacity-90',

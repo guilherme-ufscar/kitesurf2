@@ -36,14 +36,25 @@ export class AuthService {
     if (exists) throw new ConflictException('E-mail já cadastrado.')
 
     const passwordHash = await argon2.hash(data.password)
-    const emailVerifyToken = uuid()
+    const hasMailProvider = !!this.config.get('RESEND_API_KEY')
+    const emailVerifyToken = hasMailProvider ? uuid() : null
 
-    const user = await this.prisma.user.create({
-      data: { name: data.name, email: data.email, passwordHash, emailVerifyToken },
+    await this.prisma.user.create({
+      data: {
+        name: data.name,
+        email: data.email,
+        passwordHash,
+        emailVerifyToken,
+        emailVerifiedAt: hasMailProvider ? null : new Date(),
+      },
     })
 
-    await this.mail.sendEmailVerification(data.email, emailVerifyToken)
-    return { message: 'Conta criada. Verifique seu e-mail.' }
+    if (hasMailProvider) {
+      await this.mail.sendEmailVerification(data.email, emailVerifyToken!)
+      return { message: 'Conta criada. Verifique seu e-mail.', requiresVerification: true }
+    }
+
+    return { message: 'Conta criada com sucesso!', requiresVerification: false }
   }
 
   async login(data: { email: string; password: string; turnstileToken?: string }) {

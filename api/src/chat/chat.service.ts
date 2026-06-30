@@ -28,7 +28,7 @@ export class ChatService {
   }
 
   async getConversations(userId: string) {
-    return this.prisma.conversation.findMany({
+    const convs = await this.prisma.conversation.findMany({
       where: { OR: [{ userAId: userId }, { userBId: userId }] },
       include: {
         listing: { select: { id: true, title: true, images: { take: 1 } } },
@@ -37,6 +37,12 @@ export class ChatService {
         messages: { orderBy: { createdAt: 'desc' }, take: 1 },
       },
       orderBy: { updatedAt: 'desc' },
+    })
+    return convs.map((c) => {
+      const otherUser = c.userAId === userId ? c.userB : c.userA
+      const lastMessage = c.messages[0] ?? null
+      const unreadCount = 0 // TODO: implement properly
+      return { ...c, otherUser, lastMessage, unreadCount }
     })
   }
 

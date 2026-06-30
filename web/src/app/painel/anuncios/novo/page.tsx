@@ -59,7 +59,8 @@ export default function NovoAnuncioPage() {
       for (const img of images) {
         const form = new FormData()
         form.append('file', img)
-        const res = await fetch('/api/uploads/image', { method: 'POST', body: form })
+        const token = typeof window !== 'undefined' ? localStorage.getItem('kite_access_token') : null
+        const res = await fetch('/api/uploads/image', { method: 'POST', body: form, headers: token ? { Authorization: `Bearer ${token}` } : {} })
         if (!res.ok) throw new Error('Falha no upload de imagem.')
         const { url } = await res.json()
         uploadedUrls.push(url)

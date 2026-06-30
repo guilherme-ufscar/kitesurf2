@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import { authApi } from '@/lib/api'
 import { Icon } from '@/components/ui/Icon'
 import { Button } from '@/components/ui/Button'
+import { Logo } from '@/components/ui/Logo'
 
 function Content() {
   const params = useSearchParams()
@@ -52,7 +53,7 @@ function Content() {
         </div>
         <h2 className="text-title-lg font-bold text-on-surface">E-mail verificado!</h2>
         <p className="text-body-md text-secondary">Sua conta foi ativada com sucesso. Bem-vindo ao KITE360º!</p>
-        <Button as="a" href="/login">Fazer login</Button>
+        <a href="/login"><Button>Fazer login</Button></a>
       </div>
     )
   }
@@ -77,7 +78,7 @@ export default function VerificarEmailPage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-background px-margin-mobile py-unit-xl">
       <div className="w-full max-w-sm bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-xl shadow-lift text-center">
-        <Link href="/" className="text-3xl font-black text-primary tracking-tight block mb-unit-xl">KITE360º</Link>
+        <div className="flex justify-center mb-unit-xl"><Logo size={54} /></div>
         <Suspense>
           <Content />
         </Suspense>

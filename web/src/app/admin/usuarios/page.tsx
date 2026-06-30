@@ -1,19 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import AdminSidebar from '@/components/layout/AdminSidebar'
+import { AdminSidebar } from '@/components/layout/AdminSidebar'
 import { Icon } from '@/components/ui/Icon'
 import { adminApi } from '@/lib/api'
 import toast from 'react-hot-toast'
 
 interface AdminUser {
-  id: string
-  name: string
-  email: string
-  isVerified: boolean
-  isBanned: boolean
-  isAdmin: boolean
-  createdAt: string
+  id: string; name: string; email: string
+  isVerified: boolean; isBanned: boolean; isAdmin: boolean; createdAt: string
 }
 
 export default function AdminUsersPage() {
@@ -26,9 +21,9 @@ export default function AdminUsersPage() {
   const fetchUsers = async () => {
     setLoading(true)
     try {
-      const params = new URLSearchParams({ page: String(page) })
-      if (search) params.set('search', search)
-      const res = await adminApi.get(`/admin/users?${params}`)
+      const params: Record<string, string | number> = { page }
+      if (search) params.search = search
+      const res = await adminApi.users(params)
       setUsers(res.data.data)
       setTotal(res.data.total)
     } catch { toast.error('Erro ao carregar usuários.') }
@@ -39,8 +34,8 @@ export default function AdminUsersPage() {
 
   const handleBan = async (id: string, banned: boolean) => {
     try {
-      await adminApi.put(`/admin/users/${id}/${banned ? 'unban' : 'ban'}`)
-      toast.success(banned ? 'Usuário desbanido.' : 'Usuário banido.')
+      await adminApi.banUser(id)
+      toast.success(banned ? 'Ação realizada.' : 'Usuário banido.')
       fetchUsers()
     } catch { toast.error('Erro.') }
   }
@@ -57,15 +52,12 @@ export default function AdminUsersPage() {
           <div className="relative w-72">
             <Icon name="search" className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-text-tertiary)]" size={20} />
             <input
-              type="text"
-              placeholder="Buscar por nome ou e-mail..."
-              value={search}
+              type="text" placeholder="Buscar por nome ou e-mail..." value={search}
               onChange={e => { setSearch(e.target.value); setPage(1) }}
               className="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-2 pl-9 pr-4 text-sm focus:border-[var(--color-primary)] focus:outline-none"
             />
           </div>
         </div>
-
         <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden">
           <table className="w-full">
             <thead>
@@ -84,10 +76,8 @@ export default function AdminUsersPage() {
               ) : users.map(user => (
                 <tr key={user.id} className="border-b border-[var(--color-border)] last:border-0 hover:bg-[var(--color-surface-subtle)] transition-colors">
                   <td className="p-4">
-                    <div>
-                      <div className="font-medium text-[var(--color-text-primary)]">{user.name}</div>
-                      <div className="text-sm text-[var(--color-text-secondary)]">{user.email}</div>
-                    </div>
+                    <div className="font-medium text-[var(--color-text-primary)]">{user.name}</div>
+                    <div className="text-sm text-[var(--color-text-secondary)]">{user.email}</div>
                   </td>
                   <td className="p-4">
                     <div className="flex gap-2">
@@ -103,15 +93,10 @@ export default function AdminUsersPage() {
                     {new Date(user.createdAt).toLocaleDateString('pt-BR')}
                   </td>
                   <td className="p-4 text-right">
-                    <button
-                      onClick={() => handleBan(user.id, user.isBanned)}
-                      disabled={user.isAdmin}
+                    <button onClick={() => handleBan(user.id, user.isBanned)} disabled={user.isAdmin}
                       className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors disabled:opacity-40 ${
-                        user.isBanned
-                          ? 'bg-green-50 text-green-700 hover:bg-green-100'
-                          : 'bg-red-50 text-red-700 hover:bg-red-100'
-                      }`}
-                    >
+                        user.isBanned ? 'bg-green-50 text-green-700 hover:bg-green-100' : 'bg-red-50 text-red-700 hover:bg-red-100'
+                      }`}>
                       {user.isBanned ? 'Desbanir' : 'Banir'}
                     </button>
                   </td>
@@ -120,20 +105,13 @@ export default function AdminUsersPage() {
             </tbody>
           </table>
         </div>
-
         {total > 20 && (
           <div className="mt-4 flex justify-center gap-2">
             <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
-              className="rounded-lg border border-[var(--color-border)] px-4 py-2 text-sm disabled:opacity-50 hover:bg-[var(--color-surface-subtle)]">
-              Anterior
-            </button>
-            <span className="px-4 py-2 text-sm text-[var(--color-text-secondary)]">
-              Página {page} de {Math.ceil(total / 20)}
-            </span>
+              className="rounded-lg border border-[var(--color-border)] px-4 py-2 text-sm disabled:opacity-50 hover:bg-[var(--color-surface-subtle)]">Anterior</button>
+            <span className="px-4 py-2 text-sm text-[var(--color-text-secondary)]">Página {page} de {Math.ceil(total / 20)}</span>
             <button onClick={() => setPage(p => p + 1)} disabled={page >= Math.ceil(total / 20)}
-              className="rounded-lg border border-[var(--color-border)] px-4 py-2 text-sm disabled:opacity-50 hover:bg-[var(--color-surface-subtle)]">
-              Próxima
-            </button>
+              className="rounded-lg border border-[var(--color-border)] px-4 py-2 text-sm disabled:opacity-50 hover:bg-[var(--color-surface-subtle)]">Próxima</button>
           </div>
         )}
       </main>

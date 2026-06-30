@@ -44,7 +44,8 @@ export default function AdminBannersPage() {
     try {
       const fd = new FormData()
       fd.append('file', imageFile)
-      const uploadRes = await fetch('/api/uploads/image', { method: 'POST', body: fd })
+      const token = typeof window !== 'undefined' ? localStorage.getItem('kite_access_token') : null
+      const uploadRes = await fetch('/api/uploads/image', { method: 'POST', body: fd, headers: token ? { Authorization: `Bearer ${token}` } : {} })
       const { url } = await uploadRes.json()
       await adminApi.createBanner({ ...form, imageUrl: url })
       toast.success('Banner criado!')

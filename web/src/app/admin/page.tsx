@@ -9,13 +9,16 @@ import toast from 'react-hot-toast'
 
 interface Stats {
   totalUsers: number
-  activeListings: number
+  totalListings: number
+  activeListings?: number
   pendingReports: number
-  bannerImpressions: number
-  revenueMonth: number
+  bannerImpressions?: number
+  revenueMonth?: number
   newUsersToday: number
-  blockedMessages: number
-  verifiedUsers: number
+  blockedMessages?: number
+  verifiedUsers?: number
+  bannedUsers: number
+  activeAds: number
 }
 
 export default function AdminPage() {
@@ -29,14 +32,12 @@ export default function AdminPage() {
   }, [router])
 
   const STAT_CARDS = stats ? [
-    { label: 'Usuários',           value: stats.totalUsers,          icon: 'group',          color: 'text-blue-600',   bg: 'bg-blue-50' },
-    { label: 'Anúncios ativos',   value: stats.activeListings,      icon: 'sell',           color: 'text-green-600',  bg: 'bg-green-50' },
-    { label: 'Denúncias pendentes',value: stats.pendingReports,     icon: 'gavel',          color: 'text-red-600',    bg: 'bg-red-50' },
-    { label: 'Impressões banners', value: stats.bannerImpressions,  icon: 'ad_units',       color: 'text-purple-600', bg: 'bg-purple-50' },
-    { label: 'Receita (mês)',      value: `R$ ${(stats.revenueMonth/100).toFixed(0)}`,icon: 'payments', color: 'text-emerald-600', bg: 'bg-emerald-50' },
-    { label: 'Novos hoje',         value: stats.newUsersToday,       icon: 'person_add',    color: 'text-cyan-600',   bg: 'bg-cyan-50' },
-    { label: 'Msgs bloqueadas',    value: stats.blockedMessages,     icon: 'block',          color: 'text-orange-600', bg: 'bg-orange-50' },
-    { label: 'Usuários verificados',value: stats.verifiedUsers,     icon: 'verified_user',  color: 'text-primary',    bg: 'bg-primary/5' },
+    { label: 'Usuários',            value: stats.totalUsers,          icon: 'group',         color: 'text-blue-600',    bg: 'bg-blue-50' },
+    { label: 'Total de anúncios',  value: stats.totalListings,       icon: 'sell',          color: 'text-green-600',   bg: 'bg-green-50' },
+    { label: 'Denúncias pendentes',value: stats.pendingReports,      icon: 'gavel',         color: 'text-red-600',     bg: 'bg-red-50' },
+    { label: 'Banners ativos',     value: stats.activeAds,           icon: 'ad_units',      color: 'text-purple-600',  bg: 'bg-purple-50' },
+    { label: 'Novos hoje',         value: stats.newUsersToday,       icon: 'person_add',    color: 'text-cyan-600',    bg: 'bg-cyan-50' },
+    { label: 'Usuários banidos',   value: stats.bannedUsers,         icon: 'block',         color: 'text-orange-600',  bg: 'bg-orange-50' },
   ] : []
 
   return (

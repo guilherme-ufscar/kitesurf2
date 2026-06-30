@@ -58,6 +58,13 @@
   --color-outline-variant:            #c3c6d1;
   --color-surface-tint:               #3a5f94;
   --color-surface-variant:            #e2e2e7;
+
+  /* Aliases semânticos (texto/superfície/borda) — usados em páginas e componentes */
+  --color-text-primary:               #1a1c1f;
+  --color-text-secondary:             #43474f;
+  --color-text-tertiary:              #737780;
+  --color-surface-subtle:             #f4f3f8;
+  --color-border:                     #c3c6d1;
 }
 
 /* ── Design System Tokens — Dark ────────────────────────────────────────── */
@@ -113,6 +120,13 @@
   --color-outline-variant:            #43474f;
   --color-surface-tint:               #a7c8ff;
   --color-surface-variant:            #43474f;
+
+  /* Aliases semânticos (texto/superfície/borda) — dark */
+  --color-text-primary:               #e2e2e7;
+  --color-text-secondary:             #c3c6d1;
+  --color-text-tertiary:              #8d9199;
+  --color-surface-subtle:             #1a1c1f;
+  --color-border:                     #43474f;
 }
 
 /* ── Base styles ─────────────────────────────────────────────────────────── */
@@ -145,6 +159,21 @@ body {
 
 .icon-filled {
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ── Header offset — espaço abaixo do header fixo ────────────────────────── */
+.header-offset {
+  margin-top: 10rem; /* 160px — cobre header com margem generosa */
+}
+
+/* ── Button primário — sempre azul escuro + texto branco ─────────────────── */
+.btn-primary {
+  background-color: #001e40 !important;
+  color: #ffffff !important;
+}
+.dark .btn-primary {
+  background-color: #1f477b !important;
+  color: #ffffff !important;
 }
 
 /* ── Utilities ───────────────────────────────────────────────────────────── */

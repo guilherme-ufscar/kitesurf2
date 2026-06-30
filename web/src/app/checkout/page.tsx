@@ -129,7 +129,7 @@ export default function CheckoutPage() {
   return (
     <>
       <Header />
-      <main className="mt-28 px-margin-desktop mb-unit-xl max-w-container mx-auto">
+      <main className="header-offset px-margin-desktop mb-unit-xl max-w-container mx-auto">
         <Suspense>
           <CheckoutContent />
         </Suspense>

@@ -35,3 +35,17 @@ api/prisma/migrations/
 # Next.js
 web/.next/
 web/out/
+web/next-env.d.ts
+web/tsconfig.tsbuildinfo
+
+# Package locks (opcional — remover se quiser lockfile no repo)
+api/package-lock.json
+web/package-lock.json
+
+# Playwright MCP / testes locais
+.playwright-mcp/
+
+# Arquivos temporários de desenvolvimento
+atual.md
+imagens/
+web/public/imagens/

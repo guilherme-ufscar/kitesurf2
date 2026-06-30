@@ -84,7 +84,7 @@ export const reviewsApi = {
 
 export const favoritesApi = {
   list:    () => api.get('/favorites'),
-  toggle:  (listingId: string) => api.post(`/favorites/${listingId}/toggle`),
+  toggle:  (listingId: string) => api.post(`/favorites/${listingId}`),
 }
 
 export const plansApi = {
@@ -102,12 +102,12 @@ export const adminApi = {
   stats:         () => api.get('/admin/stats'),
   users:         (params?: Record<string, string | number>) => api.get('/admin/users', { params }),
   listings:      (params?: Record<string, string | number>) => api.get('/admin/listings', { params }),
-  reports:       (params?: Record<string, string | number>) => api.get('/admin/reports', { params }),
+  reports:       (params?: Record<string, string | number>) => api.get('/reports', { params }),
   banners:       (params?: Record<string, string | number>) => api.get('/admin/banners', { params }),
   createBanner:  (body: unknown) => api.post('/admin/banners', body),
   updateBanner:  (id: string, b: unknown) => api.patch(`/admin/banners/${id}`, b),
   deleteBanner:  (id: string) => api.delete(`/admin/banners/${id}`),
-  moderateReport:(id: string, action: string) => api.post(`/admin/reports/${id}/moderate`, { action }),
+  moderateReport:(id: string, action: string, actionTaken?: string) => api.put(`/reports/${id}/status`, { status: action, actionTaken }),
   banUser:       (id: string) => api.post(`/admin/users/${id}/ban`),
   verifyUser:    (id: string) => api.post(`/admin/users/${id}/verify`),
 }

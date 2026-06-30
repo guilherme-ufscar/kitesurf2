@@ -18,7 +18,7 @@ export default function ModeracaoPage() {
 
   function load() {
     setLoading(true)
-    adminApi.reports({ status: filter === 'all' ? undefined : filter })
+    adminApi.reports(filter === 'all' ? {} : { status: filter })
       .then((r) => setReports(r.data.data ?? []))
       .catch(() => toast.error('Erro ao carregar denúncias.'))
       .finally(() => setLoading(false))

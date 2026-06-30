@@ -1,6 +1,8 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import { Logo } from '@/components/ui/Logo'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -31,8 +33,13 @@ export default function CadastroPage() {
   async function onSubmit(data: FormData) {
     if (!turnstileToken) { toast.error('Conclua a verificação de segurança.'); return }
     try {
-      await authApi.register({ name: data.name, email: data.email, password: data.password, turnstileToken })
-      router.push('/verificar-email?registered=1')
+      const res = await authApi.register({ name: data.name, email: data.email, password: data.password, turnstileToken })
+      if (res.data?.requiresVerification) {
+        router.push('/verificar-email?registered=1')
+      } else {
+        toast.success('Conta criada! Faça login para continuar.')
+        router.push('/login')
+      }
     } catch (err: unknown) {
       const msg = (err as { response?: { data?: { message?: string } } })?.response?.data?.message
       toast.error(msg ?? 'Erro ao criar conta. Tente novamente.')
@@ -43,18 +50,19 @@ export default function CadastroPage() {
     <main className="flex min-h-screen w-full">
       {/* Hero side */}
       <section className="hidden md:flex md:w-1/2 lg:w-3/5 relative overflow-hidden bg-primary flex-col justify-end p-unit-xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-container" />
+        <Image src="/imagens/wakesurf.webp" alt="Wakesurf" fill priority sizes="60vw" className="object-cover" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 max-w-md mb-unit-xl">
-          <Link href="/" className="text-4xl font-black text-on-primary mb-unit-lg block">KITE360º</Link>
-          <h2 className="text-headline-lg font-black text-on-primary mb-unit-md leading-tight">
+          <Logo size={60} variant="branco" withWordmark={false} className="mb-unit-lg" />
+          <h2 className="text-headline-lg font-black text-white mb-unit-md leading-tight">
             Venda seus equipamentos<br />para quem entende.
           </h2>
-          <p className="text-body-lg text-on-primary/80">
+          <p className="text-body-lg text-white/80">
             Crie sua conta gratuitamente e anuncie para milhares de esportistas aquáticos em todo o Brasil.
           </p>
           <ul className="mt-unit-lg flex flex-col gap-3">
             {['Anuncie grátis', 'Chat seguro com bloqueio de contato externo', 'Selo de verificação para mais credibilidade', 'Avaliações e reputação do vendedor'].map((item) => (
-              <li key={item} className="flex items-center gap-3 text-on-primary/90 text-body-md">
+              <li key={item} className="flex items-center gap-3 text-white/90 text-body-md">
                 <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
                 {item}
               </li>
@@ -67,7 +75,9 @@ export default function CadastroPage() {
       <section className="w-full md:w-1/2 lg:w-2/5 flex flex-col justify-center items-center bg-surface-container-lowest px-margin-mobile md:px-margin-desktop py-unit-xl">
         <div className="w-full max-w-sm">
           <div className="text-center mb-unit-xl">
-            <Link href="/" className="text-3xl font-black text-primary tracking-tight">KITE360º</Link>
+            <div className="flex justify-center mb-2">
+              <Logo size={54} />
+            </div>
             <p className="text-body-md text-secondary mt-unit-xs">Crie sua conta gratuita</p>
           </div>
 

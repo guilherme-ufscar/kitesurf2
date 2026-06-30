@@ -53,7 +53,7 @@ export default function PlanosPage() {
     setLoading(planId)
     try {
       const { data } = await plansApi.checkout({ planId, billing })
-      router.push(`/checkout?order=${data.orderId}`)
+      router.push(`/checkout?order=${data.subscription?.id ?? data.orderId}`)
     } catch { toast.error('Faça login para assinar um plano.'); router.push('/login') }
     finally { setLoading(null) }
   }
@@ -63,7 +63,7 @@ export default function PlanosPage() {
   return (
     <>
       <Header />
-      <main className="mt-28 mb-unit-xl">
+      <main className="header-offset mb-unit-xl">
         <div className="max-w-container mx-auto px-margin-desktop py-unit-xl">
           {/* Header */}
           <div className="text-center mb-unit-xl">

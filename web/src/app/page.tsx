@@ -1,4 +1,5 @@
 import { Suspense } from 'react'
+import Image from 'next/image'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { BannerSlot } from '@/components/ads/BannerSlot'
@@ -35,12 +36,20 @@ export default async function HomePage() {
     <>
       <Header activeCategory="Home" />
 
-      <main className="mt-28 w-full max-w-container mx-auto px-margin-desktop mb-unit-xl">
+      <main className="header-offset w-full max-w-container mx-auto px-margin-desktop mb-unit-xl">
         {/* Hero Banner */}
         <section className="mb-unit-xl">
           <div className="relative w-full h-[280px] md:h-[320px] rounded-xl overflow-hidden shadow-sm bg-primary">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/20 flex items-center p-unit-xl">
-              <div className="max-w-md text-on-primary">
+            <Image
+              src="/imagens/kitesurf.webp"
+              alt="Kitesurf no mar"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/50 flex items-center p-unit-xl">
+              <div className="max-w-md text-white">
                 <h1 className="text-headline-lg font-black mb-unit-sm leading-tight">
                   Alta performance<br />no mar.
                 </h1>
@@ -138,7 +147,7 @@ const MOCK_LISTINGS: Listing[] = Array.from({ length: 8 }, (_, i) => ({
   category: 'kitesurf',
   condition: i % 2 === 0 ? 'new' : 'used',
   status: 'active',
-  images: [{ id: '1', url: '/placeholder-product.svg', thumb: '/placeholder-product.svg', order: 0 }],
+  images: [{ id: '1', ...(() => { const img = ['/imagens/kitesurf-card.webp','/imagens/surfer-card.webp','/imagens/wakesurf-card.webp','/imagens/hero-1-card.webp','/imagens/hero-2-card.webp','/imagens/beach-couple-card.webp'][i % 6]; return { url: img, thumb: img } })(), order: 0 }],
   seller: { id: `seller-${i}`, name: 'Vendedor', isVerified: i % 3 === 0, rating: 4.8, reviewCount: 23 },
   city: ['Florianópolis', 'Fortaleza', 'Ilhabela', 'Jericoacoara', 'Cumbuco', 'Preá', 'Rio de Janeiro', 'Araruama'][i % 8],
   state: ['SC', 'CE', 'SP', 'CE', 'CE', 'CE', 'RJ', 'RJ'][i % 8],

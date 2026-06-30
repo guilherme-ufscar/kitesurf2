@@ -25,6 +25,12 @@ export class MailService {
   async send(options: { to: string; subject: string; html: string }) {
     const from = this.config.get('EMAIL_FROM') ?? 'no-reply@kite360.com.br'
 
+    // Skip sending if no mail provider configured (dev)
+    if (!this.config.get('RESEND_API_KEY') && this.config.get('EMAIL_FALLBACK_ENABLED') !== 'true') {
+      this.logger.warn(`[DEV] Email not sent to ${options.to} — no mail provider configured. Subject: ${options.subject}`)
+      return
+    }
+
     // Try Resend first
     try {
       await this.resend.emails.send({ from, to: options.to, subject: options.subject, html: options.html })
@@ -32,7 +38,10 @@ export class MailService {
       return
     } catch (err: unknown) {
       const isQuota = (err as { statusCode?: number })?.statusCode === 429
-      if (!isQuota) throw err
+      if (!isQuota) {
+        this.logger.error(`Resend failed: ${(err as Error).message}`)
+        if (this.config.get('EMAIL_FALLBACK_ENABLED') !== 'true') return
+      }
       this.logger.warn('Resend quota exceeded — falling back to SMTP')
     }
 

@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { Icon } from '@/components/ui/Icon'
 import { Button } from '@/components/ui/Button'
 import { ThemeToggle } from './ThemeToggle'
+import { Logo } from '@/components/ui/Logo'
 import Image from 'next/image'
 
 const CATEGORIES = [
@@ -36,9 +37,7 @@ export function Header({ user, activeCategory }: HeaderProps) {
         {/* Main row */}
         <div className="flex items-center justify-between py-unit-sm gap-gutter">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-black text-primary shrink-0 tracking-tight">
-            KITE360º
-          </Link>
+          <Logo size={64} />
 
           {/* Search */}
           <form onSubmit={onSearch} className="flex-1 max-w-3xl relative">

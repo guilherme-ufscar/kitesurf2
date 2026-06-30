@@ -3,46 +3,22 @@ import { useEffect, useState } from 'react'
 import { DashboardSidebar } from '@/components/layout/DashboardSidebar'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
-import { authApi, usersApi } from '@/lib/api'
+import { authApi } from '@/lib/api'
 import type { User } from '@/types'
 import toast from 'react-hot-toast'
 
 const STEPS = [
-  { id: 'email',    label: 'E-mail verificado',    icon: 'mail',          desc: 'Seu e-mail foi confirmado.' },
-  { id: 'phone',    label: 'Telefone verificado',  icon: 'phone_android', desc: 'Confirme seu número de celular via SMS.' },
-  { id: 'document', label: 'Documento (CPF/RG)',   icon: 'badge',         desc: 'Envie uma foto do seu documento de identidade.' },
+  { id: 'email',    label: 'E-mail verificado',    icon: 'mail',  desc: 'Seu e-mail foi confirmado.' },
+  { id: 'document', label: 'Documento (CPF/RG)',   icon: 'badge', desc: 'Envie uma foto do seu documento de identidade.' },
 ]
 
 export default function VerificacaoContaPage() {
   const [user, setUser] = useState<User | null>(null)
-  const [phone, setPhone] = useState('')
-  const [smsCode, setSmsCode] = useState('')
-  const [smsSent, setSmsSent] = useState(false)
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     authApi.me().then((r) => setUser(r.data))
   }, [])
-
-  async function sendSms() {
-    setLoading(true)
-    try {
-      await usersApi.verify({ step: 'phone_send', phone })
-      setSmsSent(true)
-      toast.success('Código enviado!')
-    } catch { toast.error('Erro ao enviar código.') }
-    finally { setLoading(false) }
-  }
-
-  async function confirmSms() {
-    setLoading(true)
-    try {
-      await usersApi.verify({ step: 'phone_confirm', code: smsCode })
-      toast.success('Telefone verificado!')
-      authApi.me().then((r) => setUser(r.data))
-    } catch { toast.error('Código inválido.') }
-    finally { setLoading(false) }
-  }
 
   return (
     <div className="flex min-h-screen bg-background">
@@ -89,33 +65,6 @@ export default function VerificacaoContaPage() {
                     }
                   </div>
 
-                  {/* Phone step */}
-                  {step.id === 'phone' && !user?.isVerified && (
-                    <div className="mt-unit-md pl-16 flex flex-col gap-unit-sm">
-                      {!smsSent ? (
-                        <div className="flex gap-unit-sm">
-                          <input
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
-                            placeholder="+55 (85) 99999-9999"
-                            className="flex-1 border border-outline-variant rounded-lg px-unit-md py-2 text-body-md focus:outline-none focus:border-primary bg-surface-container-lowest"
-                          />
-                          <Button size="sm" loading={loading} onClick={sendSms}>Enviar código</Button>
-                        </div>
-                      ) : (
-                        <div className="flex gap-unit-sm">
-                          <input
-                            value={smsCode}
-                            onChange={(e) => setSmsCode(e.target.value)}
-                            placeholder="Código SMS"
-                            maxLength={6}
-                            className="flex-1 border border-outline-variant rounded-lg px-unit-md py-2 text-body-md focus:outline-none focus:border-primary bg-surface-container-lowest"
-                          />
-                          <Button size="sm" loading={loading} onClick={confirmSms}>Confirmar</Button>
-                        </div>
-                      )}
-                    </div>
-                  )}
                 </div>
               )
             })}

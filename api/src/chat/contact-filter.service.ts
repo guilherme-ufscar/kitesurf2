@@ -5,7 +5,7 @@ import { Injectable } from '@nestjs/common'
 // Detects: phone numbers, emails, URLs, social handles in various formats.
 
 const PHONE_REGEX = /(\+?[0-9][\s\-\.\(\)]{0,3}){10,}/g
-const EMAIL_REGEX = /[a-zA-Z0-9._%+\-]+\s*[@＠at]\s*[a-zA-Z0-9.\-]+\s*[.]\s*[a-zA-Z]{2,}/gi
+const EMAIL_REGEX = /[a-zA-Z0-9._%+\-]+\s*(?:@|＠|\bat\b)\s*[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/gi
 const URL_REGEX = /https?:\/\/|www\.|\.com|\.br|\.net|\.org|\.io|bit\.ly|t\.me|wa\.me/gi
 const SOCIAL_REGEX = /@[a-zA-Z0-9_]{3,}|\bwhatsapp\b|\btelegram\b|\binstagram\b|\bfacebook\b|\bpix\s+\w+/gi
 
@@ -21,11 +21,12 @@ export interface FilterResult {
 @Injectable()
 export class ContactFilterService {
   filter(text: string): FilterResult {
-    if (PHONE_REGEX.test(text))   return { isClean: false, reason: 'phone',        sanitized: this.mask(text) }
-    if (EMAIL_REGEX.test(text))   return { isClean: false, reason: 'email',        sanitized: this.mask(text) }
-    if (URL_REGEX.test(text))     return { isClean: false, reason: 'url',          sanitized: this.mask(text) }
-    if (SOCIAL_REGEX.test(text))  return { isClean: false, reason: 'social',       sanitized: this.mask(text) }
-    if (NUMBER_WORDS_REGEX.test(text)) return { isClean: false, reason: 'number_words', sanitized: this.mask(text) }
+    // Recreate regex instances to avoid /g flag lastIndex bug
+    if (new RegExp(PHONE_REGEX.source, PHONE_REGEX.flags).test(text))           return { isClean: false, reason: 'phone',        sanitized: this.mask(text) }
+    if (new RegExp(EMAIL_REGEX.source, EMAIL_REGEX.flags).test(text))           return { isClean: false, reason: 'email',        sanitized: this.mask(text) }
+    if (new RegExp(URL_REGEX.source, URL_REGEX.flags).test(text))               return { isClean: false, reason: 'url',          sanitized: this.mask(text) }
+    if (new RegExp(SOCIAL_REGEX.source, SOCIAL_REGEX.flags).test(text))         return { isClean: false, reason: 'social',       sanitized: this.mask(text) }
+    if (new RegExp(NUMBER_WORDS_REGEX.source, NUMBER_WORDS_REGEX.flags).test(text)) return { isClean: false, reason: 'number_words', sanitized: this.mask(text) }
     return { isClean: true, sanitized: text }
   }
 

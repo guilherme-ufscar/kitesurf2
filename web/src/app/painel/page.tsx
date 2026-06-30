@@ -33,11 +33,12 @@ export default function DashboardPage() {
       setUser(u.data)
       const mine: Listing[] = l.data.data ?? []
       setListings(mine)
-      setConversations((c.data.data ?? []).slice(0, 5))
+      const convs: Conversation[] = c.data ?? []
+      setConversations(convs.slice(0, 5))
       setStats({
         activeListings: mine.filter((x) => x.status === 'active').length,
         totalViews: mine.reduce((s, x) => s + x.viewCount, 0),
-        messages: c.data.total ?? 0,
+        messages: convs.length,
         rating: u.data.rating,
       })
     }).catch(() => {

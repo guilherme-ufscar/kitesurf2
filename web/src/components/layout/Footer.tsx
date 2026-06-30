@@ -1,11 +1,12 @@
 import Link from 'next/link'
+import { Logo } from '@/components/ui/Logo'
 
 export function Footer() {
   return (
     <footer className="w-full mt-unit-xl bg-surface-container-low border-t border-outline-variant">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-unit-xl max-w-container mx-auto">
         <div className="flex flex-col gap-unit-md">
-          <span className="text-2xl font-black text-primary">KITE360º</span>
+          <Logo size={44} href={null} />
           <p className="text-body-md text-secondary">A maior plataforma de compra e venda de equipamentos náuticos do Brasil.</p>
         </div>
         <div>

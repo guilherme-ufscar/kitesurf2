@@ -55,7 +55,7 @@ export default function AnuncioPage() {
     return (
       <>
         <Header />
-        <main className="mt-28 max-w-container mx-auto px-margin-desktop py-unit-xl flex items-center justify-center min-h-[400px]">
+        <main className="header-offset max-w-container mx-auto px-margin-desktop py-unit-xl flex items-center justify-center min-h-[400px]">
           <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
         </main>
         <Footer />
@@ -70,7 +70,7 @@ export default function AnuncioPage() {
   return (
     <>
       <Header />
-      <main className="mt-28 w-full max-w-container mx-auto px-margin-desktop mb-unit-xl">
+      <main className="header-offset w-full max-w-container mx-auto px-margin-desktop mb-unit-xl">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-body-md text-secondary mb-unit-lg">
           <Link href="/" className="hover:text-primary">Home</Link>

@@ -26,21 +26,21 @@ function ChatContent() {
 
   useEffect(() => {
     authApi.me().then((r) => setUser(r.data)).catch(() => {})
-    chatApi.conversations().then((r) => setConversations(r.data.data ?? [])).catch(() => {})
+    chatApi.conversations().then((r) => setConversations(r.data ?? [])).catch(() => {})
   }, [])
 
   useEffect(() => {
     if (!activeConv) return
     chatApi.messages(activeConv)
-      .then((r) => setMessages(r.data.data ?? []))
+      .then((r) => setMessages(r.data ?? []))
       .catch(() => toast.error('Erro ao carregar mensagens.'))
   }, [activeConv])
 
   useEffect(() => {
     if (!activeConv) return
     const token = localStorage.getItem('kite_access_token')
-    socketRef.current = io('/api/chat/ws', { auth: { token } })
-    socketRef.current.emit('join_conversation', activeConv)
+    socketRef.current = io('/chat', { path: '/socket.io', auth: { token } })
+    socketRef.current.emit('join', activeConv)
     socketRef.current.on('message', (msg: Message) => {
       setMessages((prev) => [...prev, msg])
     })

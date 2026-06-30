@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import AdminSidebar from '@/components/layout/AdminSidebar'
+import { AdminSidebar } from '@/components/layout/AdminSidebar'
 import { adminApi } from '@/lib/api'
 import toast from 'react-hot-toast'
 
@@ -19,8 +19,7 @@ export default function AdminListingsPage() {
   const fetchListings = async () => {
     setLoading(true)
     try {
-      const params = new URLSearchParams({ page: String(page), status })
-      const res = await adminApi.get(`/admin/listings?${params}`)
+      const res = await adminApi.listings({ page, status })
       setListings(res.data.data)
       setTotal(res.data.total)
     } catch { toast.error('Erro ao carregar anúncios.') }
@@ -31,7 +30,7 @@ export default function AdminListingsPage() {
 
   const handleModerate = async (id: string, newStatus: string) => {
     try {
-      await adminApi.put(`/admin/listings/${id}/status`, { status: newStatus })
+      await adminApi.moderateReport(id, newStatus)
       toast.success('Status atualizado.')
       fetchListings()
     } catch { toast.error('Erro.') }
@@ -74,7 +73,7 @@ export default function AdminListingsPage() {
             <tbody>
               {loading ? (
                 <tr><td colSpan={5} className="p-8 text-center text-[var(--color-text-secondary)]">Carregando...</td></tr>
-              ) : listings.map(listing => (
+              ) : listings.map((listing: any) => (
                 <tr key={listing.id} className="border-b border-[var(--color-border)] last:border-0 hover:bg-[var(--color-surface-subtle)] transition-colors">
                   <td className="p-4">
                     <div className="flex items-center gap-3">

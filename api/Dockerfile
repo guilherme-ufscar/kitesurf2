@@ -2,7 +2,7 @@ FROM node:20-alpine AS deps
 RUN apk add --no-cache libc6-compat python3 make g++
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm install --legacy-peer-deps
 
 FROM node:20-alpine AS builder
 WORKDIR /app
@@ -12,7 +12,7 @@ RUN npx prisma generate
 RUN npm run build
 
 FROM node:20-alpine AS runner
-RUN apk add --no-cache dumb-init
+RUN apk add --no-cache dumb-init openssl
 WORKDIR /app
 ENV NODE_ENV=production
 
@@ -23,4 +23,4 @@ COPY package*.json ./
 
 EXPOSE 8000
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
-CMD ["sh", "-c", "npx prisma migrate deploy && node dist/main.js"]
+CMD ["sh", "-c", "npx prisma db push --accept-data-loss && node dist/src/main.js"]

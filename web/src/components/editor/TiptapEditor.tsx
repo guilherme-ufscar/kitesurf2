@@ -37,7 +37,8 @@ export function TiptapEditor({ value, onChange, placeholder = 'Descreva o equipa
   async function uploadImage(file: File) {
     const form = new FormData()
     form.append('file', file)
-    const res = await fetch('/api/uploads/image', { method: 'POST', body: form })
+    const token = typeof window !== 'undefined' ? localStorage.getItem('kite_access_token') : null
+    const res = await fetch('/api/uploads/image', { method: 'POST', body: form, headers: token ? { Authorization: `Bearer ${token}` } : {} })
     if (!res.ok) throw new Error('Upload falhou')
     const { url } = await res.json()
     return url as string

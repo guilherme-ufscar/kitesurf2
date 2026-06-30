@@ -39,7 +39,7 @@ export default function VendedorPage() {
     return (
       <>
         <Header />
-        <main className="mt-28 flex items-center justify-center min-h-[400px]">
+        <main className="header-offset flex items-center justify-center min-h-[400px]">
           <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
         </main>
         <Footer />
@@ -50,7 +50,7 @@ export default function VendedorPage() {
   return (
     <>
       <Header />
-      <main className="mt-28 w-full max-w-container mx-auto px-margin-desktop mb-unit-xl">
+      <main className="header-offset w-full max-w-container mx-auto px-margin-desktop mb-unit-xl">
         {/* Profile header */}
         <div className="bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-xl mb-unit-xl">
           <div className="flex flex-col md:flex-row gap-unit-lg items-start">

@@ -19,6 +19,7 @@ class CreateListingDto {
   @IsString() city: string
   @IsString() state: string
   @IsOptional() @IsString() turnstileToken?: string
+  @IsOptional() images?: string | string[]
 }
 
 @Controller('listings')
@@ -80,6 +81,9 @@ export class ListingsController {
     if (files?.length) {
       const results = await Promise.all(files.map(f => this.uploads.saveImage(f, 'anuncios')))
       imageUrls.push(...results.map(r => r.url))
+    } else if (body.images) {
+      const bodyImages = Array.isArray(body.images) ? body.images : [body.images]
+      imageUrls.push(...bodyImages)
     }
     return this.listings.create(user.id, { ...body, images: imageUrls })
   }

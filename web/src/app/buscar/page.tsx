@@ -1,3 +1,5 @@
+'use client'
+
 import { Suspense } from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -46,7 +48,7 @@ export default async function BuscarPage({ searchParams }: SearchPageProps) {
   return (
     <>
       <Header />
-      <main className="mt-28 w-full max-w-container mx-auto px-margin-desktop mb-unit-xl">
+      <main className="header-offset w-full max-w-container mx-auto px-margin-desktop mb-unit-xl">
         <div className="flex gap-gutter">
           {/* Filters sidebar */}
           <aside className="hidden lg:flex flex-col gap-unit-lg w-64 shrink-0">
