@@ -21,7 +21,16 @@ export function Turnstile({ siteKey, onVerify, onError }: TurnstileProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const widgetId = useRef<string | undefined>()
 
+  // Mantém os callbacks atuais em refs para o efeito não depender da
+  // identidade deles (evita re-render/remoção do widget em loop).
+  const onVerifyRef = useRef(onVerify)
+  const onErrorRef = useRef(onError)
+  onVerifyRef.current = onVerify
+  onErrorRef.current = onError
+
   useEffect(() => {
+    let cancelled = false
+
     const script = document.getElementById('cf-turnstile-script')
     if (!script) {
       const s = document.createElement('script')
@@ -32,30 +41,38 @@ export function Turnstile({ siteKey, onVerify, onError }: TurnstileProps) {
     }
 
     const render = () => {
-      if (containerRef.current && window.turnstile && !widgetId.current) {
-        widgetId.current = window.turnstile.render(containerRef.current, {
-          sitekey: siteKey,
-          callback: onVerify,
-          'error-callback': onError,
-        })
-      }
+      if (cancelled || !containerRef.current || !window.turnstile || widgetId.current) return
+      widgetId.current = window.turnstile.render(containerRef.current, {
+        sitekey: siteKey,
+        callback: (token: string) => onVerifyRef.current(token),
+        'error-callback': () => onErrorRef.current?.(),
+        'expired-callback': () => onErrorRef.current?.(),
+      })
     }
 
+    let interval: ReturnType<typeof setInterval> | undefined
     if (window.turnstile) {
       render()
     } else {
-      const interval = setInterval(() => {
-        if (window.turnstile) { clearInterval(interval); render() }
+      interval = setInterval(() => {
+        if (window.turnstile) {
+          if (interval) clearInterval(interval)
+          render()
+        }
       }, 100)
     }
 
     return () => {
+      cancelled = true
+      if (interval) clearInterval(interval)
       if (window.turnstile && widgetId.current) {
         window.turnstile.remove(widgetId.current)
         widgetId.current = undefined
       }
     }
-  }, [siteKey, onVerify, onError])
+    // Só recria o widget se a sitekey mudar — não depende dos callbacks.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [siteKey])
 
   return <div ref={containerRef} className="flex justify-center" />
 }
