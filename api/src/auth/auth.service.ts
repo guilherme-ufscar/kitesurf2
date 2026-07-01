@@ -20,7 +20,11 @@ export class AuthService {
     if (exists) throw new ConflictException('E-mail já cadastrado.')
 
     const passwordHash = await argon2.hash(data.password)
-    const hasMailProvider = !!this.config.get('RESEND_API_KEY')
+    // Só considera provedor de e-mail válido se a chave Resend for real
+    // (evita quebrar o cadastro com chave placeholder). Chaves reais
+    // começam com "re_" e não são o placeholder de exemplo.
+    const resendKey = this.config.get<string>('RESEND_API_KEY')
+    const hasMailProvider = !!resendKey && resendKey.startsWith('re_') && resendKey !== 're_placeholder'
     const emailVerifyToken = hasMailProvider ? uuid() : null
 
     await this.prisma.user.create({
