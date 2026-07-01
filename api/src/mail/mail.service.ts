@@ -22,6 +22,11 @@ export class MailService {
     })
   }
 
+  /** Base URL do app sem barra final (evita // nos links). */
+  private appUrl(): string {
+    return (this.config.get<string>('APP_URL') ?? '').replace(/\/+$/, '')
+  }
+
   async send(options: { to: string; subject: string; html: string }) {
     const from = this.config.get('EMAIL_FROM') ?? 'no-reply@kite360.com.br'
 
@@ -52,7 +57,7 @@ export class MailService {
   }
 
   async sendEmailVerification(to: string, token: string) {
-    const url = `${this.config.get('APP_URL')}/verificar-email?token=${token}`
+    const url = `${this.appUrl()}/verificar-email?token=${token}`
     await this.send({
       to,
       subject: 'Verifique seu e-mail — KITE360º',
@@ -69,7 +74,7 @@ export class MailService {
   }
 
   async sendPasswordReset(to: string, token: string) {
-    const url = `${this.config.get('APP_URL')}/redefinir-senha?token=${token}`
+    const url = `${this.appUrl()}/redefinir-senha?token=${token}`
     await this.send({
       to,
       subject: 'Redefinir senha — KITE360º',
@@ -91,7 +96,7 @@ export class MailService {
       html: `
         <h2>Você tem uma nova mensagem!</h2>
         <p><strong>${senderName}</strong> enviou uma mensagem sobre <strong>${listingTitle}</strong>.</p>
-        <a href="${this.config.get('APP_URL')}/mensagens" style="background:#001e40;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;display:inline-block;">
+        <a href="${this.appUrl()}/mensagens" style="background:#001e40;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;display:inline-block;">
           Ver mensagens
         </a>
       `,
