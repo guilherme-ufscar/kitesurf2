@@ -7,7 +7,6 @@ import { Input, Select } from '@/components/ui/Input'
 import { Icon } from '@/components/ui/Icon'
 import { TiptapEditor } from '@/components/editor/TiptapEditor'
 import { listingsApi } from '@/lib/api'
-import { Turnstile } from '@/components/ui/Turnstile'
 import toast from 'react-hot-toast'
 
 const CATEGORIES = ['Kitesurf', 'Wingfoil', 'Kitefoil', 'Kitewave', 'Acessórios'].map((c) => ({ value: c.toLowerCase(), label: c }))
@@ -27,7 +26,6 @@ export default function NovoAnuncioPage() {
   const [description, setDescription] = useState('')
   const [images, setImages] = useState<File[]>([])
   const [imagePreviews, setImagePreviews] = useState<string[]>([])
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
   function handleImageChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -48,7 +46,6 @@ export default function NovoAnuncioPage() {
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (!turnstileToken) { toast.error('Conclua a verificação de segurança.'); return }
     if (!description || description === '<p></p>') { toast.error('Adicione uma descrição.'); return }
     if (images.length === 0) { toast.error('Adicione pelo menos 1 foto.'); return }
 
@@ -70,7 +67,6 @@ export default function NovoAnuncioPage() {
         title, category, brand, model, condition,
         price: parseFloat(price), city, state,
         description, images: uploadedUrls,
-        turnstileToken,
       })
 
       toast.success('Anúncio criado com sucesso!')
@@ -193,12 +189,6 @@ export default function NovoAnuncioPage() {
               </p>
               <TiptapEditor value={description} onChange={setDescription} />
             </div>
-
-            <Turnstile
-              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA'}
-              onVerify={setTurnstileToken}
-              onError={() => setTurnstileToken(null)}
-            />
 
             <div className="flex gap-3">
               <Button type="button" variant="ghost" onClick={() => router.back()} className="flex-1">

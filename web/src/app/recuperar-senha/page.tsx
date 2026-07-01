@@ -5,18 +5,15 @@ import { authApi } from '@/lib/api'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Icon } from '@/components/ui/Icon'
-import { Turnstile } from '@/components/ui/Turnstile'
 import toast from 'react-hot-toast'
 
 export default function RecuperarSenhaPage() {
   const [email, setEmail] = useState('')
-  const [token, setToken] = useState<string | null>(null)
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (!token) { toast.error('Conclua a verificação de segurança.'); return }
     setLoading(true)
     try {
       await authApi.forgotPw(email)
@@ -60,11 +57,6 @@ export default function RecuperarSenhaPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-            />
-            <Turnstile
-              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA'}
-              onVerify={setToken}
-              onError={() => setToken(null)}
             />
             <Button type="submit" loading={loading} className="w-full">
               Enviar link de recuperação

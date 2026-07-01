@@ -10,7 +10,6 @@ import { z } from 'zod'
 import { authApi } from '@/lib/api'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
-import { Turnstile } from '@/components/ui/Turnstile'
 import toast from 'react-hot-toast'
 
 const schema = z.object({
@@ -24,16 +23,14 @@ type FormData = z.infer<typeof schema>
 
 export default function CadastroPage() {
   const router = useRouter()
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null)
 
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FormData>({
     resolver: zodResolver(schema),
   })
 
   async function onSubmit(data: FormData) {
-    if (!turnstileToken) { toast.error('Conclua a verificação de segurança.'); return }
     try {
-      const res = await authApi.register({ name: data.name, email: data.email, password: data.password, turnstileToken })
+      const res = await authApi.register({ name: data.name, email: data.email, password: data.password })
       if (res.data?.requiresVerification) {
         router.push('/verificar-email?registered=1')
       } else {
@@ -86,12 +83,6 @@ export default function CadastroPage() {
             <Input label="E-mail" type="email" placeholder="seu@email.com" error={errors.email?.message} {...register('email')} />
             <Input label="Senha" type="password" placeholder="Mínimo 8 caracteres" error={errors.password?.message} {...register('password')} />
             <Input label="Confirmar senha" type="password" placeholder="Repita a senha" error={errors.confirm?.message} {...register('confirm')} />
-
-            <Turnstile
-              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA'}
-              onVerify={setTurnstileToken}
-              onError={() => setTurnstileToken(null)}
-            />
 
             <p className="text-[11px] text-secondary text-center">
               Ao cadastrar, você concorda com os{' '}

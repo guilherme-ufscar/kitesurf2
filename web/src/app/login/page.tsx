@@ -11,7 +11,6 @@ import { authApi } from '@/lib/api'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Icon } from '@/components/ui/Icon'
-import { Turnstile } from '@/components/ui/Turnstile'
 import toast from 'react-hot-toast'
 
 const schema = z.object({
@@ -22,7 +21,6 @@ type FormData = z.infer<typeof schema>
 
 export default function LoginPage() {
   const router = useRouter()
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null)
   const [showPw, setShowPw] = useState(false)
 
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FormData>({
@@ -30,9 +28,8 @@ export default function LoginPage() {
   })
 
   async function onSubmit(data: FormData) {
-    if (!turnstileToken) { toast.error('Conclua a verificação de segurança.'); return }
     try {
-      const res = await authApi.login({ ...data, turnstileToken })
+      const res = await authApi.login({ ...data })
       localStorage.setItem('kite_access_token', res.data.accessToken)
       localStorage.setItem('kite_refresh_token', res.data.refreshToken)
       router.push('/painel')
@@ -106,12 +103,6 @@ export default function LoginPage() {
                 Esqueci minha senha
               </Link>
             </div>
-
-            <Turnstile
-              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA'}
-              onVerify={setTurnstileToken}
-              onError={() => setTurnstileToken(null)}
-            />
 
             <Button type="submit" size="lg" loading={isSubmitting} className="w-full">
               Entrar

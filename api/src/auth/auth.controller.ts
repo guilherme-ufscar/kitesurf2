@@ -9,13 +9,11 @@ class RegisterDto {
   @IsString() name: string
   @IsEmail() email: string
   @IsString() @MinLength(8) password: string
-  @IsString() turnstileToken?: string
 }
 
 class LoginDto {
   @IsEmail() email: string
   @IsString() password: string
-  @IsString() turnstileToken?: string
 }
 
 class RefreshDto { @IsString() refreshToken: string }

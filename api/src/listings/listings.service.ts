@@ -72,7 +72,7 @@ export class ListingsService {
     }
   }
 
-  async create(userId: string, data: { title: string; description: string; price: number; category: string; brand?: string; model?: string; condition: string; city: string; state: string; images: string[]; turnstileToken?: string }) {
+  async create(userId: string, data: { title: string; description: string; price: number; category: string; brand?: string; model?: string; condition: string; city: string; state: string; images: string[] }) {
     const sanitizedDesc = this.filter.sanitizeHtml(data.description)
 
     const listing = await this.prisma.listing.create({

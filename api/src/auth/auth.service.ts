@@ -5,7 +5,6 @@ import { PrismaService } from '../prisma.module'
 import { MailService } from '../mail/mail.service'
 import * as argon2 from 'argon2'
 import { v4 as uuid } from 'uuid'
-import axios from 'axios'
 
 @Injectable()
 export class AuthService {
@@ -16,22 +15,7 @@ export class AuthService {
     private mail: MailService,
   ) {}
 
-  async verifyTurnstile(token: string): Promise<boolean> {
-    const secret = this.config.get('TURNSTILE_SECRET_KEY')
-    if (!secret) return true // skip in dev if not configured
-    try {
-      const res = await axios.post('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-        secret, response: token,
-      })
-      return res.data.success === true
-    } catch { return false }
-  }
-
-  async register(data: { name: string; email: string; password: string; turnstileToken?: string }) {
-    if (data.turnstileToken && !(await this.verifyTurnstile(data.turnstileToken))) {
-      throw new BadRequestException('Captcha inválido.')
-    }
-
+  async register(data: { name: string; email: string; password: string }) {
     const exists = await this.prisma.user.findUnique({ where: { email: data.email } })
     if (exists) throw new ConflictException('E-mail já cadastrado.')
 
@@ -57,11 +41,7 @@ export class AuthService {
     return { message: 'Conta criada com sucesso!', requiresVerification: false }
   }
 
-  async login(data: { email: string; password: string; turnstileToken?: string }) {
-    if (data.turnstileToken && !(await this.verifyTurnstile(data.turnstileToken))) {
-      throw new BadRequestException('Captcha inválido.')
-    }
-
+  async login(data: { email: string; password: string }) {
     const user = await this.prisma.user.findUnique({ where: { email: data.email } })
     if (!user) throw new UnauthorizedException('E-mail ou senha incorretos.')
     if (user.isBanned) throw new UnauthorizedException('Conta suspensa.')

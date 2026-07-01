@@ -18,7 +18,6 @@ class CreateListingDto {
   @IsString() condition: string
   @IsString() city: string
   @IsString() state: string
-  @IsOptional() @IsString() turnstileToken?: string
   @IsOptional() images?: string | string[]
 }
 
